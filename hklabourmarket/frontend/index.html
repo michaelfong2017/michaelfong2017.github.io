@@ -216,11 +216,29 @@
           chart_group
             .attr("transform", "translate(50,70)");
 
+
+          var tooltip = d3.select("body")
+            .append("div")
+            .style("opacity", 1)
+            .attr("class", "tooltip")
+            .style("background-color", "black")
+            .style("border-radius", "5px")
+            .style("padding", "10px")
+            .style("color", "white")
+
+
           var nodes = chart_group.selectAll("g.node")
             .data(bubble.nodes({ children: data }).filter(function (d) { return !d.children; }));
           nodes.enter().append("g")
             .attr("class", "node")
-            .attr("transform", function (d) { return "translate(" + d.x + 20 + "," + d.y + ")"; });
+            .attr("transform", function (d) { return "translate(" + d.x + 20 + "," + d.y + ")"; })
+            // .on("mouseover", (d) => console.log(d[1].reduce((a, b) => a + b).toFixed(1)));
+            .on("mouseover", (d) => tooltip.style("visibility", "visible").text("Total: " + d[1].reduce((a, b) => a + b).toFixed(1) + "k"))
+            .on("mousemove", function () {
+              return tooltip.style("top",
+                (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
+            })
+            .on("mouseout", function () { return tooltip.style("visibility", "hidden"); });
 
           var arcGs = nodes.selectAll("g.arc")
             .data(function (d) {
@@ -233,7 +251,7 @@
               arc.outerRadius(d.r);
               return arc(d);
             })
-            .style("fill", function (d, i) { return color(i); });
+            .style("fill", function (d, i) { return color(i); })
 
           arcEnter.append("text")
             .attr({
