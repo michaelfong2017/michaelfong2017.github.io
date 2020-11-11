@@ -1,0 +1,14 @@
+---
+title: "training_needs"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+training_a1 <- read.csv(file = 'training_a1.csv')
+
+```
