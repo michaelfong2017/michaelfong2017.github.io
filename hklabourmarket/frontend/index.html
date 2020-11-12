@@ -391,12 +391,12 @@
 
                     var svg = d3.select("#training-needs").append("svg")
                         .attr("width", 1200)
-                        .attr("height", 1200)
+                        .attr("height", 1000)
                         .attr("class", "bubble")
 
                     var chart_group = svg.append("g");
                     chart_group
-                        .attr("transform", "translate(-100,120)");
+                        .attr("transform", "translate(-100,70)");
 
 
                     var tooltip = d3.select("body")
@@ -440,7 +440,7 @@
 
                     var label_group = svg.append("g");
                     label_group
-                        .attr("transform", "translate(0,70)");
+                        .attr("transform", "translate(0,20)");
                     label_group.append("text")
                         .attr("x", 35)
                         .attr("y", 710)
@@ -522,7 +522,7 @@
                     /* Data source */
                     svg.append("text")
                         .attr("x", 0)
-                        .attr("y", 970)
+                        .attr("y", 950)
                         .attr("font-size", "16px")
                         .style('fill', '#808080')
                         .text("Data source: Census and Statistics Department, Hong Kong Government, 2018 Q1")
