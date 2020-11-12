@@ -2,120 +2,110 @@
 <html lang="en">
 
 <head>
-  <title>HK Labour Market</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HK Labour Market</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
-  <!-- D3.js -->
-  <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 
-  <style>
-    .make-me-sticky {
-      position: sticky;
-      top: 0;
-    }
 
-    .bottom-one {
-      margin-bottom: 1cm;
-    }
-
-    /* D3.js */
-    g.arc path {
-      stroke: #828282;
-      stroke-width: 0.5;
-    }
-
-    g.arc text {
-      font-size: 10px;
-    }
-  </style>
+    <style>
+        .make-me-sticky {
+            position: sticky;
+            top: 0;
+        }
+        
+        .bottom-one {
+            margin-bottom: 1cm;
+        }
+        /* D3.js */
+        
+        g.arc path {
+            stroke: #828282;
+            stroke-width: 0.5;
+        }
+        
+        g.arc text {
+            font-size: 10px;
+        }
+    </style>
 </head>
 
 <body>
 
-  <div class="wrapper d-flex align-items-stretch">
-    <nav id="sidebar">
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
 
-      <div class="make-me-sticky">
+            <div class="make-me-sticky">
 
-        <div class="custom-menu">
-          <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
             <i class="fa fa-bars"></i>
             <span class="sr-only">Toggle Menu</span>
           </button>
-        </div>
-        <h1><a href="index.html" class="logo">HK Labour Market</a></h1>
-        <ul class="list-unstyled components mb-5">
-          <li class="active">
-            <a href="index.html"><span class="fa fa-home mr-3"></span> Homepage</a>
-          </li>
-          <li>
-            <a href="#employment-and-vacancies"><span class="fa fa-line-chart mr-3"></span> Employment and vacancies</a>
-          </li>
-          <li>
-            <a href="#employment-earnings"><span class="fa fa-line-chart mr-3"></span> Employment earnings</a>
-          </li>
-          <li>
-            <a href="#hours-of-work"><span class="fa fa-line-chart mr-3"></span> Hours of work</a>
-          </li>
-          <li>
-            <a href="#training-needs"><span class="fa fa-line-chart mr-3"></span> Training needs</a>
-          </li>
-          <li>
-            <a href="#discussion"><span class="fa fa-comments mr-3"></span> Discussion</a>
-          </li>
-        </ul>
+                </div>
+                <h1><a href="index.html" class="logo">HK Labour Market</a></h1>
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a href="index.html"><span class="fa fa-home mr-3"></span> Homepage</a>
+                    </li>
+                    <li>
+                        <a href="#employment-and-vacancies"><span class="fa fa-line-chart mr-3"></span> Employment and vacancies</a>
+                    </li>
+                    <li>
+                        <a href="#employment-earnings"><span class="fa fa-line-chart mr-3"></span> Employment earnings</a>
+                    </li>
+                    <li>
+                        <a href="#hours-of-work"><span class="fa fa-line-chart mr-3"></span> Hours of work</a>
+                    </li>
+                    <li>
+                        <a href="#training-needs"><span class="fa fa-line-chart mr-3"></span> Training needs</a>
+                    </li>
+                    <li>
+                        <a href="#discussion"><span class="fa fa-comments mr-3"></span> Discussion</a>
+                    </li>
+                </ul>
 
-      </div>
+            </div>
 
-    </nav>
-
-
-    <!-- Page Content  -->
-    <div id="content" class="p-4 p-md-5 pt-5">
-      <div id="introduction">
-
-        <h2 class="mb-4">Hong Kong Labour Market Data Visualization</h2>
-        <p>Labour market is an important determinant of economic development. In a context of complex and dynamic labour
-          market, gathering intelligence on labour market data, including but not limited to employment and vacancies
-          statistics, labour treatment, and skills needs, can identify and understand issues in the labour market,
-          inform
-          decisions about employment policies, evaluate the benefits and costs of policies, match supply to current
-          demand
-          for skills and help enterprises and workers adapt to change.</p>
-        <p>This page discusses about various concerns of school graduates entering labor market, policy makers, and
-          educational institutes. We provide data visualization on Hong Kong labour market data to provide clear
-          pictures
-          of the current labour market situation and answer the following questions:</p>
-        <li>What is the best industry and occupation for one to enter as a fresh graduate, based on his/her skills and
-          interests, as well as the market conditions (saturation level and salary)?</li>
-        <li>How would one select a program of study in school that can meet the market demand and his/her personal
-          interests?</li>
-        <li>Which industries and occupations have the brightest future and, therefore, requiring educational institutes
-          to
-          direct more teaching resources and to encourage student enrollments in?</li>
-        <li>Which industries and occupations have the highest potentials and can be boosted further with policies to
-          attract companies and talents?</li>
-        <li>Which demographic groups (age, education level, sex) are the most disadvantaged and will need government
-          assistance on improving the industry outlook and plans for re-training of the current labor force?</li>
-        <li>What types of training programs are most beneficial to the workforce and students?</li>
-
-        <p class="bottom-one"></p>
-        <hr>
-      </div>
+        </nav>
 
 
-      <div id="employment-and-vacancies">
-        <h3 class="mb-4">Employment and vacancies</h3>
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <div id="introduction">
 
-        <!-- Vacancies and Graduates -->
+                <h2 class="mb-4">Hong Kong Labour Market Data Visualization</h2>
+                <p>Labour market is an important determinant of economic development. In a context of complex and dynamic labour market, gathering intelligence on labour market data, including but not limited to employment and vacancies statistics, labour
+                    treatment, and skills needs, can identify and understand issues in the labour market, inform decisions about employment policies, evaluate the benefits and costs of policies, match supply to current demand for skills and help enterprises
+                    and workers adapt to change.</p>
+                <p>This page discusses about various concerns of school graduates entering labor market, policy makers, and educational institutes. We provide data visualization on Hong Kong labour market data to provide clear pictures of the current labour
+                    market situation and answer the following questions:</p>
+                <li>What is the best industry and occupation for one to enter as a fresh graduate, based on his/her skills and interests, as well as the market conditions (saturation level and salary)?</li>
+                <li>How would one select a program of study in school that can meet the market demand and his/her personal interests?
+                </li>
+                <li>Which industries and occupations have the brightest future and, therefore, requiring educational institutes to direct more teaching resources and to encourage student enrollments in?</li>
+                <li>Which industries and occupations have the highest potentials and can be boosted further with policies to attract companies and talents?</li>
+                <li>Which demographic groups (age, education level, sex) are the most disadvantaged and will need government assistance on improving the industry outlook and plans for re-training of the current labor force?</li>
+                <li>What types of training programs are most beneficial to the workforce and students?</li>
 
-        <div class='tableauPlaceholder' id='viz1605111289246' style='position: relative'><noscript><a href='#'><img
+                <p class="bottom-one"></p>
+                <hr>
+            </div>
+
+
+            <div id="employment-and-vacancies">
+                <h3 class="mb-4">Employment and vacancies</h3>
+
+                <!-- Vacancies and Graduates -->
+
+                <div class='tableauPlaceholder' id='viz1605111289246' style='position: relative'><noscript><a href='#'><img
                 alt=' '
                 src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ho&#47;HoursofWork&#47;VacanciesandGraduates&#47;1_rss.png'
                 style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
@@ -134,29 +124,36 @@
             <param name='display_count' value='yes' />
             <param name='language' value='zh-Hant' />
             <param name='filter' value='publish=yes' /></object></div>
-        <script
-          type='text/javascript'>                    var divElement = document.getElementById('viz1605111289246'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1605111289246');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
 
 
-        <p class="bottom-one"></p>
-        <hr>
-      </div>
+                <p class="bottom-one"></p>
+                <hr>
+            </div>
 
 
-      <div id="employment-earnings">
-        <h3 class="mb-4">Employment earnings</h3>
+            <div id="employment-earnings">
+                <h3 class="mb-4">Employment earnings</h3>
 
 
-        <p class="bottom-one"></p>
-        <hr>
-      </div>
+                <p class="bottom-one"></p>
+                <hr>
+            </div>
 
 
-      <div id="hours-of-work">
-        <h3 class="mb-4">Hours of work</h3>
+            <div id="hours-of-work">
+                <h3 class="mb-4">Hours of work</h3>
 
-        <!-- Heat map -->
-        <div class='tableauPlaceholder' id='viz1605098134736' style='position: relative'><noscript><a href='#'><img
+                <!-- Heat map -->
+                <div class='tableauPlaceholder' id='viz1605098134736' style='position: relative'><noscript><a href='#'><img
                 alt=' '
                 src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ho&#47;HoursofWork&#47;HoursofWorkbyIndustry&#47;1_rss.png'
                 style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
@@ -175,271 +172,484 @@
             <param name='display_count' value='yes' />
             <param name='language' value='zh-Hant' />
             <param name='filter' value='publish=yes' /></object></div>
-        <script
-          type='text/javascript'>                    var divElement = document.getElementById('viz1605098134736'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1605098134736');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
 
 
-        <p class="bottom-one"></p>
-        <hr>
-      </div>
+                <p class="bottom-one"></p>
+                <hr>
+            </div>
 
 
-      <div id="training-needs">
-        <h3 class="mb-4">Training needs</h3>
+            <div id="training-needs">
+                <h3 class="mb-4">Training needs</h3>
 
-        <script>
-          var data = [
-            ["經理及行政級人員、專業人員與輔助專業人員 Managers and administrators, professionals and associate professionals", [120.3, 57.1, 52.2, 38.3, 35.5, 0, 0, 0, 0]],
-            ["文書支援人員 Clerical support workers", [19.6, 29.2, 0, 22.6, 0, 21.3, 19.2, 0, 0]],
-            ["服務工作及銷售人員 Service and sales workers", [36.5, 16.8, 0, 22.9, 0, 16.1, 0, 15.3, 0]],
-            ["工藝及有關人員、機台及機器操作員及裝配員 Craft and related workers, plant and machine operators and assemblers", [22.9, 0, 0, 19.7, 0, 15.8, 14.9, 0, 19.1]],
-            ["非技術工人 Elementary occupations", [13.5, 0, 0, 12.2, 0, 10.2, 8.1, 0, 7.5]],
-          ];
+                <script>
+                    var data = {
+                        "name": "All",
+                        "children": [{
+                            "name": "經理及行政級人員、專業人員與輔助專業人員 Managers and administrators, professionals and associate professionals",
+                            "children": [{
+                                "training": "Yes",
+                                "children": [{
+                                    "type": 0,
+                                    "value": 120.3
+                                }, {
+                                    "type": 1,
+                                    "value": 57.1
+                                }, {
+                                    "type": 2,
+                                    "value": 52.2
+                                }, {
+                                    "type": 3,
+                                    "value": 38.3
+                                }, {
+                                    "type": 4,
+                                    "value": 35.5
+                                }, {
+                                    "type": 5,
+                                    "value": 0
+                                }, {
+                                    "type": 6,
+                                    "value": 0
+                                }, {
+                                    "type": 7,
+                                    "value": 0
+                                }, {
+                                    "type": 8,
+                                    "value": 0
+                                }]
+                            }, {
+                                "training": "No",
+                                "value": 1239
+                            }]
+                        }, {
+                            "name": "文書支援人員 Clerical support workers",
+                            "children": [{
+                                "training": "Yes",
+                                "children": [{
+                                    "type": 0,
+                                    "value": 19.6
+                                }, {
+                                    "type": 1,
+                                    "value": 29.2
+                                }, {
+                                    "type": 2,
+                                    "value": 0
+                                }, {
+                                    "type": 3,
+                                    "value": 22.6
+                                }, {
+                                    "type": 4,
+                                    "value": 0
+                                }, {
+                                    "type": 5,
+                                    "value": 21.3
+                                }, {
+                                    "type": 6,
+                                    "value": 19.2
+                                }, {
+                                    "type": 7,
+                                    "value": 0
+                                }, {
+                                    "type": 8,
+                                    "value": 0
+                                }]
+                            }, {
+                                "training": "No",
+                                "value": 378.3
+                            }]
+                        }, {
+                            "name": "服務工作及銷售人員 Service and sales workers",
+                            "children": [{
+                                "training": "Yes",
+                                "children": [{
+                                    "type": 0,
+                                    "value": 36.5
+                                }, {
+                                    "type": 1,
+                                    "value": 16.8
+                                }, {
+                                    "type": 2,
+                                    "value": 0
+                                }, {
+                                    "type": 3,
+                                    "value": 22.9
+                                }, {
+                                    "type": 4,
+                                    "value": 0
+                                }, {
+                                    "type": 5,
+                                    "value": 16.1
+                                }, {
+                                    "type": 6,
+                                    "value": 0
+                                }, {
+                                    "type": 7,
+                                    "value": 15.3
+                                }, {
+                                    "type": 8,
+                                    "value": 0
+                                }]
+                            }, {
+                                "training": "No",
+                                "value": 519.4
+                            }]
+                        }, {
+                            "name": "工藝及有關人員、機台及機器操作員及裝配員 Craft and related workers, plant and machine operators and assemblers",
+                            "children": [{
+                                "training": "Yes",
+                                "children": [{
+                                    "type": 0,
+                                    "value": 22.9
+                                }, {
+                                    "type": 1,
+                                    "value": 0
+                                }, {
+                                    "type": 2,
+                                    "value": 0
+                                }, {
+                                    "type": 3,
+                                    "value": 19.7
+                                }, {
+                                    "type": 4,
+                                    "value": 0
+                                }, {
+                                    "type": 5,
+                                    "value": 15.8
+                                }, {
+                                    "type": 6,
+                                    "value": 14.9
+                                }, {
+                                    "type": 7,
+                                    "value": 0
+                                }, {
+                                    "type": 8,
+                                    "value": 19.1
+                                }]
+                            }, {
+                                "training": "No",
+                                "value": 327.5
+                            }]
+                        }, {
+                            "name": "非技術工人 Elementary occupations",
+                            "children": [{
+                                "training": "Yes",
+                                "children": [{
+                                    "type": 0,
+                                    "value": 13.5
+                                }, {
+                                    "type": 1,
+                                    "value": 0
+                                }, {
+                                    "type": 2,
+                                    "value": 0
+                                }, {
+                                    "type": 3,
+                                    "value": 12.2
+                                }, {
+                                    "type": 4,
+                                    "value": 0
+                                }, {
+                                    "type": 5,
+                                    "value": 10.2
+                                }, {
+                                    "type": 6,
+                                    "value": 8.1
+                                }, {
+                                    "type": 7,
+                                    "value": 0
+                                }, {
+                                    "type": 8,
+                                    "value": 7.5
+                                }]
+                            }, {
+                                "training": "No",
+                                "value": 729.4
+                            }]
+                        }]
+                    }
 
-          var color = d3.scale.ordinal().range(["#eb5d0f", "#2718e6", "#980c2e", "#d997c6", "#bee544", "#7b64cf", "#c7a585", "#0a8920", "#CBB446"]),
-            diameter = 700;
-
-          var bubble = d3.layout.pack()
-            .value(function (d) { return d3.sum(d[1]); })
-            .sort(null)
-            .size([diameter, diameter])
-            .padding(1.5),
-            arc = d3.svg.arc().innerRadius(0),
-            pie = d3.layout.pie();
-
-          var svg = d3.select("#training-needs").append("svg")
-            .attr("width", diameter + 450)
-            .attr("height", diameter + 100)
-            .attr("class", "bubble")
-
-          var chart_group = svg.append("g");
-          chart_group
-            .attr("transform", "translate(50,70)");
-
-
-          var tooltip = d3.select("body")
-            .append("div")
-            .style("opacity", 1)
-            .attr("class", "tooltip")
-            .style("background-color", "black")
-            .style("border-radius", "5px")
-            .style("padding", "10px")
-            .style("color", "white")
-
-
-          var nodes = chart_group.selectAll("g.node")
-            .data(bubble.nodes({ children: data }).filter(function (d) { return !d.children; }));
-          nodes.enter().append("g")
-            .attr("class", "node")
-            .attr("transform", function (d) { return "translate(" + d.x + 20 + "," + d.y + ")"; })
-            // .on("mouseover", (d) => console.log(d[1].reduce((a, b) => a + b).toFixed(1)));
-            .on("mouseover", (d) => tooltip.style("visibility", "visible").text("Total: " + d[1].reduce((a, b) => a + b).toFixed(1) + "k"))
-            .on("mousemove", function () {
-              return tooltip.style("top",
-                (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
-            })
-            .on("mouseout", function () { return tooltip.style("visibility", "hidden"); });
-
-          var arcGs = nodes.selectAll("g.arc")
-            .data(function (d) {
-              return pie(d[1]).map(function (m) { m.r = d.r; return m; });
-            });
-          var arcEnter = arcGs.enter().append("g").attr("class", "arc")
-
-          arcEnter.append("path")
-            .attr("d", function (d) {
-              arc.outerRadius(d.r);
-              return arc(d);
-            })
-            .style("fill", function (d, i) { return color(i); })
-
-          arcEnter.append("text")
-            .attr({
-              x: function (d) { arc.outerRadius(d.r); return arc.centroid(d)[0]; },
-              y: function (d) { arc.outerRadius(d.r); return arc.centroid(d)[1]; },
-              dy: "0.35em"
-            })
-            .style("text-anchor", "middle")
-            .style("font-size", "16px")
-            .filter(function (d) { return d.value != 0 })
-            .text(function (d) { return d.value + "k"; });
-
-
-          var label_group = svg.append("g");
-          label_group
-            .attr("transform", "translate(30,70)");
-          label_group.append("text")
-            .attr("x", 80)
-            .attr("y", 670)
-            .attr("font-size", "12px")
-            .text("經理及行政級人員、專業人員與輔助專業人員")
-          label_group.append("text")
-            .attr("x", 80)
-            .attr("y", 685)
-            .text("Managers and administrators, professionals")
-          label_group.append("text")
-            .attr("x", 80)
-            .attr("y", 700)
-            .text("and associate professionals")
-
-
-          label_group.append("text")
-            .attr("x", 510)
-            .attr("y", 590)
-            .attr("font-size", "12px")
-            .text("文書支援人員")
-          label_group.append("text")
-            .attr("x", 510)
-            .attr("y", 605)
-            .text("Clerical support workers")
-
-
-          label_group.append("text")
-            .attr("x", 420)
-            .attr("y", 105)
-            .attr("font-size", "12px")
-            .text("服務工作及銷售人員")
-          label_group.append("text")
-            .attr("x", 420)
-            .attr("y", 120)
-            .text("Service and sales workers")
-
-
-          label_group.append("text")
-            .attr("x", 210)
-            .attr("y", 15)
-            .attr("font-size", "12px")
-            .text("工藝及有關人員、機台及機器操作員及裝配員")
-          label_group.append("text")
-            .attr("x", 210)
-            .attr("y", 30)
-            .text("Craft and related workers, plant and")
-          label_group.append("text")
-            .attr("x", 210)
-            .attr("y", 45)
-            .text("machine operators and assemblers")
-
-
-          label_group.append("text")
-            .attr("x", 10)
-            .attr("y", 130)
-            .attr("font-size", "12px")
-            .text("非技術工人")
-          label_group.append("text")
-            .attr("x", 10)
-            .attr("y", 145)
-            .text("Elementary occupations")
-
-
-          svg.append("text")
-            .attr("x", 8)
-            .attr("y", 25)
-            .attr("font-size", "22px")
-            .style('fill', '#808080')
-            .text("Top 5 cited training courses attended by employed persons for each")
-          svg.append("text")
-            .attr("x", 88)
-            .attr("y", 50)
-            .attr("font-size", "22px")
-            .style('fill', '#808080')
-            .text("occupation during the 12 months before enumeration")
-
-
-
-          var legend = svg.append("g");
-          legend
-            .attr("transform", "translate(630,-30)");
-
-          var legend_a = legend.append("g");
-
-          // create a list of keys
-          var keys = ["對所售賣產品及提供服務的知識",
-            "員工訓練及輔導",
-            "領導才能及團隊合作",
-            "適應新工作程序或其他轉變的能力",
-            "人力資源管理",
-            "創意及創新",
-            "管理個人時間及編排個人工作",
-            "客戶服務技巧",
-            "其他特定工作技能"]
-
-          // Add one dot in the legend for each name.
-          legend_a.selectAll("mydots")
-            .data(keys)
-            .enter()
-            .append("circle")
-            .attr("cx", 100)
-            .attr("cy", function (d, i) { return 100 + i * 40 }) // 100 is where the first dot appears. 25 is the distance between dots
-            .attr("r", 7)
-            .style("fill", function (d) { return color(d) })
-
-          // Add one dot in the legend for each name.
-          legend_a.selectAll("mylabels")
-            .data(keys)
-            .enter()
-            .append("text")
-            .attr("x", 120)
-            .attr("y", function (d, i) { return 100 + i * 40 }) // 100 is where the first dot appears. 25 is the distance between dots
-            .style("fill", function (d) { return color(d) })
-            .text(function (d) { return d })
-            .attr("text-anchor", "left")
-            .style("alignment-baseline", "middle");
+                    var rootNode = d3.hierarchy(data)
+                    var packLayout = d3.pack();
+                    packLayout.size([1000, 800]);
+                    rootNode.sum(function(d) {
+                        return d.value;
+                    });
+                    packLayout(rootNode);
 
 
-          var legend_b = legend.append("g");
-          legend_b
-            .attr("transform", "translate(0, 20)");
-
-          // create a list of keys
-          var keys = ["Knowledge of products and services offered",
-            "Staff training and counselling",
-            "Leadership and teamwork",
-            "Ability to adapt to new work procedure or other changes",
-            "Human resource management",
-            "Creativity and innovation",
-            "Time management and work organisation",
-            "Customer service skills",
-            "Other job-specific skills"]
-
-          // Add one dot in the legend for each name.
-          legend_b.selectAll("mylabels")
-            .data(keys)
-            .enter()
-            .append("text")
-            .attr("x", 120)
-            .attr("y", function (d, i) { return 100 + i * 40 }) // 100 is where the first dot appears. 25 is the distance between dots
-            .style("fill", function (d) { return color(d) })
-            .text(function (d) { return d })
-            .attr("text-anchor", "left")
-            .style("alignment-baseline", "middle");
+                    var color = ["#eb5d0f", "#2718e6", "#980c2e", "#d997c6", "#bee544", "#7b64cf", "#c7a585", "#0a8920", "#CBB446"];
 
 
-        </script>
+                    var svg = d3.select("#training-needs").append("svg")
+                        .attr("width", 1200)
+                        .attr("height", 1200)
+                        .attr("class", "bubble")
+
+                    var chart_group = svg.append("g");
+                    chart_group
+                        .attr("transform", "translate(-100,120)");
 
 
-        <p class="bottom-one"></p>
-        <hr>
-      </div>
+                    var tooltip = d3.select("body")
+                        .append("div")
+                        .style("opacity", 1)
+                        .attr("class", "tooltip")
+                        .style("background-color", "black")
+                        .style("border-radius", "5px")
+                        .style("padding", "10px")
+                        .style("color", "white")
 
 
-      <div id="discussion">
-        <h3 class="mb-4">Discussion</h3>
+                    chart_group.selectAll('circle')
+                        .data(rootNode.descendants())
+                        .enter()
+                        .append('circle')
+                        .filter(function(d) {
+                            return d.depth >= 1
+                        })
+                        .attr("fill", (d, i) => d.data.type != null ? color[d.data.type] : d.data.training == "No" ? "grey" : d.data.training == "Yes" ? "lightgreen" : "lightblue")
+                        .attr('cx', function(d) {
+                            return d.x;
+                        })
+                        .attr('cy', function(d) {
+                            return d.y;
+                        })
+                        .attr('r', function(d) {
+                            return d.r;
+                        })
+                        // .on("mouseover", (d) => console.log(d[1].reduce((a, b) => a + b).toFixed(1)));
+                        .on("mouseover", (d) => tooltip.style("visibility", "visible").text(d.value.toFixed(1)))
+                        .on("mousemove", function() {
+                            return tooltip.style("top",
+                                (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
+                        })
+                        .on("mouseout", function() {
+                            return tooltip.style("visibility", "hidden");
+                        });
 
 
-        <p class="bottom-one"></p>
-        <hr>
-      </div>
+
+                    var label_group = svg.append("g");
+                    label_group
+                        .attr("transform", "translate(0,70)");
+                    label_group.append("text")
+                        .attr("x", 35)
+                        .attr("y", 710)
+                        .attr("font-size", "12px")
+                        .text("經理及行政級人員、專業人員與輔助專業人員")
+                    label_group.append("text")
+                        .attr("x", 35)
+                        .attr("y", 725)
+                        .text("Managers and administrators, professionals")
+                    label_group.append("text")
+                        .attr("x", 35)
+                        .attr("y", 740)
+                        .text("and associate professionals")
 
 
+                    label_group.append("text")
+                        .attr("x", 660)
+                        .attr("y", 590)
+                        .attr("font-size", "12px")
+                        .text("文書支援人員")
+                    label_group.append("text")
+                        .attr("x", 660)
+                        .attr("y", 605)
+                        .text("Clerical support workers")
+
+
+                    label_group.append("text")
+                        .attr("x", 620)
+                        .attr("y", 775)
+                        .attr("font-size", "12px")
+                        .text("服務工作及銷售人員")
+                    label_group.append("text")
+                        .attr("x", 620)
+                        .attr("y", 790)
+                        .text("Service and sales workers")
+
+
+                    label_group.append("text")
+                        .attr("x", 445)
+                        .attr("y", 155)
+                        .attr("font-size", "12px")
+                        .text("工藝及有關人員、機台及機器操作員及裝配員")
+                    label_group.append("text")
+                        .attr("x", 445)
+                        .attr("y", 170)
+                        .text("Craft and related workers, plant and")
+                    label_group.append("text")
+                        .attr("x", 445)
+                        .attr("y", 185)
+                        .text("machine operators and assemblers")
+
+
+                    label_group.append("text")
+                        .attr("x", 10)
+                        .attr("y", 130)
+                        .attr("font-size", "12px")
+                        .text("非技術工人")
+                    label_group.append("text")
+                        .attr("x", 10)
+                        .attr("y", 145)
+                        .text("Elementary occupations")
+
+
+                    /* Title */
+                    svg.append("text")
+                        .attr("x", 8)
+                        .attr("y", 25)
+                        .attr("font-size", "22px")
+                        .style('fill', '#808080')
+                        .text("Top 5 cited training courses attended by employed persons for each")
+                    svg.append("text")
+                        .attr("x", 88)
+                        .attr("y", 50)
+                        .attr("font-size", "22px")
+                        .style('fill', '#808080')
+                        .text("occupation during the 12 months before enumeration")
+
+
+                    /* Data source */
+                    svg.append("text")
+                        .attr("x", 0)
+                        .attr("y", 970)
+                        .attr("font-size", "16px")
+                        .style('fill', '#808080')
+                        .text("Data source: Census and Statistics Department, Hong Kong Government, 2018 Q1")
+
+
+                    /* Legend */
+                    var legend = svg.append("g");
+                    legend
+                        .attr("transform", "translate(630,-30)");
+
+                    var legend_a = legend.append("g");
+
+
+                    color.push("grey");
+                    color.push("lightgreen");
+                    color.push("lightblue");
+
+                    // create a list of keys
+                    var keys = ["對所售賣產品及提供服務的知識",
+                        "員工訓練及輔導",
+                        "領導才能及團隊合作",
+                        "適應新工作程序或其他轉變的能力",
+                        "人力資源管理",
+                        "創意及創新",
+                        "管理個人時間及編排個人工作",
+                        "客戶服務技巧",
+                        "其他特定工作技能",
+                        "沒有接受培訓",
+                        "曾接受培訓",
+                        "所有僱員"
+                    ]
+
+                    // Add one dot in the legend for each name.
+                    legend_a.selectAll("mydots")
+                        .data(keys)
+                        .enter()
+                        .append("circle")
+                        .attr("cx", 100)
+                        .attr("cy", function(d, i) {
+                            return 100 + i * 40
+                        }) // 100 is where the first dot appears. 25 is the distance between dots
+                        .attr("r", 7)
+                        .style("fill", function(d, i) {
+                            return color[i]
+                        })
+
+                    // Add one dot in the legend for each name.
+                    legend_a.selectAll("mylabels")
+                        .data(keys)
+                        .enter()
+                        .append("text")
+                        .attr("x", 120)
+                        .attr("y", function(d, i) {
+                            return 100 + i * 40
+                        }) // 100 is where the first dot appears. 25 is the distance between dots
+                        .style("fill", function(d, i) {
+                            return color[i]
+                        })
+                        .text(function(d) {
+                            return d
+                        })
+                        .attr("text-anchor", "left")
+                        .style("alignment-baseline", "middle");
+
+
+                    var legend_b = legend.append("g");
+                    legend_b
+                        .attr("transform", "translate(0, 20)");
+
+                    // create a list of keys
+                    var keys = ["Knowledge of products and services offered",
+                        "Staff training and counselling",
+                        "Leadership and teamwork",
+                        "Ability to adapt to new work procedure or other changes",
+                        "Human resource management",
+                        "Creativity and innovation",
+                        "Time management and work organisation",
+                        "Customer service skills",
+                        "Other job-specific skills",
+                        "No training attended",
+                        "Training attended",
+                        "All employees"
+                    ]
+
+                    // Add one dot in the legend for each name.
+                    legend_b.selectAll("mylabels")
+                        .data(keys)
+                        .enter()
+                        .append("text")
+                        .attr("x", 120)
+                        .attr("y", function(d, i) {
+                            return 100 + i * 40
+                        }) // 100 is where the first dot appears. 25 is the distance between dots
+                        .style("fill", function(d, i) {
+                            return color[i]
+                        })
+                        .text(function(d) {
+                            return d
+                        })
+                        .attr("text-anchor", "left")
+                        .style("alignment-baseline", "middle");
+                </script>
+
+
+                <p class="bottom-one"></p>
+                <hr>
+            </div>
+
+
+            <div id="discussion">
+                <h3 class="mb-4">Discussion</h3>
+
+
+                <p class="bottom-one"></p>
+                <hr>
+            </div>
+
+
+
+        </div>
 
     </div>
 
-  </div>
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
