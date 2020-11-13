@@ -454,6 +454,35 @@
                         }]
                     }
 
+                    // create a list of keys
+                    var keys_ch = ["對所售賣產品及提供服務的知識",
+                            "員工訓練及輔導",
+                            "領導才能及團隊合作",
+                            "適應新工作程序或其他轉變的能力",
+                            "人力資源管理",
+                            "創意及創新",
+                            "管理個人時間及編排個人工作",
+                            "客戶服務技巧",
+                            "其他特定工作技能",
+                            "沒有接受培訓",
+                            "曾接受培訓",
+                            "所有僱員"
+                        ]
+                        // create a list of keys
+                    var keys_en = ["Knowledge of products and services offered",
+                        "Staff training and counselling",
+                        "Leadership and teamwork",
+                        "Ability to adapt to new work procedure or other changes",
+                        "Human resource management",
+                        "Creativity and innovation",
+                        "Time management and work organisation",
+                        "Customer service skills",
+                        "Other job-specific skills",
+                        "No training attended",
+                        "Training attended",
+                        "All employees"
+                    ]
+
                     var rootNode = d3.hierarchy(data)
                     var packLayout = d3.pack();
                     packLayout.size([1000, 800]);
@@ -484,6 +513,7 @@
                         .style("border-radius", "5px")
                         .style("padding", "10px")
                         .style("color", "white")
+                        .style("white-space", "pre-wrap")
 
 
                     chart_group.selectAll('circle')
@@ -504,7 +534,10 @@
                             return d.r;
                         })
                         // .on("mouseover", (d) => console.log(d[1].reduce((a, b) => a + b).toFixed(1)));
-                        .on("mouseover", (d) => tooltip.style("visibility", "visible").text(d.value.toFixed(1) + "k"))
+                        .on("mouseover", (d) => tooltip.style("visibility", "visible").text(d.data.type != null ? keys_en[d.data.type] + "\n" + d.value.toFixed(1) + "k" :
+                            d.data.training == "Yes" ? "Training attended" + "\n" + d.value.toFixed(1) + "k" :
+                            d.data.training == "No" ? "No training attended" + "\n" + d.value.toFixed(1) + "k" :
+                            "All employees" + "\n" + d.value.toFixed(1) + "k"))
                         .on("mousemove", function() {
                             return tooltip.style("top",
                                 (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
@@ -617,24 +650,10 @@
                     color.push("lightgreen");
                     color.push("lightblue");
 
-                    // create a list of keys
-                    var keys = ["對所售賣產品及提供服務的知識",
-                        "員工訓練及輔導",
-                        "領導才能及團隊合作",
-                        "適應新工作程序或其他轉變的能力",
-                        "人力資源管理",
-                        "創意及創新",
-                        "管理個人時間及編排個人工作",
-                        "客戶服務技巧",
-                        "其他特定工作技能",
-                        "沒有接受培訓",
-                        "曾接受培訓",
-                        "所有僱員"
-                    ]
 
                     // Add one dot in the legend for each name.
                     legend_a.selectAll("mydots")
-                        .data(keys)
+                        .data(keys_ch)
                         .enter()
                         .append("circle")
                         .attr("cx", 100)
@@ -648,7 +667,7 @@
 
                     // Add one dot in the legend for each name.
                     legend_a.selectAll("mylabels")
-                        .data(keys)
+                        .data(keys_ch)
                         .enter()
                         .append("text")
                         .attr("x", 120)
@@ -669,24 +688,10 @@
                     legend_b
                         .attr("transform", "translate(0, 20)");
 
-                    // create a list of keys
-                    var keys = ["Knowledge of products and services offered",
-                        "Staff training and counselling",
-                        "Leadership and teamwork",
-                        "Ability to adapt to new work procedure or other changes",
-                        "Human resource management",
-                        "Creativity and innovation",
-                        "Time management and work organisation",
-                        "Customer service skills",
-                        "Other job-specific skills",
-                        "No training attended",
-                        "Training attended",
-                        "All employees"
-                    ]
 
                     // Add one dot in the legend for each name.
                     legend_b.selectAll("mylabels")
-                        .data(keys)
+                        .data(keys_en)
                         .enter()
                         .append("text")
                         .attr("x", 120)
