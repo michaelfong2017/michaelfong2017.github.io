@@ -35,6 +35,52 @@
         g.arc text {
             font-size: 10px;
         }
+        
+        .label {
+            display: flex;
+            align-items: center;
+        }
+        
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: opacity .15s ease-in-out;
+            transition: opacity .15s ease-in-out;
+        }
+        
+        .slider:hover {
+            opacity: 1;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border: 0;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -184,8 +230,36 @@
                             /* Slider */
                             var label = d3.select("#employment-treemap")
                                 .append("label")
-                                .style("display", "flex")
-                                .style("align-items", "center")
+                                .attr("class", "label")
+
+
+                            var interval = null;
+                            var button = label.append("button")
+                                .attr("class", "button")
+                                .style("width", "5em")
+                                .style("margin-right", "0.6em")
+                                .style("height", "25px")
+                                .text("Play")
+                                .on("click", function() {
+                                    if (interval == null) {
+                                        d3.select(this).text("Pause")
+                                        interval = setInterval(function() {
+                                            if (slider.value == 81) {
+                                                // slider.value = 0
+                                            } else {
+                                                slider.value++;
+                                            }
+
+                                            d3.select("output").text(quarters[slider.value])
+                                            update(slider.value)
+                                        }, 500);
+                                    } else if (interval != null) {
+                                        d3.select(this).text("Play")
+                                        clearInterval(interval)
+                                        interval = null
+                                    }
+
+                                })
 
                             label.append("input")
                                 .attr("type", "range")
@@ -195,6 +269,7 @@
                                 .attr("value", 81)
                                 .style("width", "800px")
                                 .attr("id", "quarter")
+                                .attr("class", "slider")
                                 .on("input", function input() {
                                     d3.select("output").text(quarters[slider.value])
                                     update(slider.value)
@@ -204,8 +279,19 @@
 
                             var output = label.append("output")
                                 .style("margin-left", "0.4em")
+                                .style("width", "100px")
                                 .text(quarters[slider.value])
 
+                            // var interval = setInterval(function() {
+                            //     if (slider.value == 81) {
+                            //         slider.value = 0
+                            //     } else {
+                            //         slider.value++;
+                            //     }
+
+                            //     d3.select("output").text(quarters[slider.value])
+                            //     update(slider.value)
+                            // }, 500);
 
 
 
