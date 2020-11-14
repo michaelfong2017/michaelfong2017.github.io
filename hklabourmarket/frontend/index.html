@@ -114,28 +114,30 @@
                         d3.csv("https://raw.githubusercontent.com/michaelfong2017/michaelfong2017.github.io/master/hklabourmarket/frontend/csv/employment.csv", function(data) {
                             var nestedData = d3.nest()
                                 .key(function(d) {
-                                    return d.world;
+                                    return d.quarter;
                                 })
                                 .key(function(d) {
-                                    return d.country;
+                                    return d.industry_section;
                                 })
                                 .key(function(d) {
-                                    return d.state;
+                                    return d.industry_division;
                                 })
                                 .rollup(function(d) {
                                     var children = [];
                                     d.forEach(function(dSub) {
                                         var keys = Object.keys(dSub);
                                         keys.forEach((key) => {
-                                            // from 2000Q1 to 2020Q2
-                                            if (key.startsWith("20")) {
+                                            // number_of_persons_engaged_total,number_of_persons_engaged_male,
+                                            // number_of_persons_engaged_female,number_of_vacancies,number_of_establishments
+                                            if (key.startsWith("number")) {
                                                 children.push(dSub[key]);
                                             }
                                         });
                                     })
-                                    return 5;
+                                    return children;
                                 })
                                 .entries(data);
+                            console.log(nestedData)
                             var root = d3.hierarchy(nestedData[0], function(d) {
                                     return d.values;
                                 })
