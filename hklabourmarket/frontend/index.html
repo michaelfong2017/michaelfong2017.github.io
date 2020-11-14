@@ -109,150 +109,285 @@
 
 
                 <!-- Treemap -->
-                <script>
-                    d3.csv("https://michaelfong2017.github.io/hklabourmarket/frontend/csv/employment.csv", function(data) {
-                        var nestedData = d3.nest()
-                            .key(function(d) {
-                                return d.world;
-                            })
-                            .key(function(d) {
-                                return d.country;
-                            })
-                            .entries(data);
-                        var root = d3.hierarchy(nestedData[0], function(d) {
-                            return d.values;
-                        })
-                        console.log(root);
-                    });
+                <div id="employment-treemap">
+                    <script>
+                        d3.csv("https://raw.githubusercontent.com/michaelfong2017/michaelfong2017.github.io/master/hklabourmarket/frontend/csv/employment.csv", function(data) {
+                            var nestedData = d3.nest()
+                                .key(function(d) {
+                                    return d.Quarter;
+                                })
+                                .key(function(d) {
+                                    return d.country;
+                                })
+                                .key(function(d) {
+                                    return d.state;
+                                })
+                                .rollup(function(d) {
+                                    var children = [];
+                                    d.forEach(function(dSub) {
+                                        var keys = Object.keys(dSub);
+                                        keys.forEach((key) => {
+                                            // from 2000Q1 to 2020Q2
+                                            if (key.startsWith("20")) {
+                                                children.push(dSub[key]);
+                                            }
+                                        });
+                                    })
+                                    return 5;
+                                })
+                                .entries(data);
+                            var root = d3.hierarchy(nestedData[0], function(d) {
+                                    return d.values;
+                                })
+                                .sum(function(d) {
+                                    return d.value;
+                                });
+
+                            console.log(root)
+                            console.log(root.descendants())
+
+
+                            var treemapLayout = d3.treemap();
+                            treemapLayout
+                                .size([800, 600])
+                                .paddingOuter(20);
+                            treemapLayout(root);
+
+                            /* Metadata */
+                            quarters = [
+                                "2000 Q1", "2000 Q2", "2000 Q3", "2000 Q4",
+                                "2001 Q1", "2001 Q2", "2001 Q3", "2001 Q4",
+                                "2002 Q1", "2002 Q2", "2002 Q3", "2002 Q4",
+                                "2003 Q1", "2003 Q2", "2003 Q3", "2003 Q4",
+                                "2004 Q1", "2004 Q2", "2004 Q3", "2004 Q4",
+                                "2005 Q1", "2005 Q2", "2005 Q3", "2005 Q4",
+                                "2006 Q1", "2006 Q2", "2006 Q3", "2006 Q4",
+                                "2007 Q1", "2007 Q2", "2007 Q3", "2007 Q4",
+                                "2008 Q1", "2008 Q2", "2008 Q3", "2008 Q4",
+                                "2009 Q1", "2009 Q2", "2009 Q3", "2009 Q4",
+                                "2010 Q1", "2010 Q2", "2010 Q3", "2010 Q4",
+                                "2011 Q1", "2011 Q2", "2011 Q3", "2011 Q4",
+                                "2012 Q1", "2012 Q2", "2012 Q3", "2012 Q4",
+                                "2013 Q1", "2013 Q2", "2013 Q3", "2013 Q4",
+                                "2014 Q1", "2014 Q2", "2014 Q3", "2014 Q4",
+                                "2015 Q1", "2015 Q2", "2015 Q3", "2015 Q4",
+                                "2016 Q1", "2016 Q2", "2016 Q3", "2016 Q4",
+                                "2017 Q1", "2017 Q2", "2017 Q3", "2017 Q4",
+                                "2018 Q1", "2018 Q2", "2018 Q3", "2018 Q4",
+                                "2019 Q1", "2019 Q2", "2019 Q3", "2019 Q4",
+                                "2020 Q1", "2020 Q2"
+                            ]
+
+                            /* Slider */
+                            var label = d3.select("#employment-treemap")
+                                .append("label")
+                                .style("display", "flex")
+                                .style("align-items", "center")
+
+                            label.append("input")
+                                .attr("type", "range")
+                                .attr("min", 0)
+                                .attr("max", 81)
+                                .attr("step", "1")
+                                .attr("value", 81)
+                                .attr("id", "quarter")
+                                .on("input", function input() {
+                                    d3.select("output").text(quarters[slider.value])
+                                });
+
+                            var slider = document.getElementById("quarter");
+
+                            var output = label.append("output")
+                                .style("margin-left", "0.4em")
+                                .text(quarters[slider.value])
 
 
 
 
+                            var svg = d3.select("#employment-treemap").append("svg")
+                                .attr("width", 1000)
+                                .attr("height", 800)
 
-                    /*const treemap = d3.treemap()
-                        .tile(d3.treemapResquarify)
-                        .size([width, height])
-                        .padding(d => d.height === 1 ? 1 : 0)
-                        .round(true);
 
-                    // Compute the structure using the average value.
-                    const root = treemap(d3.hierarchy(data.group)
-                        .sum(d => Array.isArray(d.values) ? d3.sum(d.values) : 0)
-                        .sort((a, b) => b.value - a.value));
+                            var chart_group = svg.append("g");
+                            chart_group
+                                .attr("transform", "translate(0,70)");
 
-                    const svg = d3.create("svg")
-                        .attr("viewBox", `0 -20 ${width} ${height + 20}`)
-                        .attr("font-family", "sans-serif")
-                        .attr("font-size", 10)
-                        .style("overflow", "visible");
+                            chart_group.selectAll('rect')
+                                .data(root.descendants())
+                                .enter()
+                                .append('rect')
+                                .attr('x', function(d) {
+                                    return d.x0;
+                                })
+                                .attr('y', function(d) {
+                                    return d.y0;
+                                })
+                                .attr('width', function(d) {
+                                    return d.x1 - d.x0;
+                                })
+                                .attr('height', function(d) {
+                                    return d.y1 - d.y0;
+                                })
+                                .style("stroke", "black")
+                                .style("fill", "#69b3a2");
 
-                    const box = svg.append("g")
-                        .selectAll("g")
-                        .data(data.keys.map((key, i) => {
-                            const value = root.sum(d => d.values[i]).value;
-                            return {
-                                key,
-                                value,
-                                i,
-                                k: Math.sqrt(value / max)
-                            };
-                        }).reverse())
-                        .join("g")
-                        .attr("transform", ({
-                            k
-                        }) => `translate(${(1 - k) / 2 * width},${(1 - k) / 2 * height})`)
-                        .attr("opacity", ({
-                            i
-                        }) => i >= viewof index.value ? 1 : 0)
-                        .call(g => g.append("text")
-                            .attr("y", -6)
-                            .attr("fill", "#777")
-                            .selectAll("tspan")
-                            .data(({
-                                key,
-                                value
-                            }) => [key, ` ${formatNumber(value)}`])
-                            .join("tspan")
-                            .attr("font-weight", (d, i) => i === 0 ? "bold" : null)
-                            .text(d => d))
-                        .call(g => g.append("rect")
-                            .attr("fill", "none")
-                            .attr("stroke", "#ccc")
-                            .attr("width", ({
-                                k
-                            }) => k * width)
-                            .attr("height", ({
-                                k
-                            }) => k * height));
+                            var nodes = chart_group
+                                .selectAll('g')
+                                .data(root.descendants())
+                                .enter()
+                                .append('g')
+                                .attr('transform', function(d) {
+                                    return 'translate(' + [d.x0, d.y0] + ')'
+                                })
+                                .style("stroke", "black")
+                                .style("fill", "#69b3a2");
 
-                    const leaf = svg.append("g")
-                        .selectAll("g")
-                        .data(layout(viewof index.value))
-                        .join("g")
-                        .attr("transform", d => `translate(${d.x0},${d.y0})`);
+                            nodes
+                                .append('rect')
+                                .attr('width', function(d) {
+                                    return d.x1 - d.x0;
+                                })
+                                .attr('height', function(d) {
+                                    return d.y1 - d.y0;
+                                })
+                                .style("stroke", "black")
+                                .style("fill", "#69b3a2");
 
-                    leaf.append("rect")
-                        .attr("id", d => (d.leafUid = DOM.uid("leaf")).id)
-                        .attr("fill", d => {
-                            while (d.depth > 1) d = d.parent;
-                            return color(d.data[0]);
-                        })
-                        .attr("width", d => d.x1 - d.x0)
-                        .attr("height", d => d.y1 - d.y0);
+                            nodes
+                                .append('text')
+                                .attr('dx', 4)
+                                .attr('dy', 14)
+                                .text(function(d) {
+                                    return d.data.key;
+                                })
+                                .style("stroke", "black")
+                                .style("fill", "#69b3a2");
 
-                    leaf.append("clipPath")
-                        .attr("id", d => (d.clipUid = DOM.uid("clip")).id)
-                        .append("use")
-                        .attr("xlink:href", d => d.leafUid.href);
 
-                    leaf.append("text")
-                        .attr("clip-path", d => d.clipUid)
-                        .selectAll("tspan")
-                        .data(d => [d.data.name, formatNumber(d.value)])
-                        .join("tspan")
-                        .attr("x", 3)
-                        .attr("y", (d, i, nodes) => `${(i === nodes.length - 1) * 0.3 + 1.1 + i * 0.9}em`)
-                        .attr("fill-opacity", (d, i, nodes) => i === nodes.length - 1 ? 0.7 : null)
-                        .text(d => d);
+                            /*
+                            const treemap = d3.treemap()
+                                .tile(d3.treemapResquarify)
+                                .size([width, height])
+                                .padding(d => d.height === 1 ? 1 : 0)
+                                .round(true);
 
-                    leaf.append("title")
-                        .text(d => d.data.name);
 
-                    function layout(index) {
-                        const k = Math.sqrt(root.sum(d => d.values[index]).value / max);
-                        const x = (1 - k) / 2 * width;
-                        const y = (1 - k) / 2 * height;
-                        return treemap.size([width * k, height * k])(root)
-                            .each(d => (d.x0 += x, d.x1 += x, d.y0 += y, d.y1 += y))
-                            .leaves();
-                    }
+                            const svg = d3.create("svg")
+                                .attr("viewBox", `0 -20 ${width} ${height + 20}`)
+                                .attr("font-family", "sans-serif")
+                                .attr("font-size", 10)
+                                .style("overflow", "visible");
 
-                    return Object.assign(svg.node(), {
-                        update(index) {
-                            box.transition()
-                                .duration(duration)
+                            const box = svg.append("g")
+                                .selectAll("g")
+                                .data(data.keys.map((key, i) => {
+                                    const value = root.sum(d => d.values[i]).value;
+                                    return {
+                                        key,
+                                        value,
+                                        i,
+                                        k: Math.sqrt(value / max)
+                                    };
+                                }).reverse())
+                                .join("g")
+                                .attr("transform", ({
+                                    k
+                                }) => `translate(${(1 - k) / 2 * width},${(1 - k) / 2 * height})`)
                                 .attr("opacity", ({
                                     i
-                                }) => i >= index ? 1 : 0);
+                                }) => i >= viewof(index.value) ? 1 : 0)
+                                .call(g => g.append("text")
+                                    .attr("y", -6)
+                                    .attr("fill", "#777")
+                                    .selectAll("tspan")
+                                    .data(({
+                                        key,
+                                        value
+                                    }) => [key, ` ${formatNumber(value)}`])
+                                    .join("tspan")
+                                    .attr("font-weight", (d, i) => i === 0 ? "bold" : null)
+                                    .text(d => d))
+                                .call(g => g.append("rect")
+                                    .attr("fill", "none")
+                                    .attr("stroke", "#ccc")
+                                    .attr("width", ({
+                                        k
+                                    }) => k * width)
+                                    .attr("height", ({
+                                        k
+                                    }) => k * height));
 
-                            leaf.data(layout(index)).transition()
-                                .duration(duration)
-                                .ease(d3.easeLinear)
-                                .attr("transform", d => `translate(${d.x0},${d.y0})`)
-                                .call(leaf => leaf.select("rect")
-                                    .attr("width", d => d.x1 - d.x0)
-                                    .attr("height", d => d.y1 - d.y0))
-                                .call(leaf => leaf.select("text tspan:last-child")
-                                    .tween("text", function(d) {
-                                        const i = d3.interpolate(parseNumber(this.textContent), d.value);
-                                        return function(t) {
-                                            this.textContent = formatNumber(i(t));
-                                        };
-                                    }));
-                        }
-                    });*/
-                </script>
+                            const leaf = svg.append("g")
+                                .selectAll("g")
+                                .data(layout(viewof(index.value)))
+                                .join("g")
+                                .attr("transform", d => `translate(${d.x0},${d.y0})`);
 
+                            leaf.append("rect")
+                                .attr("id", d => (d.leafUid = DOM.uid("leaf")).id)
+                                .attr("fill", d => {
+                                    while (d.depth > 1) d = d.parent;
+                                    return color(d.data[0]);
+                                })
+                                .attr("width", d => d.x1 - d.x0)
+                                .attr("height", d => d.y1 - d.y0);
+
+                            leaf.append("clipPath")
+                                .attr("id", d => (d.clipUid = DOM.uid("clip")).id)
+                                .append("use")
+                                .attr("xlink:href", d => d.leafUid.href);
+
+                            leaf.append("text")
+                                .attr("clip-path", d => d.clipUid)
+                                .selectAll("tspan")
+                                .data(d => [d.data.name, formatNumber(d.value)])
+                                .join("tspan")
+                                .attr("x", 3)
+                                .attr("y", (d, i, nodes) => `${(i === nodes.length - 1) * 0.3 + 1.1 + i * 0.9}em`)
+                                .attr("fill-opacity", (d, i, nodes) => i === nodes.length - 1 ? 0.7 : null)
+                                .text(d => d);
+
+                            leaf.append("title")
+                                .text(d => d.data.name);
+
+                            function layout(index) {
+                                const k = Math.sqrt(root.sum(d => d.values[index]).value / max);
+                                const x = (1 - k) / 2 * width;
+                                const y = (1 - k) / 2 * height;
+                                return treemap.size([width * k, height * k])(root)
+                                    .each(d => (d.x0 += x, d.x1 += x, d.y0 += y, d.y1 += y))
+                                    .leaves();
+                            }
+
+                            return Object.assign(svg.node(), {
+                                update(index) {
+                                    box.transition()
+                                        .duration(duration)
+                                        .attr("opacity", ({
+                                            i
+                                        }) => i >= index ? 1 : 0);
+
+                                    leaf.data(layout(index)).transition()
+                                        .duration(duration)
+                                        .ease(d3.easeLinear)
+                                        .attr("transform", d => `translate(${d.x0},${d.y0})`)
+                                        .call(leaf => leaf.select("rect")
+                                            .attr("width", d => d.x1 - d.x0)
+                                            .attr("height", d => d.y1 - d.y0))
+                                        .call(leaf => leaf.select("text tspan:last-child")
+                                            .tween("text", function(d) {
+                                                const i = d3.interpolate(parseNumber(this.textContent), d.value);
+                                                return function(t) {
+                                                    this.textContent = formatNumber(i(t));
+                                                };
+                                            }));
+                                }
+                            });*/
+
+                        });
+                    </script>
+                </div>
 
 
 
