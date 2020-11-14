@@ -114,7 +114,7 @@
                         d3.csv("https://raw.githubusercontent.com/michaelfong2017/michaelfong2017.github.io/master/hklabourmarket/frontend/csv/employment.csv", function(data) {
                             var nestedData = d3.nest()
                                 .key(function(d) {
-                                    return d.Quarter;
+                                    return d.world;
                                 })
                                 .key(function(d) {
                                     return d.country;
