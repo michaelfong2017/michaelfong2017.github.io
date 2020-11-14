@@ -238,7 +238,8 @@
                                 .attr("class", "button")
                                 .style("width", "5em")
                                 .style("margin-right", "0.6em")
-                                .style("height", "25px")
+                                .style("height", "36px")
+                                .style("font-size", "20px")
                                 .text("Play")
                                 .on("click", function() {
                                     if (interval == null) {
@@ -246,6 +247,9 @@
                                         interval = setInterval(function() {
                                             if (slider.value == 81) {
                                                 // slider.value = 0
+                                                button.text("Play")
+                                                clearInterval(interval)
+                                                interval = null
                                             } else {
                                                 slider.value++;
                                             }
@@ -280,29 +284,20 @@
                             var output = label.append("output")
                                 .style("margin-left", "0.4em")
                                 .style("width", "100px")
+                                .style("font-size", "24px")
                                 .text(quarters[slider.value])
 
-                            // var interval = setInterval(function() {
-                            //     if (slider.value == 81) {
-                            //         slider.value = 0
-                            //     } else {
-                            //         slider.value++;
-                            //     }
-
-                            //     d3.select("output").text(quarters[slider.value])
-                            //     update(slider.value)
-                            // }, 500);
 
 
 
                             var svg = d3.select("#employment-treemap").append("svg")
-                                .attr("width", 1200)
+                                .attr("width", 1500)
                                 .attr("height", 800)
 
 
                             var chart_group = svg.append("g");
                             chart_group
-                                .attr("transform", "translate(0,20)");
+                                .attr("transform", "translate(0,50)");
 
                             var tooltip = d3.select("body")
                                 .append("div")
@@ -432,145 +427,76 @@
                                     .on("mouseout", function() {
                                         return tooltip.style("visibility", "hidden");
                                     });
+
                             }
 
                             update(81)
 
-                            // nodes
-                            //     .append('text')
-                            //     .attr('dx', 4)
-                            //     .attr('dy', 14)
-                            //     .text(function(d) {
-                            //         return d.data.key;
-                            //     })
 
 
-
-                            /*
-                            const treemap = d3.treemap()
-                                .tile(d3.treemapResquarify)
-                                .size([width, height])
-                                .padding(d => d.height === 1 ? 1 : 0)
-                                .round(true);
+                            /* Legend */
+                            var legend = svg.append("g");
+                            legend
+                                .attr("transform", "translate(960,0)");
 
 
-                            const svg = d3.create("svg")
-                                .attr("viewBox", `0 -20 ${width} ${height + 20}`)
-                                .attr("font-family", "sans-serif")
-                                .attr("font-size", 10)
-                                .style("overflow", "visible");
+                            legend.append("rect")
+                                .attr('x', 70)
+                                .attr('y', 70)
+                                .attr('width', 500)
+                                .attr('height', 540)
+                                .style("stroke", "black")
+                                .style("fill", "black")
 
-                            const box = svg.append("g")
-                                .selectAll("g")
-                                .data(data.keys.map((key, i) => {
-                                    const value = root.sum(d => d.values[i]).value;
-                                    return {
-                                        key,
-                                        value,
-                                        i,
-                                        k: Math.sqrt(value / max)
-                                    };
-                                }).reverse())
-                                .join("g")
-                                .attr("transform", ({
-                                    k
-                                }) => `translate(${(1 - k) / 2 * width},${(1 - k) / 2 * height})`)
-                                .attr("opacity", ({
-                                    i
-                                }) => i >= viewof(index.value) ? 1 : 0)
-                                .call(g => g.append("text")
-                                    .attr("y", -6)
-                                    .attr("fill", "#777")
-                                    .selectAll("tspan")
-                                    .data(({
-                                        key,
-                                        value
-                                    }) => [key, ` ${formatNumber(value)}`])
-                                    .join("tspan")
-                                    .attr("font-weight", (d, i) => i === 0 ? "bold" : null)
-                                    .text(d => d))
-                                .call(g => g.append("rect")
-                                    .attr("fill", "none")
-                                    .attr("stroke", "#ccc")
-                                    .attr("width", ({
-                                        k
-                                    }) => k * width)
-                                    .attr("height", ({
-                                        k
-                                    }) => k * height));
 
-                            const leaf = svg.append("g")
-                                .selectAll("g")
-                                .data(layout(viewof(index.value)))
-                                .join("g")
-                                .attr("transform", d => `translate(${d.x0},${d.y0})`);
-
-                            leaf.append("rect")
-                                .attr("id", d => (d.leafUid = DOM.uid("leaf")).id)
-                                .attr("fill", d => {
-                                    while (d.depth > 1) d = d.parent;
-                                    return color(d.data[0]);
+                            // Add one dot in the legend for each name.
+                            legend.selectAll("mydots")
+                                .data(keys)
+                                .enter()
+                                .append("circle")
+                                .attr("cx", 100)
+                                .attr("cy", function(d, i) {
+                                    return 100 + i * 30
+                                }) // 100 is where the first dot appears. 25 is the distance between dots
+                                .attr("r", 7)
+                                .style("fill", function(d, i) {
+                                    return color(i)
                                 })
-                                .attr("width", d => d.x1 - d.x0)
-                                .attr("height", d => d.y1 - d.y0);
 
-                            leaf.append("clipPath")
-                                .attr("id", d => (d.clipUid = DOM.uid("clip")).id)
-                                .append("use")
-                                .attr("xlink:href", d => d.leafUid.href);
+                            // Add one dot in the legend for each name.
+                            legend.selectAll("mylabels")
+                                .data(keys)
+                                .enter()
+                                .append("text")
+                                .attr("x", 120)
+                                .attr("y", function(d, i) {
+                                    return 100 + i * 30
+                                }) // 100 is where the first dot appears. 25 is the distance between dots
+                                .style("fill", function(d, i) {
+                                    return color(i)
+                                })
+                                .text(function(d) {
+                                    return d
+                                })
+                                .attr("text-anchor", "left")
+                                .style("alignment-baseline", "middle");
 
-                            leaf.append("text")
-                                .attr("clip-path", d => d.clipUid)
-                                .selectAll("tspan")
-                                .data(d => [d.data.name, formatNumber(d.value)])
-                                .join("tspan")
-                                .attr("x", 3)
-                                .attr("y", (d, i, nodes) => `${(i === nodes.length - 1) * 0.3 + 1.1 + i * 0.9}em`)
-                                .attr("fill-opacity", (d, i, nodes) => i === nodes.length - 1 ? 0.7 : null)
-                                .text(d => d);
 
-                            leaf.append("title")
-                                .text(d => d.data.name);
-
-                            function layout(index) {
-                                const k = Math.sqrt(root.sum(d => d.values[index]).value / max);
-                                const x = (1 - k) / 2 * width;
-                                const y = (1 - k) / 2 * height;
-                                return treemap.size([width * k, height * k])(root)
-                                    .each(d => (d.x0 += x, d.x1 += x, d.y0 += y, d.y1 += y))
-                                    .leaves();
-                            }
-
-                            return Object.assign(svg.node(), {
-                                update(index) {
-                                    box.transition()
-                                        .duration(duration)
-                                        .attr("opacity", ({
-                                            i
-                                        }) => i >= index ? 1 : 0);
-
-                                    leaf.data(layout(index)).transition()
-                                        .duration(duration)
-                                        .ease(d3.easeLinear)
-                                        .attr("transform", d => `translate(${d.x0},${d.y0})`)
-                                        .call(leaf => leaf.select("rect")
-                                            .attr("width", d => d.x1 - d.x0)
-                                            .attr("height", d => d.y1 - d.y0))
-                                        .call(leaf => leaf.select("text tspan:last-child")
-                                            .tween("text", function(d) {
-                                                const i = d3.interpolate(parseNumber(this.textContent), d.value);
-                                                return function(t) {
-                                                    this.textContent = formatNumber(i(t));
-                                                };
-                                            }));
-                                }
-                            });*/
+                            /* Title */
+                            svg.append("text")
+                                .attr("x", 8)
+                                .attr("y", 30)
+                                .attr("font-size", "22px")
+                                .style('fill', '#808080')
+                                .text("Total number of people engaged by Industry section / Industry division")
 
                         });
                     </script>
                 </div>
 
-
+                <p class="bottom-one"></p>
+                <p>Interpret your result here.</p>
+                <p class="bottom-one"></p>
 
 
 
