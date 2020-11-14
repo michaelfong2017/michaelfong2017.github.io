@@ -115,9 +115,6 @@
                         d3.csv("https://raw.githubusercontent.com/michaelfong2017/michaelfong2017.github.io/master/hklabourmarket/frontend/csv/employment.csv", function(data) {
                             var nestedData = d3.nest()
                                 .key(function(d) {
-                                    return d.all;
-                                })
-                                .key(function(d) {
                                     return d.quarter;
                                 })
                                 .key(function(d) {
@@ -179,9 +176,9 @@
 
                             var treemapLayout = d3.treemap();
                             treemapLayout
-                                .tile(d3.treemapResquarify)
-                                .size([800, 600])
-                                .paddingOuter(20);
+                                .tile(d3.treemapBinary)
+                                .size([1000, 600])
+                                .paddingOuter(12);
 
 
                             /* Slider */
@@ -196,7 +193,7 @@
                                 .attr("max", 81)
                                 .attr("step", "1")
                                 .attr("value", 81)
-                                .style("width", "600px")
+                                .style("width", "800px")
                                 .attr("id", "quarter")
                                 .on("input", function input() {
                                     d3.select("output").text(quarters[slider.value])
@@ -213,7 +210,7 @@
 
 
                             var svg = d3.select("#employment-treemap").append("svg")
-                                .attr("width", 1000)
+                                .attr("width", 1200)
                                 .attr("height", 800)
 
 
@@ -221,25 +218,70 @@
                             chart_group
                                 .attr("transform", "translate(0,20)");
 
-
-
-                            /* Draw treemap from root */
-                            console.log(nestedData[0])
-                            var root = d3.hierarchy(nestedData, function(d) {
-                                    return d.values;
-                                })
-                                .sum(function(d) {
-                                    if (d.value != null) {
-                                        return d.value[0];
-                                    }
-                                });
-
-                            treemapLayout(root);
+                            var tooltip = d3.select("body")
+                                .append("div")
+                                .style("opacity", 1)
+                                .attr("class", "tooltip")
+                                .style("width", "300px")
+                                .style("background-color", "black")
+                                .style("border-radius", "5px")
+                                .style("padding", "10px")
+                                .style("color", "white")
+                                .style("white-space", "pre-wrap")
 
 
                             function update(quarter_i) {
+                                var root = d3.hierarchy(nestedData[quarter_i], function(d) {
+                                        return d.values;
+                                    })
+                                    .sum(function(d) {
+                                        if (d.value != null) {
+                                            return d.value[0];
+                                        }
+                                    });
+
+                                treemapLayout(root);
+
+
+                                /* For displaying other data */
+                                var root_male = d3.hierarchy(nestedData[quarter_i], function(d) {
+                                        return d.values;
+                                    })
+                                    .sum(function(d) {
+                                        if (d.value != null) {
+                                            return d.value[1];
+                                        }
+                                    });
+                                var root_female = d3.hierarchy(nestedData[quarter_i], function(d) {
+                                        return d.values;
+                                    })
+                                    .sum(function(d) {
+                                        if (d.value != null) {
+                                            return d.value[2];
+                                        }
+                                    });
+                                var root_vacancies = d3.hierarchy(nestedData[quarter_i], function(d) {
+                                        return d.values;
+                                    })
+                                    .sum(function(d) {
+                                        if (d.value != null) {
+                                            return d.value[3];
+                                        }
+                                    });
+                                var root_establishments = d3.hierarchy(nestedData[quarter_i], function(d) {
+                                        return d.values;
+                                    })
+                                    .sum(function(d) {
+                                        if (d.value != null) {
+                                            return d.value[4];
+                                        }
+                                    });
+
+
+
+
                                 chart_group.selectAll('rect')
-                                    .data(root.data[quarter_i].descendants(), function(d) {
+                                    .data(root.descendants(), function(d) {
                                         return d.values
                                     })
                                     .enter()
@@ -261,6 +303,49 @@
                                         while (d.depth > 1) d = d.parent;
                                         return color(d.data.key);
                                     })
+                                    // .on("mouseover", (d) => console.log(d[1].reduce((a, b) => a + b).toFixed(1)));
+                                    .on("mouseover", (d) => {
+                                        var node = root.descendants().filter(function(des) {
+                                            return des.depth == d.depth
+                                        }).filter(function(des) {
+                                            return des.data.key == d.data.key
+                                        });
+                                        var node_male = root_male.descendants().filter(function(des) {
+                                            return des.depth == d.depth
+                                        }).filter(function(des) {
+                                            return des.data.key == d.data.key
+                                        });
+                                        var node_female = root_female.descendants().filter(function(des) {
+                                            return des.depth == d.depth
+                                        }).filter(function(des) {
+                                            return des.data.key == d.data.key
+                                        });
+                                        var node_vacancies = root_vacancies.descendants().filter(function(des) {
+                                            return des.depth == d.depth
+                                        }).filter(function(des) {
+                                            return des.data.key == d.data.key
+                                        });
+                                        var node_establishments = root_establishments.descendants().filter(function(des) {
+                                            return des.depth == d.depth
+                                        }).filter(function(des) {
+                                            return des.data.key == d.data.key
+                                        });
+                                        tooltip.style("visibility", "visible").text(
+                                            "Industry section / Industry division: " + (d.data.key.startsWith("20") ? "All" : d.data.key) + "\n" +
+                                            "Number of persons engaged (Total): " + node[0].value + "\n" +
+                                            "Number of persons engaged (Male): " + node_male[0].value + "\n" +
+                                            "Number of persons engaged (Female): " + node_female[0].value + "\n" +
+                                            "Number of vacancies: " + node_vacancies[0].value + "\n" +
+                                            "Number of establishments: " + node_establishments[0].value
+                                        )
+                                    })
+                                    .on("mousemove", function() {
+                                        return tooltip.style("top",
+                                            (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
+                                    })
+                                    .on("mouseout", function() {
+                                        return tooltip.style("visibility", "hidden");
+                                    });
                             }
 
                             update(81)
