@@ -13,6 +13,7 @@
 
     <!-- D3.js -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 
     <style>
@@ -114,6 +115,9 @@
                         d3.csv("https://raw.githubusercontent.com/michaelfong2017/michaelfong2017.github.io/master/hklabourmarket/frontend/csv/employment.csv", function(data) {
                             var nestedData = d3.nest()
                                 .key(function(d) {
+                                    return d.all;
+                                })
+                                .key(function(d) {
                                     return d.quarter;
                                 })
                                 .key(function(d) {
@@ -137,23 +141,9 @@
                                     return children;
                                 })
                                 .entries(data);
+
                             console.log(nestedData)
-                            var root = d3.hierarchy(nestedData[0], function(d) {
-                                    return d.values;
-                                })
-                                .sum(function(d) {
-                                    return d.value;
-                                });
 
-                            console.log(root)
-                            console.log(root.descendants())
-
-
-                            var treemapLayout = d3.treemap();
-                            treemapLayout
-                                .size([800, 600])
-                                .paddingOuter(20);
-                            treemapLayout(root);
 
                             /* Metadata */
                             quarters = [
@@ -180,6 +170,20 @@
                                 "2020 Q1", "2020 Q2"
                             ]
 
+                            var keys = []
+                            nestedData[0].values.forEach((d) => keys.push(d.key))
+                            console.log(keys)
+                            color = d3.scaleOrdinal().domain(keys)
+                                .range(d3.schemeSet3);
+
+
+                            var treemapLayout = d3.treemap();
+                            treemapLayout
+                                .tile(d3.treemapResquarify)
+                                .size([800, 600])
+                                .paddingOuter(20);
+
+
                             /* Slider */
                             var label = d3.select("#employment-treemap")
                                 .append("label")
@@ -192,9 +196,11 @@
                                 .attr("max", 81)
                                 .attr("step", "1")
                                 .attr("value", 81)
+                                .style("width", "600px")
                                 .attr("id", "quarter")
                                 .on("input", function input() {
                                     d3.select("output").text(quarters[slider.value])
+                                    update(slider.value)
                                 });
 
                             var slider = document.getElementById("quarter");
@@ -213,58 +219,60 @@
 
                             var chart_group = svg.append("g");
                             chart_group
-                                .attr("transform", "translate(0,70)");
+                                .attr("transform", "translate(0,20)");
 
-                            chart_group.selectAll('rect')
-                                .data(root.descendants())
-                                .enter()
-                                .append('rect')
-                                .attr('x', function(d) {
-                                    return d.x0;
-                                })
-                                .attr('y', function(d) {
-                                    return d.y0;
-                                })
-                                .attr('width', function(d) {
-                                    return d.x1 - d.x0;
-                                })
-                                .attr('height', function(d) {
-                                    return d.y1 - d.y0;
-                                })
-                                .style("stroke", "black")
-                                .style("fill", "#69b3a2");
 
-                            var nodes = chart_group
-                                .selectAll('g')
-                                .data(root.descendants())
-                                .enter()
-                                .append('g')
-                                .attr('transform', function(d) {
-                                    return 'translate(' + [d.x0, d.y0] + ')'
-                                })
-                                .style("stroke", "black")
-                                .style("fill", "#69b3a2");
 
-                            nodes
-                                .append('rect')
-                                .attr('width', function(d) {
-                                    return d.x1 - d.x0;
+                            /* Draw treemap from root */
+                            console.log(nestedData[0])
+                            var root = d3.hierarchy(nestedData, function(d) {
+                                    return d.values;
                                 })
-                                .attr('height', function(d) {
-                                    return d.y1 - d.y0;
-                                })
-                                .style("stroke", "black")
-                                .style("fill", "#69b3a2");
+                                .sum(function(d) {
+                                    if (d.value != null) {
+                                        return d.value[0];
+                                    }
+                                });
 
-                            nodes
-                                .append('text')
-                                .attr('dx', 4)
-                                .attr('dy', 14)
-                                .text(function(d) {
-                                    return d.data.key;
-                                })
-                                .style("stroke", "black")
-                                .style("fill", "#69b3a2");
+                            treemapLayout(root);
+
+
+                            function update(quarter_i) {
+                                chart_group.selectAll('rect')
+                                    .data(root.data[quarter_i].descendants(), function(d) {
+                                        return d.values
+                                    })
+                                    .enter()
+                                    .append('rect')
+                                    .attr('x', function(d) {
+                                        return d.x0;
+                                    })
+                                    .attr('y', function(d) {
+                                        return d.y0;
+                                    })
+                                    .attr('width', function(d) {
+                                        return d.x1 - d.x0;
+                                    })
+                                    .attr('height', function(d) {
+                                        return d.y1 - d.y0;
+                                    })
+                                    .style("stroke", "black")
+                                    .style("fill", d => {
+                                        while (d.depth > 1) d = d.parent;
+                                        return color(d.data.key);
+                                    })
+                            }
+
+                            update(81)
+
+                            // nodes
+                            //     .append('text')
+                            //     .attr('dx', 4)
+                            //     .attr('dy', 14)
+                            //     .text(function(d) {
+                            //         return d.data.key;
+                            //     })
+
 
 
                             /*
