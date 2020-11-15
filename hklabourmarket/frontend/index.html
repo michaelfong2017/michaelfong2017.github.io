@@ -215,14 +215,14 @@
 
                             var keys = []
                             nestedData[0].values.forEach((d) => keys.push(d.key))
+                            keys.push("All")
                             console.log(keys)
-                            color = d3.scaleOrdinal().domain(keys)
-                                .range(d3.schemeSet3);
+                            color = d3.scaleOrdinal(d3.schemeCategory20);
 
 
                             var treemapLayout = d3.treemap();
                             treemapLayout
-                                .tile(d3.treemapBinary)
+                                .tile(d3.treemapSquarify)
                                 .size([1000, 600])
                                 .paddingOuter(12);
 
@@ -319,6 +319,9 @@
                                         if (d.value != null) {
                                             return d.value[0];
                                         }
+                                    })
+                                    .sort(function(a, b) {
+                                        return a.value - b.value;
                                     });
 
                                 treemapLayout(root);
@@ -359,11 +362,11 @@
                                     });
 
 
-
+                                chart_group.selectAll('rect').remove()
 
                                 chart_group.selectAll('rect')
                                     .data(root.descendants(), function(d) {
-                                        return d.values
+                                        return d.data.key
                                     })
                                     .enter()
                                     .append('rect')
@@ -381,6 +384,9 @@
                                     })
                                     .style("stroke", "black")
                                     .style("fill", d => {
+                                        if (d.depth == 0) {
+                                            return color("All")
+                                        }
                                         while (d.depth > 1) d = d.parent;
                                         return color(d.data.key);
                                     })
@@ -460,7 +466,7 @@
                                 }) // 100 is where the first dot appears. 25 is the distance between dots
                                 .attr("r", 7)
                                 .style("fill", function(d, i) {
-                                    return color(i)
+                                    return color(keys[i])
                                 })
 
                             // Add one dot in the legend for each name.
@@ -473,7 +479,7 @@
                                     return 100 + i * 30
                                 }) // 100 is where the first dot appears. 25 is the distance between dots
                                 .style("fill", function(d, i) {
-                                    return color(i)
+                                    return color(keys[i])
                                 })
                                 .text(function(d) {
                                     return d
