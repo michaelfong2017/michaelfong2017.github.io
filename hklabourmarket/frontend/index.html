@@ -81,6 +81,14 @@
             background: #4CAF50;
             cursor: pointer;
         }
+        
+        .textField {
+            display: flex;
+            text-align: right;
+            padding-top: 2px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
     </style>
 </head>
 
@@ -243,6 +251,11 @@
                                 .text("Play")
                                 .on("click", function() {
                                     if (interval == null) {
+                                        if (slider.value == 81) {
+                                            slider.value = 0
+                                            d3.select("output").text(quarters[slider.value])
+                                            update(slider.value)
+                                        }
                                         d3.select(this).text("Pause")
                                         interval = setInterval(function() {
                                             if (slider.value == 81) {
@@ -256,7 +269,7 @@
 
                                             d3.select("output").text(quarters[slider.value])
                                             update(slider.value)
-                                        }, 500);
+                                        }, textField.value != "" ? textField.value : defaultInterval);
                                     } else if (interval != null) {
                                         d3.select(this).text("Play")
                                         clearInterval(interval)
@@ -283,9 +296,26 @@
 
                             var output = label.append("output")
                                 .style("margin-left", "0.4em")
-                                .style("width", "120px")
+                                .style("white-space", "nowrap")
                                 .style("font-size", "24px")
                                 .text(quarters[slider.value])
+
+                            var defaultInterval = 100;
+                            label.append("input")
+                                .attr("type", "text")
+                                .attr("value", defaultInterval)
+                                .style("width", "55px")
+                                .style("margin-left", "1.6em")
+                                .attr("id", "intervalTime")
+                                .attr("class", "textField")
+
+                            var textField = document.getElementById("intervalTime");
+
+                            label.append("text")
+                                .style("margin-left", "0.4em")
+                                .style("font-size", "16px")
+                                .style("color", "black")
+                                .text("ms")
 
 
 
@@ -450,7 +480,7 @@
                                 .attr('x', 70)
                                 .attr('y', 70)
                                 .attr('width', 500)
-                                .attr('height', 540)
+                                .attr('height', 570)
                                 .style("stroke", "black")
                                 .style("fill", "black")
 
