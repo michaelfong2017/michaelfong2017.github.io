@@ -25,6 +25,10 @@
         .bottom-one {
             margin-bottom: 1cm;
         }
+        
+        .bottom-three {
+            margin-bottom: 3cm;
+        }
         /* D3.js */
         
         g.arc path {
@@ -159,6 +163,7 @@
 
             <div id="employment-and-vacancies">
                 <h3 class="mb-4">Employment and vacancies</h3>
+                <hr>
 
 
 
@@ -322,7 +327,7 @@
 
                             var svg = d3.select("#employment-treemap").append("svg")
                                 .attr("width", 1500)
-                                .attr("height", 800)
+                                .attr("height", 650)
 
 
                             var chart_group = svg.append("g");
@@ -524,15 +529,37 @@
                                 .attr("y", 30)
                                 .attr("font-size", "22px")
                                 .style('fill', '#808080')
-                                .text("Total number of people engaged by Industry section / Industry division")
+                                .text("Total number of persons engaged by Industry section / Industry division")
 
                         });
                     </script>
                 </div>
 
                 <p class="bottom-one"></p>
-                <p>Interpret your result here.</p>
+                <p>The above squarified treemap visualizes the employment composition involving most of the industries. Data are mainly based on the Quarterly Survey of Employment and Vacancies (SEV) and the Quarterly Employment Survey of Construction Sites
+                    (Site Survey) conducted by the Census and Statistics Department, Hong Kong Government. Proportion of individual industry section or industry division to all industries is reflected by its relative area. Data in different quarters from
+                    2000 Q1 to 2020 Q2 are displayed by moving the slider. Employment and vacancies statistics of individual industry section or industry division is displayed by hovering the mouse over the corresponding rectangle.
+                </p>
+                <p>When the treemap is interpreted, industries can be ranked by their total number of persons engaged. An unambiguous ranking is shown since the data are already sorted. Key observations are shown below:</p>
+                <li>Arts, entertainment and recreation industry grows very sharply, its total number of persons engaged increase from 2379 in 2000 Q1 to 47259 in 2020 Q2. This is a 1890% increase.</li>
+                <li>Manufacturing industry diminishes rapidly, its total number of persons engaged drops from 215560 in 2000 Q1 to 84187 in 2020. This is a 60.9% drop.</li>
+                <li>Although import/export, wholesale and retail trades industry is the largest industry along the timeline, its proportion to all industries keeps decreasing. Its total number of persons engaged does not significantly grow with Hong Kong
+                    population.
+                </li>
+                <li>Construction industry is the second largest industry from 2000 Q1 to 2002 Q2. Its rank drops to the lowest in 2009 Q3. From 2009 Q4 onwards, its rank and total number of persons engaged increase rapidly. It has become the second largest
+                    industry again since 2015 Q4.</li>
+                <li>
+                    In the treemap, the areas of Professional, scientific and technical services industry, Administrative and support services industry, Education industry and Human health and social work services industry increase greatly. These industries' increase in
+                    total number of persons engaged from 2000 Q1 to 2020 Q2 ranges from 76.1% to 113% whereas total number of persons engaged of all surveyed industries only increase by 20.6%. Therefore, it is obvious that these four industries are ranking
+                    up and gaining in proportion significantly along the timeline.
+                </li>
+                <li>
+                    Financing and insurance industry, Real estate industry and Information and communications industry are ranking up and gaining in proportion whereas Transportation, storage, postal and courier services industry is ranking down and losing in proportion
+                    along the timeline.
+                </li>
+
                 <p class="bottom-one"></p>
+                <hr>
 
 
 
@@ -646,6 +673,7 @@
 
             <div id="employment-earnings">
                 <h3 class="mb-4">Employment earnings</h3>
+                <hr>
 
 
                 <p class="bottom-one"></p>
@@ -655,6 +683,7 @@
 
             <div id="hours-of-work">
                 <h3 class="mb-4">Hours of work</h3>
+                <hr>
 
                 <!-- Heat map -->
                 <div class='tableauPlaceholder' id='viz1605098134736' style='position: relative'><noscript><a
@@ -698,6 +727,7 @@
 
             <div id="training-needs">
                 <h3 class="mb-4">Training needs</h3>
+                <hr>
 
                 <script>
                     var data = {
