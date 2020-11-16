@@ -117,6 +117,9 @@
                     <li>
                         <a href="#bubble-chart"><span class="fa fa-line-chart mr-3"></span> Bubble chart</a>
                     </li>
+                    <li>
+                        <a href="#packed-bubble-chart"><span class="fa fa-line-chart mr-3"></span> Packed bubble chart</a>
+                    </li>
                 </ul>
 
             </div>
@@ -160,6 +163,144 @@
 
             </div>
 
+
+            <div id="packed-bubble-chart">
+                <h3 class="mb-4">Packed bubble chart</h3>
+                <hr>
+
+                <!-- Packed bubble chart -->
+
+                <script>
+                    // create a list of keys
+                    var keys_ch = ["對所售賣產品及提供服務的知識",
+                            "員工訓練及輔導",
+                            "領導才能及團隊合作",
+                            "適應新工作程序或其他轉變的能力",
+                            "人力資源管理",
+                            "創意及創新",
+                            "管理個人時間及編排個人工作",
+                            "客戶服務技巧",
+                            "其他特定工作技能",
+                            "沒有接受培訓",
+                            "曾接受培訓",
+                            "所有僱員"
+                        ]
+                        // create a list of keys
+                    var keys_en = ["Knowledge of products and services offered",
+                        "Staff training and counselling",
+                        "Leadership and teamwork",
+                        "Ability to adapt to new work procedure or other changes",
+                        "Human resource management",
+                        "Creativity and innovation",
+                        "Time management and work organisation",
+                        "Customer service skills",
+                        "Other job-specific skills",
+                        "No training attended",
+                        "Training attended",
+                        "All employees"
+                    ]
+
+                    d3.csv("https://raw.githubusercontent.com/michaelfong2017/michaelfong2017.github.io/master/govhkbudget/frontend/csv/budget.csv", function(data) {
+                        var nestedData = d3.nest()
+                            .key(function(d) {
+                                return d.report_year;
+                            })
+                            .key(function(d) {
+                                return d.domain;
+                            })
+                            .key(function(d) {
+                                return d.head_of_expenditure;
+                            })
+                            .rollup(function(d) {
+                                var children = [];
+                                d.forEach(function(dSub) {
+                                    var keys = Object.keys(dSub);
+                                    keys.forEach((key) => {
+                                        if (key == "estimate" || key == "actual_expenditure" ||
+                                            key == "approved_estimate" || key == "revised_estimate" ||
+                                            key == "share(actual)") {
+                                            children.push(dSub[key]);
+                                        }
+                                    });
+                                })
+                                return children;
+                            })
+                            .entries(data);
+
+                        console.log(nestedData)
+
+                        var rootNode = d3.hierarchy(data)
+                        var packLayout = d3.pack();
+                        packLayout.size([1000, 800]);
+                        rootNode.sum(function(d) {
+                            return d.value;
+                        });
+                        packLayout(rootNode);
+
+
+                        var color = ["#eb5d0f", "#2718e6", "#980c2e", "#d997c6", "#bee544", "#7b64cf", "#c7a585", "#0a8920", "#CBB446"];
+
+
+                        var svg = d3.select("#packed-bubble-chart").append("svg")
+                            .attr("width", 1200)
+                            .attr("height", 1000)
+                            .attr("class", "bubble")
+
+                        var chart_group = svg.append("g");
+                        chart_group
+                            .attr("transform", "translate(-100,70)");
+
+
+                        var tooltip = d3.select("body")
+                            .append("div")
+                            .style("opacity", 1)
+                            .attr("class", "tooltip")
+                            .style("background-color", "black")
+                            .style("border-radius", "5px")
+                            .style("padding", "10px")
+                            .style("color", "white")
+                            .style("white-space", "pre-wrap")
+
+
+                        chart_group.selectAll('circle')
+                            .data(rootNode.descendants())
+                            .enter()
+                            .append('circle')
+                            .filter(function(d) {
+                                return d.depth >= 1
+                            })
+                            .attr("fill", (d, i) => d.data.type != null ? color[d.data.type] : d.data.training == "No" ? "grey" : d.data.training == "Yes" ? "lightgreen" : "lightblue")
+                            .attr('cx', function(d) {
+                                return d.x;
+                            })
+                            .attr('cy', function(d) {
+                                return d.y;
+                            })
+                            .attr('r', function(d) {
+                                return d.r;
+                            })
+                            // .on("mouseover", (d) => console.log(d[1].reduce((a, b) => a + b).toFixed(1)));
+                            .on("mouseover", (d) => tooltip.style("visibility", "visible").text(d.data.type != null ? keys_en[d.data.type] + "\n" + d.value.toFixed(1) + "k" :
+                                d.data.training == "Yes" ? "Training attended" + "\n" + d.value.toFixed(1) + "k" :
+                                d.data.training == "No" ? "No training attended" + "\n" + d.value.toFixed(1) + "k" :
+                                "All employees" + "\n" + d.value.toFixed(1) + "k"))
+                            .on("mousemove", function() {
+                                return tooltip.style("top",
+                                    (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
+                            })
+                            .on("mouseout", function() {
+                                return tooltip.style("visibility", "hidden");
+                            });
+
+                    });
+                </script>
+
+
+                <p class="bottom-one"></p>
+                <hr>
+
+
+            </div>
 
 
 
