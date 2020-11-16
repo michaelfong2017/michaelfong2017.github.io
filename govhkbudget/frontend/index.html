@@ -171,35 +171,6 @@
                 <!-- Packed bubble chart -->
 
                 <script>
-                    // create a list of keys
-                    var keys_ch = ["對所售賣產品及提供服務的知識",
-                            "員工訓練及輔導",
-                            "領導才能及團隊合作",
-                            "適應新工作程序或其他轉變的能力",
-                            "人力資源管理",
-                            "創意及創新",
-                            "管理個人時間及編排個人工作",
-                            "客戶服務技巧",
-                            "其他特定工作技能",
-                            "沒有接受培訓",
-                            "曾接受培訓",
-                            "所有僱員"
-                        ]
-                        // create a list of keys
-                    var keys_en = ["Knowledge of products and services offered",
-                        "Staff training and counselling",
-                        "Leadership and teamwork",
-                        "Ability to adapt to new work procedure or other changes",
-                        "Human resource management",
-                        "Creativity and innovation",
-                        "Time management and work organisation",
-                        "Customer service skills",
-                        "Other job-specific skills",
-                        "No training attended",
-                        "Training attended",
-                        "All employees"
-                    ]
-
                     d3.csv("https://raw.githubusercontent.com/michaelfong2017/michaelfong2017.github.io/master/govhkbudget/frontend/csv/budget.csv", function(data) {
                         var nestedData = d3.nest()
                             .key(function(d) {
@@ -229,16 +200,108 @@
 
                         console.log(nestedData)
 
-                        var rootNode = d3.hierarchy(data)
+
+                        /* Metadata */
+                        years = [
+                            "2014-2015", "2015-2016", "2016-2017",
+                            "2017-2018", "2018-2019", "2019-2020", "2020-2021"
+                        ]
+
+
+                        var keys = []
+                        nestedData[0].values.forEach((d) => keys.push(d.key))
+                        keys.push("All")
+                        console.log(keys)
+                        var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+
                         var packLayout = d3.pack();
                         packLayout.size([1000, 800]);
-                        rootNode.sum(function(d) {
-                            return d.value;
-                        });
-                        packLayout(rootNode);
 
 
-                        var color = ["#eb5d0f", "#2718e6", "#980c2e", "#d997c6", "#bee544", "#7b64cf", "#c7a585", "#0a8920", "#CBB446"];
+                        /* Slider */
+                        var label = d3.select("#packed-bubble-chart")
+                            .append("label")
+                            .attr("class", "label")
+
+
+                        var interval = null;
+                        var button = label.append("button")
+                            .attr("class", "button")
+                            .style("width", "5em")
+                            .style("margin-right", "0.6em")
+                            .style("height", "36px")
+                            .style("font-size", "20px")
+                            .text("Play")
+                            .on("click", function() {
+                                if (interval == null) {
+                                    if (slider.value == 6) {
+                                        slider.value = 0
+                                        d3.select("output").text(years[slider.value])
+                                        update(slider.value)
+                                    }
+                                    d3.select(this).text("Pause")
+                                    interval = setInterval(function() {
+                                        if (slider.value == 6) {
+                                            // slider.value = 0
+                                            button.text("Play")
+                                            clearInterval(interval)
+                                            interval = null
+                                        } else {
+                                            slider.value++;
+                                        }
+
+                                        d3.select("output").text(years[slider.value])
+                                        update(slider.value)
+                                    }, textField.value != "" ? textField.value : defaultInterval);
+                                } else if (interval != null) {
+                                    d3.select(this).text("Play")
+                                    clearInterval(interval)
+                                    interval = null
+                                }
+
+                            })
+
+                        label.append("input")
+                            .attr("type", "range")
+                            .attr("min", 0)
+                            .attr("max", 6)
+                            .attr("step", "1")
+                            .attr("value", 6)
+                            .style("width", "800px")
+                            .attr("id", "year")
+                            .attr("class", "slider")
+                            .on("input", function input() {
+                                d3.select("output").text(years[slider.value])
+                                update(slider.value)
+                            });
+
+                        var slider = document.getElementById("year");
+
+                        var output = label.append("output")
+                            .style("margin-left", "0.4em")
+                            .style("white-space", "nowrap")
+                            .style("font-size", "24px")
+                            .text(years[slider.value])
+
+                        var defaultInterval = 500;
+                        label.append("input")
+                            .attr("type", "text")
+                            .attr("value", defaultInterval)
+                            .style("width", "55px")
+                            .style("margin-left", "1.6em")
+                            .attr("id", "intervalTime")
+                            .attr("class", "textField")
+
+                        var textField = document.getElementById("intervalTime");
+
+                        label.append("text")
+                            .style("margin-left", "0.4em")
+                            .style("font-size", "16px")
+                            .style("color", "black")
+                            .text("ms")
+
+
 
 
                         var svg = d3.select("#packed-bubble-chart").append("svg")
@@ -248,7 +311,7 @@
 
                         var chart_group = svg.append("g");
                         chart_group
-                            .attr("transform", "translate(-100,70)");
+                            .attr("transform", "translate(-100,0)");
 
 
                         var tooltip = d3.select("body")
@@ -262,35 +325,130 @@
                             .style("white-space", "pre-wrap")
 
 
-                        chart_group.selectAll('circle')
-                            .data(rootNode.descendants())
-                            .enter()
-                            .append('circle')
-                            .filter(function(d) {
-                                return d.depth >= 1
-                            })
-                            .attr("fill", (d, i) => d.data.type != null ? color[d.data.type] : d.data.training == "No" ? "grey" : d.data.training == "Yes" ? "lightgreen" : "lightblue")
-                            .attr('cx', function(d) {
-                                return d.x;
-                            })
-                            .attr('cy', function(d) {
-                                return d.y;
-                            })
-                            .attr('r', function(d) {
-                                return d.r;
-                            })
-                            // .on("mouseover", (d) => console.log(d[1].reduce((a, b) => a + b).toFixed(1)));
-                            .on("mouseover", (d) => tooltip.style("visibility", "visible").text(d.data.type != null ? keys_en[d.data.type] + "\n" + d.value.toFixed(1) + "k" :
-                                d.data.training == "Yes" ? "Training attended" + "\n" + d.value.toFixed(1) + "k" :
-                                d.data.training == "No" ? "No training attended" + "\n" + d.value.toFixed(1) + "k" :
-                                "All employees" + "\n" + d.value.toFixed(1) + "k"))
-                            .on("mousemove", function() {
-                                return tooltip.style("top",
-                                    (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
-                            })
-                            .on("mouseout", function() {
-                                return tooltip.style("visibility", "hidden");
-                            });
+                        function update(year_i) {
+                            var root = d3.hierarchy(nestedData[year_i], function(d) {
+                                    return d.values;
+                                })
+                                .sum(function(d) {
+                                    if (d.value != null) {
+                                        return d.value[0];
+                                    }
+                                })
+                                // .sort(function(a, b) {
+                                //     return a.value - b.value;
+                                // });
+
+                            packLayout(root)
+
+
+                            /* For displaying other data */
+                            var root_actual_expenditure = d3.hierarchy(nestedData[year_i], function(d) {
+                                    return d.values;
+                                })
+                                .sum(function(d) {
+                                    if (d.value != null) {
+                                        return d.value[1];
+                                    }
+                                });
+                            var root_approved_estimate = d3.hierarchy(nestedData[year_i], function(d) {
+                                    return d.values;
+                                })
+                                .sum(function(d) {
+                                    if (d.value != null) {
+                                        return d.value[2];
+                                    }
+                                });
+                            var root_revised_estimate = d3.hierarchy(nestedData[year_i], function(d) {
+                                    return d.values;
+                                })
+                                .sum(function(d) {
+                                    if (d.value != null) {
+                                        return d.value[3];
+                                    }
+                                });
+                            var root_share_actual = d3.hierarchy(nestedData[year_i], function(d) {
+                                    return d.values;
+                                })
+                                .sum(function(d) {
+                                    if (d.value != null) {
+                                        return d.value[4];
+                                    }
+                                });
+
+
+                            chart_group.selectAll('circle').remove()
+
+
+
+                            chart_group.selectAll('circle')
+                                .data(root.descendants(), function(d) {
+                                    return d.data.key
+                                })
+                                .enter()
+                                .append('circle')
+                                .filter(function(d) {
+                                    return d.depth >= 1
+                                })
+                                .style("fill", d => {
+                                    if (d.depth == 0) {
+                                        return color("All")
+                                    }
+                                    // while (d.depth > 1) d = d.parent;
+                                    return color(d.data.key);
+                                }).attr('cx', function(d) {
+                                    return d.x;
+                                })
+                                .attr('cy', function(d) {
+                                    return d.y;
+                                })
+                                .attr('r', function(d) {
+                                    return d.r;
+                                })
+                                .on("mouseover", (d) => {
+                                    var node = root.descendants().filter(function(des) {
+                                        return des.depth == d.depth
+                                    }).filter(function(des) {
+                                        return des.data.key == d.data.key
+                                    });
+                                    var node_actual_expenditure = root_actual_expenditure.descendants().filter(function(des) {
+                                        return des.depth == d.depth
+                                    }).filter(function(des) {
+                                        return des.data.key == d.data.key
+                                    });
+                                    var node_approved_estimate = root_approved_estimate.descendants().filter(function(des) {
+                                        return des.depth == d.depth
+                                    }).filter(function(des) {
+                                        return des.data.key == d.data.key
+                                    });
+                                    var node_revised_estimate = root_revised_estimate.descendants().filter(function(des) {
+                                        return des.depth == d.depth
+                                    }).filter(function(des) {
+                                        return des.data.key == d.data.key
+                                    });
+                                    var node_share_actual = root_share_actual.descendants().filter(function(des) {
+                                        return des.depth == d.depth
+                                    }).filter(function(des) {
+                                        return des.data.key == d.data.key
+                                    });
+                                    tooltip.style("visibility", "visible").text(
+                                        "Domain / Head of expenditure: " + (d.data.key.startsWith("20") ? "All" : d.data.key) + "\n" +
+                                        "Estimate: " + node[0].value + "\n" +
+                                        "Actual expenditure: " + node_actual_expenditure[0].value + "\n" +
+                                        "Approved estimate: " + node_approved_estimate[0].value + "\n" +
+                                        "Revised estimate: " + node_revised_estimate[0].value + "\n" +
+                                        "Share(actual): " + node_share_actual[0].value
+                                    )
+                                })
+                                .on("mousemove", function() {
+                                    return tooltip.style("top",
+                                        (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
+                                })
+                                .on("mouseout", function() {
+                                    return tooltip.style("visibility", "hidden");
+                                });
+                        }
+
+                        update(6)
 
                     });
                 </script>
