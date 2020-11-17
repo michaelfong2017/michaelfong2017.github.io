@@ -926,8 +926,7 @@
                             "管理個人時間及編排個人工作",
                             "客戶服務技巧",
                             "其他特定工作技能",
-                            "沒有接受培訓",
-                            "曾接受培訓",
+                            "總培訓出席人數",
                             "所有僱員"
                         ]
                         // create a list of keys
@@ -940,8 +939,7 @@
                         "Time management and work organisation",
                         "Customer service skills",
                         "Other job-specific skills",
-                        "No training attended",
-                        "Training attended",
+                        "Total number of training attendance",
                         "All employees"
                     ]
 
@@ -997,8 +995,8 @@
                         })
                         // .on("mouseover", (d) => console.log(d[1].reduce((a, b) => a + b).toFixed(1)));
                         .on("mouseover", (d) => tooltip.style("visibility", "visible").text(d.data.type != null ? keys_en[d.data.type] + "\n" + d.value.toFixed(1) + "k" :
-                            d.data.training == "Yes" ? "Training attended" + "\n" + d.value.toFixed(1) + "k" :
-                            d.data.training == "No" ? "No training attended" + "\n" + d.value.toFixed(1) + "k" :
+                            d.data.training == "Yes" ? "Total number of training attendance" + "\n" + d.value.toFixed(1) + "k" :
+                            d.data.training == "No" ? "Number of all employees minus total number of training attendance" + "\n" + d.value.toFixed(1) + "k" :
                             "All employees" + "\n" + d.value.toFixed(1) + "k"))
                         .on("mousemove", function() {
                             return tooltip.style("top",
@@ -1108,7 +1106,6 @@
                     var legend_a = legend.append("g");
 
 
-                    color.push("grey");
                     color.push("lightgreen");
                     color.push("lightblue");
 
