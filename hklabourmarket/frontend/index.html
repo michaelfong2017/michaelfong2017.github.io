@@ -1080,13 +1080,13 @@
                         .attr("y", 25)
                         .attr("font-size", "22px")
                         .style('fill', '#808080')
-                        .text("Top 5 cited training courses attended by employed persons for each")
+                        .text("Top 5 cited training courses arranged by employers attended by employed")
                     svg.append("text")
-                        .attr("x", 88)
+                        .attr("x", 33)
                         .attr("y", 50)
                         .attr("font-size", "22px")
                         .style('fill', '#808080')
-                        .text("occupation during the 12 months before enumeration")
+                        .text("persons for each occupation during the 12 months before enumeration")
 
 
                     /* Data source */
@@ -1095,13 +1095,13 @@
                         .attr("y", 950)
                         .attr("font-size", "16px")
                         .style('fill', '#808080')
-                        .text("Data source: Census and Statistics Department, Hong Kong Government, 2018 Q1")
+                        .text("Data source: Census and Statistics Department, Hong Kong Government, 2018")
 
 
                     /* Legend */
                     var legend = svg.append("g");
                     legend
-                        .attr("transform", "translate(630,-30)");
+                        .attr("transform", "translate(630,-15)");
 
                     var legend_a = legend.append("g");
 
