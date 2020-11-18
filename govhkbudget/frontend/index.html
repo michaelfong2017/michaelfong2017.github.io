@@ -285,7 +285,7 @@
                                 .style("font-size", "24px")
                                 .text(years[slider.value])
 
-                            var defaultInterval = 500;
+                            var defaultInterval = 200;
                             label.append("input")
                                 .attr("type", "text")
                                 .attr("value", defaultInterval)
@@ -335,9 +335,9 @@
                                             return d.value[0];
                                         }
                                     })
-                                    // .sort(function(a, b) {
-                                    //     return a.value - b.value;
-                                    // });
+                                    .sort(function(a, b) {
+                                        return b.value - a.value;
+                                    });
 
                                 packLayout(root)
 
