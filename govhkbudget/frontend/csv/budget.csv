@@ -1,588 +1,589 @@
-﻿head_code,head_of_expenditure,actual_expenditure,approved_estimate,revised_estimate,estimate,report_year,share(actual),domain,led by
-21,Chief Executive’s Office,92388,94481,95347,99112,2014-15,0.030178396,administration,chief executive
-22,"Agriculture, Fisheries and Conservation Department",1964540,1579239,1151550,1395778,2014-15,0.641713914,environment & food,secretary for food and health
-23,Auxiliary Medical Service,71961,75158,74606,80590,2014-15,0.023505948,security,secretary for security
-24,Audit Commission,132968,137368,140561,144428,2014-15,0.043433789,administration,chief executive
-25,Architectural Services Department,1673413,1733990,1759454,1806701,2014-15,0.546617736,development,secretary for development
-26,Census and Statistics Department,550625,590713,552000,615131,2014-15,0.179860794,finance,secretary for financial services and the treasury
-27,Civil Aid Service,88351,96253,96852,95687,2014-15,0.028859716,security,secretary for security
-28,Civil Aviation Department,832351,853813,857537,862098,2014-15,0.271886151,transport,secretary for transport and housing
-30,Correctional Services Department,3140130,3235902,3257633,3366910,2014-15,1.025718547,security,secretary for security
-31,Customs and Excise Department,2768626,3107689,2996908,3056587,2014-15,0.904367347,security,secretary for security
-33,Civil Engineering and Development Department,1799825,2029341,1906482,2120406,2014-15,0.587910018,development,secretary for development 
-37,Department of Health,4991733,5580318,5554893,6093178,2014-15,1.630541767,health,secretary for food and health
-39,Drainage Services Department,1939166,1996348,1995206,2182147,2014-15,0.633425537,infrastrcuture,secretary for development 
-42,Electrical and Mechanical Services Department,379035,509032,505309,512903,2014-15,0.123811189,infrastructure,secretary for development
-44,Environmental Protection Department,2732201,3132891,8406888,6848374,2014-15,0.892469178,environment & food,secretary for environment
-45,Fire Services Department,4482731,4691796,4690873,5007243,2014-15,1.464277061,security,secretary for security
-46,General Expenses of the Civil Service,2699636,3044324,2854171,3170445,2014-15,0.881831872,finance,"secretary for civil service, secretary for financial services and the treasury, secretary for development, financial secretary, secretary for commerce and economic development
-"
-47,Government Secretariat: Office of the Government Chief Information Officer,627154,671357,674656,690227,2014-15,0.204858872,administration,"secretary for commerce and economic development (before 2015), secretary for innovation and technology (now) "
-48,Government Laboratory,380116,411240,388981,435759,2014-15,0.124164296,health,secretary for food and health
-49,Food and Environmental Hygiene Department,5004521,5200542,5347831,5667222,2014-15,1.634718947,environment & food,secretary for food and health
-51,Government Property Agency,1735985,1889157,1873129,1873206,2014-15,0.567056782,infrastructure,secretary for financial services and the treasury
-53,Government Secretariat: Home Affairs Bureau,1302385,1393644,16388621,1546324,2014-15,0.425422021,housing,secretary for home affairs
-55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Technology Branch),307486,326031,316037,314910,2014-15,0.10043982,economic,secretary for commerce and economic development
-59,Government Logistics Department,504657,526171,520712,537179,2014-15,0.164845419,transport/administration,secretary for financial services and the treasury
-60,Highways Department,2361588,2475061,2473873,2549814,2014-15,0.771409022,transport,secretary for transport and housing
-62,Housing Department,2074459,210178,2360781,261054,2014-15,0.677618784,housing,secretary for transport and housing
-63,Home Affairs Department,1865952,2022532,2000992,2183530,2014-15,0.609510299,community,secretary for home affairs
-70,Immigration Department,3380067,3546855,3598943,3694051,2014-15,1.104093592,security,secretary for security
-72,Independent Commission Against Corruption,861921,927340,926876,937127,2014-15,0.281545145,judiciary,chief executive
-74,Information Services Department,382516,405986,398880,408758,2014-15,0.124948252,administration,secretary for home affairs
-76,Inland Revenue Department,1265192,1431999,1376316,1389503,2014-15,0.413272985,finance,secretary for financial services and the treasury
-78,Intellectual Property Department,113448,121505,123003,133516,2014-15,0.037057612,economic,secretary for commerce and economic development
-79,Invest Hong Kong,113675,116913,116913,114967,2014-15,0.037131761,economic,secretary for commerce and economic development
-80,Judiciary,1147414,1272125,1222858,1356642,2014-15,0.374800986,judiciary,secretary for justice
-82,Buildings Department,1029782,1124935,1109625,1175901,2014-15,0.336376678,infrastructure,secretary for commerce and economic development
-90,Labour Department,1436590,2040432,1638679,1912412,2014-15,0.469259874,welfare,secretary for labour and welfare
-91,Lands Department,1992005,2071602,2084797,2162090,2014-15,0.650685314,development,secretary for development
-92,Department of Justice,1272067,1401718,1388940,1795198,2014-15,0.415518693,judiciary,secretary for justice
-94,Legal Aid Department,870972,842163,842163,833151,2014-15,0.28450164,judiciary,chief secretary for administration
-95,Leisure and Cultural Services Department,6240150,6538016,6593363,6889307,2014-15,2.038335225,community,secretary for home affairs
-96,Government Secretariat: Overseas Economic and Trade Offices,306355,324678,321865,333479,2014-15,0.100070381,economic,secretary for commerce and economic development
-100,Marine Department,1017935,1045050,1064334,1156473,2014-15,0.332506874,security,secretary for transport and housing
-106,Miscellaneous Services,107451,57272497,303975,11915636,2014-15,0.035098701,others,secretary for financial services and the treasury
-112,Legislative Council Commission,642090,664384,673340,717691,2014-15,0.209737693,administration,chief executive of the Legislative Council Secretariat
-114,Office of The Ombudsman,99085,99540,102461,102816,2014-15,0.03236596,judiciary,chief executive
-116,Official Receiver’s Office,133875,155159,140054,147624,2014-15,0.043730059,judiciary,secretary for financial services and the treasury
-118,Planning Department,523549,574397,559592,607936,2014-15,0.171016461,development,secretary for development
-120,Pensions,21843494,25509500,23905341,27317100,2014-15,7.135143107,welfare,secretary for financial services and the treasury
-121,Independent Police Complaints Council,46685,49833,50919,55988,2014-15,0.015249582,judiciary,chief executive
-122,Hong Kong Police Force,14598280,14776454,14983740,15515188,2014-15,4.7685053,security,secretary for security
-136,Public Service Commission Secretariat,18329,20059,20522,20782,2014-15,0.005987139,administration,secretary for environment
-137,Government Secretariat: Environment Bureau,58580,72755,69153,80408,2014-15,0.019135065,environment & food,secretary for education
-138,Government Secretariat: Development Bureau (Planning and Lands Branch),622041,763645,556271,492049,2014-15,0.203188718,development,secretary for development
-139,Government Secretariat: Food and Health Bureau (Food Branch),58414,80496,64761,76150,2014-15,0.019080842,environment & food,secretary for food and health
-140,Government Secretariat: Food and Health Bureau (Health Branch),53249857,45568939,46668004,48507848,2014-15,17.3939824,health,secretary for food and health
-141,Government Secretariat: Labour and Welfare Bureau,619977,717785,15665788,753727,2014-15,0.202514516,welfare,secretary for labour and welfare
-142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,669577,739840,706533,833832,2014-15,0.218716278,administration,chief secretary for administration
-143,Government Secretariat: Civil Service Bureau,464775,499173,491506,521385,2014-15,0.151818026,administration,secretary for civil service
-144,Government Secretariat: Constitutional and Mainland Affairs Bureau,451033,500086,497823,582912,2014-15,0.147329223,others,secretary for constitutional and mainland affairs 
-147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),14486536,1812850,4464984,1883242,2014-15,4.732004298,finance,secretary for financial services and the treasury
-148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),216852,239173,239125,312895,2014-15,0.070834366,finance,secretary for financial services and the treasury
-151,Government Secretariat: Security Bureau,251931,313589,299332,325154,2014-15,0.082292867,security,secretary for security
-152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",1326011,1539475,1515333,1644960,2014-15,0.433139417,economic,secretary for commerce and economic development
-155,Government Secretariat: Innovation and Technology Commission,533963,559228,553374,587163,2014-15,0.174418178,economic,secretary for innovation and technology
-156,Government Secretariat: Education Bureau,50534721,44478419,50017566,47369464,2014-15,16.50708747,education,secretary for education
-158,Government Secretariat: Transport and Housing Bureau (Transport Branch),146961,169179,171243,200136,2014-15,0.04800458,transport & housing,secretary for transport and housing
-159,Government Secretariat: Development Bureau (Works Branch),329303,472729,398688,448025,2014-15,0.107566309,development,secretary for development
-160,Radio Television Hong Kong,615328,754288,732765,784477,2014-15,0.200995928,others,secretary for commerce and economic development
-162,Rating and Valuation Department,434085,484270,455296,479332,2014-15,0.141793185,finance,secretary for financial services and the treasury
-163,Registration and Electoral Office,548589,94315,82429,268299,2014-15,0.179195738,administration,secretary for constitutional and mainland affairs 
-166,Government Flying Service,641940,515835,297640,367280,2014-15,0.209688696,security,secretary for security
-168,Hong Kong Observatory,239103,247367,247827,259781,2014-15,0.07810262,community,secretary for commerce and economic development
-169,"Secretariat, Commissioner on Interception of Communications and Surveillance",15928,18014,17540,18404,2014-15,0.005202856,security,secretary for security
-170,Social Welfare Department,44476987,54722835,53746431,55909483,2014-15,14.52833815,welfare,secretary for labour and welfare
-173,Student Financial Assistance Agency,4589213,5016294,4954160,5380592,2014-15,1.499059239,education,secretary for education
-174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,27537,30070,30252,29704,2014-15,0.008994918,finance,secretary for civil service
-180,"Office for Film, Newspaper and Article Administration",41251,43627,43630,43790,2014-15,0.013474575,others,secretary for commerce and economic development
-181,Trade and Industry Department,707043,770088,812896,828458,2014-15,0.230954489,economic,secretary for commerce and economic development
-184,Transfers to Funds,52000,743000,10893000,7519000,2014-15,0.016985719,finance,secretary for financial services and the treasury
-186,Transport Department,1558120,2035872,1848672,2063030,2014-15,0.508957458,transport,secretary for transport and housing
-188,Treasury,338614,363460,349365,369410,2014-15,0.110607733,finance,secretary for financial services and the treasury
-190,University Grants Committee,15315776,15015579,15716427,15601731,2014-15,5.002874245,education,secretary for education
-194,Water Supplies Department,6570580,6810214,6862624,7095920,2014-15,2.146269667,infrastructure ,secretary for development
-21,Chief Executive’s Office,94464,99112,101316,101508,2015-16,0.026899918,administration,
-22,"Agriculture, Fisheries and Conservation Department",1149867,1395778,1194301,1233499,2015-16,0.327440376,environment & food,
-23,Auxiliary Medical Service,74287,80590,80590,87279,2015-16,0.021154241,security,
-24,Audit Commission,138253,144428,149187,152589,2015-16,0.039369435,administration,
-25,Architectural Services Department,1760510,1806701,1843061,1892270,2015-16,0.501329334,development,
-26,Census and Statistics Department,557047,615131,591276,675314,2015-16,0.158626762,finance,
-27,Civil Aid Service,96196,95687,97030,99546,2015-16,0.027393128,security,
-28,Civil Aviation Department,855633,862098,881315,903375,2015-16,0.243653215,transport,
-30,Correctional Services Department,3278777,3366910,3451430,3519735,2015-16,0.933676656,security,
-31,Customs and Excise Department,2960851,3056587,3163670,3316890,2015-16,0.843142873,security,
-33,Civil Engineering and Development Department,1845860,2120406,2157375,2257938,2015-16,0.525633915,development,
-37,Department of Health,5606137,6093178,6006515,6470478,2015-16,1.596424291,health,
-39,Drainage Services Department,2000981,2182147,2148745,2416746,2015-16,0.569806745,infrastrcuture,
-42,Electrical and Mechanical Services Department,502948,512903,510112,462437,2015-16,0.143221331,infrastructure,
-44,Environmental Protection Department,7961302,6848374,6189029,6996144,2015-16,2.26708978,environment & food,
-45,Fire Services Department,4676837,5007243,4995510,5380447,2015-16,1.331793388,security,
-46,General Expenses of the Civil Service,2809903,3170445,3050357,3351738,2015-16,0.800158363,finance,
-47,Government Secretariat: Office of the Government Chief Information Officer,670825,690227,699561,714743,2015-16,0.191026606,administration,
-48,Government Laboratory,409531,435759,433595,445799,2015-16,0.116619561,health,
-49,Food and Environmental Hygiene Department,5329353,5667222,5794990,5923986,2015-16,1.517606256,environment & food,
-51,Government Property Agency,1866265,1873206,1872625,1901449,2015-16,0.531444519,infrastructure,
-53,Government Secretariat: Home Affairs Bureau,16388205,1546324,1574104,1672933,2015-16,4.666765821,housing,
-55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Technology Branch),296821,314910,304505,340399,2015-16,0.084523845,economic,
-59,Government Logistics Department,511954,537179,537179,550992,2015-16,0.145785913,transport/administration,
-60,Highways Department,2485815,2549814,2622391,2639769,2015-16,0.707869866,transport,
-62,Housing Department,2356518,261054,1335463,280437,2015-16,0.671050775,housing,
-63,Home Affairs Department,1970358,2183530,2217312,2370979,2015-16,0.561086426,community,
-70,Immigration Department,3602630,3694051,3830774,3910311,2015-16,1.025898233,security,
-72,Independent Commission Against Corruption,909050,937127,968474,977866,2015-16,0.258864438,judiciary,
-74,Information Services Department,391215,408758,415773,449664,2015-16,0.111403829,administration,
-76,Inland Revenue Department,1331804,1389503,1433298,1451062,2015-16,0.379249429,finance,
-78,Intellectual Property Department,121601,133516,135768,137480,2015-16,0.03462755,economic,
-79,Invest Hong Kong,116135,114967,115999,115139,2015-16,0.033071032,economic,
-80,Judiciary,1198624,1356642,1286570,1437185,2015-16,0.3413246,judiciary,
-82,Buildings Department,1106303,1175901,1159652,1243103,2015-16,0.315034931,infrastructure,
-90,Labour Department,1641286,1912412,1779971,1917957,2015-16,0.467378667,welfare,
-91,Lands Department,2087882,2162090,2216898,2265591,2015-16,0.594552994,development,
-92,Department of Justice,1351778,1795198,1725342,1980026,2015-16,0.384937299,judiciary,
-94,Legal Aid Department,841508,833151,841040,845148,2015-16,0.239630928,judiciary,
-95,Leisure and Cultural Services Department,6587022,6889307,7032874,7482663,2015-16,1.875744728,community,
-96,Government Secretariat: Overseas Economic and Trade Offices,314183,333479,328907,355773,2015-16,0.089467912,economic,
-100,Marine Department,1060721,1156473,1196277,1178092,2015-16,0.302054832,security,
-106,Miscellaneous Services,198821,11915636,199636,23710238,2015-16,0.056617003,others,
-112,Legislative Council Commission,679728,717691,731863,758559,2015-16,0.193561857,administration,
-114,Office of The Ombudsman,102461,102816,107171,107146,2015-16,0.029177173,judiciary,
-116,Official Receiver¡¦s Office,139798,147624,149856,154373,2015-16,0.039809395,judiciary,
-118,Planning Department,545906,607936,607212,629834,2015-16,0.15545421,development,
-120,Pensions,23913477,27317100,26532050,29712370,2015-16,6.809690087,welfare,
-121,Independent Police Complaints Council,50916,55988,57611,57282,2015-16,0.014499028,judiciary,
-122,Hong Kong Police Force,15144195,15515188,16410941,16800671,2015-16,4.312516936,security,
-136,Public Service Commission Secretariat,20434,20782,21561,21943,2015-16,0.005818861,administration,
-137,Government Secretariat: Environment Bureau,68572,80408,78422,81433,2015-16,0.019526816,environment & food,
-138,Government Secretariat: Development Bureau (Planning and Lands Branch),537452,492049,476753,315760,2015-16,0.153046818,development,
-139,Government Secretariat: Food and Health Bureau (Food Branch),74809,76150,76383,84292,2015-16,0.021302887,environment & food,
-140,Government Secretariat: Food and Health Bureau (Health Branch),46692450,48507848,50185893,50400595,2015-16,13.29631462,health,
-141,Government Secretariat: Labour and Welfare Bureau,15713109,753727,757404,801736,2015-16,4.474522989,welfare,
-142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,701076,833832,784155,853206,2015-16,0.199640993,administration,
-143,Government Secretariat: Civil Service Bureau,484380,521385,527000,557046,2015-16,0.137933839,administration,
-144,Government Secretariat: Constitutional and Mainland Affairs Bureau,497496,582912,577153,580613,2015-16,0.1416688,others,
-147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),4531500,1883242,1978009,408697,2015-16,1.290406687,finance,
-148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),230951,312895,235551,229784,2015-16,0.06576646,finance,
-151,Government Secretariat: Security Bureau,276674,325154,315137,356065,2015-16,0.078786711,security,
-152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",1480694,1644960,1666750,1829156,2015-16,0.421647896,economic,
-155,Government Secretariat: Innovation and Technology Commission,550979,587163,596367,620295,2015-16,0.156898816,economic,
-156,Government Secretariat: Education Bureau,49731487,47369464,48086341,51382677,2015-16,14.16172203,education,
-158,Government Secretariat: Transport and Housing Bureau (Transport Branch),179998,200136,199158,223327,2015-16,0.051256896,transport & housing,
-159,Government Secretariat: Development Bureau (Works Branch),396795,448025,422410,416442,2015-16,0.112992811,development,
-160,Radio Television Hong Kong,723177,784477,778288,823102,2015-16,0.205934555,others,
-162,Rating and Valuation Department,459786,479332,482612,501929,2015-16,0.130930361,finance,
-163,Registration and Electoral Office,81784,268299,185730,743819,2015-16,0.023289114,administration,
-166,Government Flying Service,312188,367280,360499,583253,2015-16,0.088899809,security,
-168,Hong Kong Observatory,245768,259781,268485,275514,2015-16,0.069985804,community,
-169,"Secretariat, Commissioner on Interception of Communications and Surveillance",16855,18404,18683,21452,2015-16,0.004799692,security,
-170,Social Welfare Department,53658843,55909483,56359311,58349247,2015-16,15.28009044,welfare,
-173,Working Family and Student Financial Assistance Agency,4917424,5380592,5021871,5555255,2015-16,1.400303831,education,
-174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,30251,29704,31538,29191,2015-16,0.008614387,finance,
-180,"Office for Film, Newspaper and Article Administration",39941,43790,43500,45393,2015-16,0.011373747,others,
-181,Trade and Industry Department,803082,828458,817819,831089,2015-16,0.228688598,economic,
-184,Transfers to Funds,10893000,7519000,2529000,3130000,2015-16,3.101930937,finance,
-186,Transport Department,1852711,2063030,2039648,2534203,2015-16,0.527584831,transport,
-188,Treasury,341911,369410,369593,371085,2015-16,0.09736384,finance,
-190,University Grants Committee,15656765,15601731,16386303,16988115,2015-16,4.458478264,education,
-194,Water Supplies Department,6873476,7095920,7175492,7564794,2015-16,1.957316428,infrastructure ,
-21,Chief Executive’s Office,101073,101508,106739,110502,2016-17,0.031419302,administration,
-22,"Agriculture, Fisheries and Conservation Department",1140046,1233499,1186526,1318098,2016-17,0.354391866,environment & food,
-23,Auxiliary Medical Service,81553,87279,87279,99060,2016-17,0.025351363,security,
-24,Audit Commission,148645,152589,159545,161137,2016-17,0.046207415,administration,
-25,Architectural Services Department,1831630,1892270,1947797,1975984,2016-17,0.569375949,development,
-26,Census and Statistics Department,606166,675314,659239,768519,2016-17,0.188431256,finance,
-27,Civil Aid Service,98365,99546,99546,106387,2016-17,0.030577499,security,
-28,Civil Aviation Department,875614,903375,923969,945666,2016-17,0.272191192,transport,
-30,Correctional Services Department,3465231,3519735,3609340,3655769,2016-17,1.077193095,security,
-31,Customs and Excise Department,3142521,3316890,3332353,3432065,2016-17,0.976876267,security,
-33,Civil Engineering and Development Department,2175728,2257938,2303617,2607215,2016-17,0.676341398,development,
-37,Department of Health,5980330,6470478,6594732,7790054,2016-17,1.859030519,health,
-39,Drainage Services Department,2148869,2416746,2398598,2570653,2016-17,0.667992076,infrastrcuture,
-42,Electrical and Mechanical Services Department,509269,462437,452813,489448,2016-17,0.158310095,infrastructure,
-44,Environmental Protection Department,6149964,6996144,6256336,5487145,2016-17,1.911762523,environment & food,
-45,Fire Services Department,4968947,5380447,5444279,5597598,2016-17,1.544634514,security,
-46,General Expenses of the Civil Service,2984349,3351738,3170713,3507673,2016-17,0.927707312,finance,
-47,Government Secretariat: Office of the Government Chief Information Officer,694800,714743,719196,743371,2016-17,0.215983801,administration,
-48,Government Laboratory,408825,445799,452457,464970,2016-17,0.127086323,health,
-49,Food and Environmental Hygiene Department,5762513,5923986,6037070,6401904,2016-17,1.791320468,environment & food,
-51,Government Property Agency,1871217,1901449,1901449,1942685,2016-17,0.581681865,infrastructure,
-53,Government Secretariat: Home Affairs Bureau,1561994,1672933,1695984,1841596,2016-17,0.485557572,housing,
-55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Creative Industries Branch),295309,340399,311204,414369,2016-17,0.091799022,economic,
-59,Government Logistics Department,536524,550992,549770,602467,2016-17,0.166782517,transport/administration,
-60,Highways Department,2610597,2639769,2659024,2915194,2016-17,0.811523694,transport,
-62,Housing Department,1312666,280437,1433425,287616,2016-17,0.40805209,housing,
-63,Home Affairs Department,2205853,2370979,2429083,2393355,2016-17,0.685705981,community,
-70,Immigration Department,3828945,3910311,4028705,4268122,2016-17,1.190256325,security,
-72,Independent Commission Against Corruption,961182,977866,1011165,1011622,2016-17,0.298790647,judiciary,
-74,Information Services Department,408698,449664,449625,457589,2016-17,0.127046844,administration,
-76,Inland Revenue Department,1415748,1451062,1487956,1506385,2016-17,0.440095904,finance,
-78,Intellectual Property Department,131634,137480,139648,147456,2016-17,0.040919418,economic,
-79,Invest Hong Kong,115948,115139,115897,128235,2016-17,0.036043307,economic,
-80,Judiciary,1277485,1437185,1408827,1587460,2016-17,0.397115812,judiciary,
-82,Buildings Department,1142668,1243103,1266873,1308654,2016-17,0.355206934,infrastructure,
-90,Labour Department,1760329,1917957,1830838,1947292,2016-17,0.547211497,welfare,
-91,Lands Department,2210450,2265591,2341354,2357013,2016-17,0.687134993,development,
-92,Department of Justice,1482725,1980026,1730905,2240887,2016-17,0.460916208,judiciary,
-94,Legal Aid Department,849082,845148,855513,1007656,2016-17,0.26394352,judiciary,
-95,Leisure and Cultural Services Department,7024637,7482663,7598277,8372380,2016-17,2.183661197,community,
-96,Government Secretariat: Overseas Economic and Trade Offices,326019,355773,361458,391552,2016-17,0.101345456,economic,
-100,Marine Department,1203688,1178092,1194048,1310704,2016-17,0.37417546,security,
-106,Miscellaneous Services,93832,23710238,161638,25092749,2016-17,0.029168382,others,
-112,Legislative Council Commission,734491,758559,771316,850107,2016-17,0.228322047,administration,
-114,Office of The Ombudsman,107171,107146,112249,110820,2016-17,0.033314911,judiciary,
-116,Official Receiver・s Office,149824,154373,158858,190582,2016-17,0.046573916,judiciary,
-118,Planning Department,591421,629834,645217,657196,2016-17,0.183847662,development,
-120,Pensions,26412460,29712370,29692560,33046690,2016-17,8.210511664,welfare,
-121,Independent Police Complaints Council,57272,57282,58903,62263,2016-17,0.017803432,judiciary,
-122,Hong Kong Police Force,16547206,16800671,17066898,17303546,2016-17,5.143823327,security,
-135,Government Secretariat: Innovation and Technology Bureau,0,0,12636,43379,2016-17,0,economic,
-136,Public Service Commission Secretariat,21448,21943,22600,25016,2016-17,0.006667272,administration,
-137,Government Secretariat: Environment Bureau,78247,81433,80869,77841,2016-17,0.024323668,environment & food,
-138,Government Secretariat: Development Bureau (Planning and Lands Branch),474062,315760,311824,318303,2016-17,0.147365735,development,
-139,Government Secretariat: Food and Health Bureau (Food Branch),73860,84292,81837,147914,2016-17,0.022959936,environment & food,
-140,Government Secretariat: Food and Health Bureau (Health Branch),50204378,50400595,52053797,52238020,2016-17,15.60640816,health,
-141,Government Secretariat: Labour and Welfare Bureau,741536,801736,761606,807521,2016-17,0.230512038,welfare,
-142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,795067,853206,836038,957957,2016-17,0.247152551,administration,
-143,Government Secretariat: Civil Service Bureau,520109,557046,549425,578897,2016-17,0.161679791,administration,
-144,Government Secretariat: Constitutional and Mainland Affairs Bureau,574640,580613,586231,607974,2016-17,0.178631162,others,
-147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),1971803,408697,416077,373588,2016-17,0.612949779,finance,
-148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),239409,229784,245920,765513,2016-17,0.074422087,finance,
-151,Government Secretariat: Security Bureau,303039,356065,351366,480555,2016-17,0.09420195,security,
-152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",1631285,1829156,2209661,2081992,2016-17,0.5070972,economic,
-155,Government Secretariat: Innovation and Technology Commission,594192,620295,624415,588346,2016-17,0.184709048,economic,
-156,Government Secretariat: Education Bureau,47975828,51382677,52313423,53184149,2016-17,14.91364664,education,
-158,Government Secretariat: Transport and Housing Bureau (Transport Branch),195093,223327,210277,278824,2016-17,0.060646125,transport & housing,
-159,Government Secretariat: Development Bureau (Works Branch),415600,416442,440669,416940,2016-17,0.129192383,development,
-160,Radio Television Hong Kong,775720,823102,843291,978448,2016-17,0.241138391,others,
-162,Rating and Valuation Department,475604,501929,499427,513650,2016-17,0.147845077,finance,
-163,Registration and Electoral Office,179971,743819,503576,1114285,2016-17,0.055945338,administration,
-166,Government Flying Service,359686,583253,1027203,577612,2016-17,0.111811096,security,
-168,Hong Kong Observatory,267278,275514,282897,292276,2016-17,0.083085375,community,
-169,"Secretariat, Commissioner on Interception of Communications and Surveillance",18340,21452,20510,20126,2016-17,0.005701127,security,
-170,Social Welfare Department,56142958,58349247,62541099,61631797,2016-17,17.45246037,welfare,
-173,Working Family and Student Financial Assistance Agency,4789189,5555255,4948384,8270472,2016-17,1.488755388,education,
-174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,31538,29191,30712,29211,2016-17,0.009803824,finance,
-180,"Office for Film, Newspaper and Article Administration",41739,45393,45100,46865,2016-17,0.012974882,others,
-181,Trade and Industry Department,811980,831089,746329,773651,2016-17,0.252410085,economic,
-184,Transfers to Funds,2529000,3130000,3180000,44864000,2016-17,0.786158654,finance,
-186,Transport Department,2041407,2534203,2527770,2858507,2016-17,0.634586706,transport,
-188,Treasury,366078,371085,378415,376380,2016-17,0.113798097,finance,
-190,University Grants Committee,16365753,16988115,17587367,17966125,2016-17,5.087417299,education,
-194,Water Supplies Department,7183442,7564794,7653621,7923917,2016-17,2.233026925,infrastructure ,
-21,Chief Executive’s Office,106245,110502,111511,117363,2017-18,0.029979647,administration,
-22,"Agriculture, Fisheries and Conservation Department",1164528,1318098,1285523,1521847,2017-18,0.328600297,environment & food,
-23,Auxiliary Medical Service,84761,99060,99060,97935,2017-18,0.023917407,security,
-24,Audit Commission,158413,161137,164893,169191,2017-18,0.044700135,administration,
-25,Architectural Services Department,1944607,1975984,2028104,2042983,2017-18,0.548718827,development,
-26,Census and Statistics Department,668960,768519,788126,665767,2017-18,0.188763563,finance,
-27,Civil Aid Service,99390,106387,106643,109468,2017-18,0.02804534,security,
-28,Civil Aviation Department,909849,945666,957043,994730,2017-18,0.256736336,transport,
-30,Correctional Services Department,3623644,3655769,3742975,3839053,2017-18,1.022500529,security,
-31,Customs and Excise Department,3292382,3432065,3544286,3652909,2017-18,0.929026785,security,
-33,Civil Engineering and Development Department,2273572,2607215,2638516,2845479,2017-18,0.641544416,development,
-37,Department of Health,6619063,7790054,7353505,8780758,2017-18,1.867731879,health,
-39,Drainage Services Department,2393374,2570653,2594985,2636654,2017-18,0.675349505,infrastrcuture,
-42,Electrical and Mechanical Services Department,450554,489448,478710,668166,2017-18,0.127134924,infrastructure,
-44,Environmental Protection Department,5565097,5487145,4973160,6133742,2017-18,1.570329377,environment & food,
-45,Fire Services Department,5464973,5597598,5561112,6049824,2017-18,1.542076921,security,
-46,General Expenses of the Civil Service,3104023,3507673,3339835,3826740,2017-18,0.875876648,finance,
-47,Government Secretariat: Office of the Government Chief Information Officer,719330,743371,746243,765961,2017-18,0.202976701,administration,
-48,Government Laboratory,451624,464970,475016,463918,2017-18,0.127436851,health,
-49,Food and Environmental Hygiene Department,6036130,6401904,6553340,6776198,2017-18,1.703242956,environment & food,
-51,Government Property Agency,1901407,1942685,1942685,1942714,2017-18,0.536528882,infrastructure,
-53,Government Secretariat: Home Affairs Bureau,1693601,1841596,1835642,2025752,2017-18,0.477891293,housing,
-55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Creative Industries Branch),282943,414369,387869,409369,2017-18,0.079839346,economic,
-59,Government Logistics Department,549695,602467,602467,619790,2017-18,0.155110002,transport/administration,
-60,Highways Department,2647348,2915194,2807935,3148719,2017-18,0.747014533,transport,
-62,Housing Department,1416806,287616,297287,304587,2017-18,0.399786757,housing,
-63,Home Affairs Department,2397197,2393355,2448258,2607074,2017-18,0.676428258,community,
-70,Immigration Department,4027151,4268122,4275907,4558514,2017-18,1.136359981,security,
-72,Independent Commission Against Corruption,1006621,1011622,1050583,1074206,2017-18,0.284042943,judiciary,
-74,Information Services Department,447532,457589,468096,505545,2017-18,0.126282192,administration,
-76,Inland Revenue Department,1453411,1506385,1523453,1566548,2017-18,0.410115761,finance,
-78,Intellectual Property Department,137649,147456,147727,156394,2017-18,0.03884106,economic,
-79,Invest Hong Kong,115681,128235,126368,130697,2017-18,0.032642247,economic,
-80,Judiciary,1382772,1587460,1523328,1762725,2017-18,0.390183225,judiciary,
-82,Buildings Department,1251817,1308654,1350212,1382930,2017-18,0.353231042,infrastructure,
-90,Labour Department,1815895,1947292,1845115,1953176,2017-18,0.512399562,welfare,
-91,Lands Department,2323574,2357013,2401047,2452963,2017-18,0.655653713,development,
-92,Department of Justice,1509258,2240887,1580521,1971926,2017-18,0.425874369,judiciary,
-94,Legal Aid Department,860536,1007656,1014415,996812,2017-18,0.242821457,judiciary,
-95,Leisure and Cultural Services Department,7580770,8372380,8301881,8599298,2017-18,2.139101229,community,
-96,Government Secretariat: Overseas Economic and Trade Offices,314386,391552,371899,431946,2017-18,0.088711764,economic,
-100,Marine Department,1195756,1310704,1313062,1362139,2017-18,0.337412048,security,
-106,Miscellaneous Services,129601,25092749,137799,3912906,2017-18,0.036570119,others,
-112,Legislative Council Commission,776867,850107,877805,841862,2017-18,0.219212185,administration,
-114,Office of The Ombudsman,111296,110820,115095,114068,2017-18,0.031404911,judiciary,
-116,Official Receiver・s Office,156898,190582,191582,180311,2017-18,0.04427264,judiciary,
-118,Planning Department,636909,657196,670671,686700,2017-18,0.179719583,development,
-120,Pensions,29432807,33046690,32228730,35385040,2017-18,8.30519243,welfare,
-121,Independent Police Complaints Council,58903,62263,64215,73393,2017-18,0.016620934,judiciary,
-122,Hong Kong Police Force,17064732,17303546,17713106,18495744,2017-18,4.815235021,security,
-135,Government Secretariat: Innovation and Technology Bureau,10959,43379,39313,178215,2017-18,0.003092352,economic,
-136,Public Service Commission Secretariat,22575,25016,25044,30350,2017-18,0.006370093,administration,
-137,Government Secretariat: Environment Bureau,76808,77841,77841,80845,2017-18,0.021673272,environment & food,
-138,Government Secretariat: Development Bureau (Planning and Lands Branch),305491,318303,314215,392650,2017-18,0.08620182,development,
-139,Government Secretariat: Food and Health Bureau (Food Branch),74779,147914,135138,162081,2017-18,0.021100739,environment & food,
-140,Government Secretariat: Food and Health Bureau (Health Branch),62053414,52238020,54056997,55990015,2017-18,17.50990126,health,
-141,Government Secretariat: Labour and Welfare Bureau,755297,807521,787408,840546,2017-18,0.213125677,welfare,
-142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,846702,957957,914836,993951,2017-18,0.238917852,administration,
-143,Government Secretariat: Civil Service Bureau,544261,578897,577626,600626,2017-18,0.153576665,administration,
-144,Government Secretariat: Constitutional and Mainland Affairs Bureau,584572,607974,607876,698066,2017-18,0.164951408,others,
-147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),425891,373588,345487,318842,2017-18,0.12017565,finance,
-148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),241082,765513,763159,343588,2017-18,0.068027232,finance,
-151,Government Secretariat: Security Bureau,335475,480555,402394,606630,2017-18,0.094662545,security,
-152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",2173288,2081992,1934612,2515634,2017-18,0.613246812,economic,
-155,Government Secretariat: Innovation and Technology Commission,617752,588346,594941,621176,2017-18,0.174313963,economic,
-156,Government Secretariat: Education Bureau,52286462,53184149,54807753,57393829,2017-18,14.75391485,education,
-158,Government Secretariat: Transport and Housing Bureau (Transport Branch),206169,278824,248523,280433,2017-18,0.058175668,transport & housing,
-159,Government Secretariat: Development Bureau (Works Branch),437867,416940,420042,505678,2017-18,0.123554974,development,
-160,Radio Television Hong Kong,840937,978448,989157,995202,2017-18,0.237291116,others,
-162,Rating and Valuation Department,495537,513650,517409,525906,2017-18,0.139827987,finance,
-163,Registration and Electoral Office,479939,1114285,918660,554159,2017-18,0.135426626,administration,
-166,Government Flying Service,1023012,577612,535779,776275,2017-18,0.288668068,security,
-168,Hong Kong Observatory,281467,292276,298082,303083,2017-18,0.079422856,community,
-169,"Secretariat, Commissioner on Interception of Communications and Surveillance",20419,20126,19211,21202,2017-18,0.005761724,security,
-170,Social Welfare Department,62482922,61631797,64548444,72151170,2017-18,17.63109753,welfare,
-173,Working Family and Student Financial Assistance Agency,4857908,8270472,5628469,8197941,2017-18,1.370778558,education,
-174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,30712,29211,30410,33107,2017-18,0.008666148,finance,
-180,"Office for Film, Newspaper and Article Administration",44102,46865,47243,48345,2017-18,0.012444467,others,
-181,Trade and Industry Department,719041,773651,766713,802446,2017-18,0.202895153,economic,
-184,Transfers to Funds,3180000,44864000,23864000,8850000,2017-18,0.897315432,finance,
-186,Transport Department,2507943,2858507,2648494,3097346,2017-18,0.707677974,transport,
-188,Treasury,377218,376380,383952,391910,2017-18,0.106441362,finance,
-190,University Grants Committee,17581142,17966125,18613717,18661695,2017-18,4.960952839,education,
-194,Water Supplies Department,7658947,7923917,8001857,8282094,2017-18,2.161160797,infrastructure ,
-21,Chief Executive’s Office,110498,117363,117297,117007,2018-19,0.028993137,administration,
-22,"Agriculture, Fisheries and Conservation Department",1250175,1521847,1398431,1648525,2018-19,0.328028516,environment & food,
-23,Auxiliary Medical Service,96385,97935,97930,100803,2018-19,0.025290082,security,
-24,Audit Commission,164357,169191,170569,173725,2018-19,0.043124989,administration,
-25,Architectural Services Department,2032677,2042983,2072598,2177714,2018-19,0.533346147,development,
-26,Census and Statistics Department,777868,665767,650382,672580,2018-19,0.204101734,finance,
-27,Civil Aid Service,106138,109468,109525,116899,2018-19,0.027849134,security,
-28,Civil Aviation Department,950005,994730,1006730,1088247,2018-19,0.249268086,transport,
-30,Correctional Services Department,3775767,3839053,3853215,3969152,2018-19,0.990708696,security,
-31,Customs and Excise Department,3497997,3652909,3637592,4426311,2018-19,0.917825715,security,
-33,Civil Engineering and Development Department,2636662,2845479,2595798,2979134,2018-19,0.691823402,development,
-37,Department of Health,7304813,8780758,8548325,11080699,2018-19,1.916681237,health,
-39,Drainage Services Department,2594150,2636654,2655542,2821876,2018-19,0.680668846,infrastrcuture,
-42,Electrical and Mechanical Services Department,477032,668166,658435,915771,2018-19,0.125166556,infrastructure,
-44,Environmental Protection Department,4956727,6133742,5267087,6167198,2018-19,1.30057616,environment & food,
-45,Fire Services Department,5563723,6049824,5904992,6676723,2018-19,1.45984346,security,
-46,General Expenses of the Civil Service,3261294,3826740,3484825,3825939,2018-19,0.855718143,finance,
-47,Government Secretariat: Office of the Government Chief Information Officer,735443,765961,767991,777508,2018-19,0.192970005,administration,
-48,Government Laboratory,473487,463918,470816,489331,2018-19,0.124236397,health,
-49,Food and Environmental Hygiene Department,6511923,6776198,6808125,7589878,2018-19,1.708637939,environment & food,
-51,Government Property Agency,1936934,1942714,1942549,2041673,2018-19,0.508224517,infrastructure,
-53,Government Secretariat: Home Affairs Bureau,1808372,2025752,2001350,2057808,2018-19,0.474491638,housing,
-55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Creative Industries Branch),367022,409369,372631,526430,2018-19,0.096301463,economic,
-59,Government Logistics Department,602465,619790,619406,574635,2018-19,0.158078429,transport/administration,
-60,Highways Department,2810029,3148719,2925423,3862156,2018-19,0.73731249,transport,
-62,Housing Department,287593,304587,312702,322650,2018-19,0.075460399,housing,
-63,Home Affairs Department,2425682,2607074,2609657,2902836,2018-19,0.636465188,community,
-70,Immigration Department,4275049,4558514,4450673,5683240,2018-19,1.121713342,security,
-72,Independent Commission Against Corruption,1044691,1074206,1095052,1120424,2018-19,0.274112375,judiciary,
-74,Information Services Department,466367,505545,512211,499386,2018-19,0.122368208,administration,
-76,Inland Revenue Department,1503710,1566548,1554249,1633897,2018-19,0.39455257,finance,
-78,Intellectual Property Department,145793,156394,157684,167172,2018-19,0.038254054,economic,
-79,Invest Hong Kong,125539,130697,135017,139008,2018-19,0.032939686,economic,
-80,Judiciary,1521355,1762725,1700190,1901759,2018-19,0.399182372,judiciary,
-82,Buildings Department,1359915,1382930,1399333,1570642,2018-19,0.356822764,infrastructure,
-90,Labour Department,1851634,1953176,1920355,2148376,2018-19,0.485842984,welfare,
-91,Lands Department,2402600,2452963,2502413,2750380,2018-19,0.630408792,development,
-92,Department of Justice,1531123,1971926,1620436,2290902,2018-19,0.40174536,judiciary,
-94,Legal Aid Department,1023633,996812,999258,1116769,2018-19,0.268587049,judiciary,
-95,Leisure and Cultural Services Department,8431164,8599298,8634705,9091340,2018-19,2.212220059,community,
-96,Government Secretariat: Overseas Economic and Trade Offices,337878,431946,396206,425335,2018-19,0.088654483,economic,
-100,Marine Department,1307032,1362139,1371036,1540054,2018-19,0.342947001,security,
-106,Miscellaneous Services,115825,3912906,564906,16921008,2018-19,0.030390868,others,
-112,Legislative Council Commission,874052,841862,860528,890077,2018-19,0.229339077,administration,
-114,Office of The Ombudsman,115095,114068,116644,117139,2018-19,0.030199326,judiciary,
-116,Official Receiver・s Office,188998,180311,182794,343556,2018-19,0.049590444,judiciary,
-118,Planning Department,662442,686700,694925,731245,2018-19,0.173815559,development,
-120,Pensions,31948165,35385040,34867740,37934730,2018-19,8.382753729,welfare,
-121,Independent Police Complaints Council,64215,73393,74673,76841,2018-19,0.016849122,judiciary,
-122,Hong Kong Police Force,17855006,18495744,18680131,19662158,2018-19,4.684905006,security,
-135,Government Secretariat: Innovation and Technology Bureau,38837,178215,55247,590202,2018-19,0.010190288,economic,
-136,Public Service Commission Secretariat,24871,30350,29648,27074,2018-19,0.006525804,administration,
-137,Government Secretariat: Environment Bureau,77626,80845,80670,91794,2018-19,0.020367982,environment & food,
-138,Government Secretariat: Development Bureau (Planning and Lands Branch),307301,392650,391118,689936,2018-19,0.080631504,development,
-139,Government Secretariat: Food and Health Bureau (Food Branch),131095,162081,154474,165583,2018-19,0.034397503,environment & food,
-140,Government Secretariat: Food and Health Bureau (Health Branch),54049368,55990015,57066771,63342179,2018-19,14.18180171,health,
-141,Government Secretariat: Labour and Welfare Bureau,782636,840546,828899,849047,2018-19,0.205352791,welfare,
-142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,911989,993951,950396,885635,2018-19,0.239293217,administration,
-143,Government Secretariat: Civil Service Bureau,569040,600626,596512,652846,2018-19,0.149308174,administration,
-144,Government Secretariat: Constitutional and Mainland Affairs Bureau,608814,698066,696743,676072,2018-19,0.159744318,others,
-147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),342091,318842,310827,304311,2018-19,0.089759916,finance,
-148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),764942,343588,281842,770232,2018-19,0.200710132,finance,
-151,Government Secretariat: Security Bureau,371884,606630,452043,773518,2018-19,0.097577184,security,
-152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",1884689,2515634,2038383,2633651,2018-19,0.494516156,economic,
-155,Government Secretariat: Innovation and Technology Commission,590739,621176,626135,691955,2018-19,0.15500169,economic,
-156,Government Secretariat: Education Bureau,54815376,57393829,60041313,63702930,2018-19,14.38279155,education,
-158,Government Secretariat: Transport and Housing Bureau (Transport Branch),231057,280433,280100,293494,2018-19,0.06062614,transport & housing,
-159,Government Secretariat: Development Bureau (Works Branch),408782,505678,470857,583330,2018-19,0.107258706,development,
-160,Radio Television Hong Kong,985439,995202,1011102,1012461,2018-19,0.258565475,others,
-162,Rating and Valuation Department,512928,525906,531949,555395,2018-19,0.134585166,finance,
-163,Registration and Electoral Office,920958,554159,342372,711357,2018-19,0.241646558,administration,
-166,Government Flying Service,536119,776275,767622,622890,2018-19,0.140670162,security,
-168,Hong Kong Observatory,298044,303083,303083,338539,2018-19,0.078202596,community,
-169,"Secretariat, Commissioner on Interception of Communications and Surveillance",19146,21202,20373,24573,2018-19,0.005023644,security,
-170,Social Welfare Department,64434066,72151170,66655174,84204368,2018-19,16.9066019,welfare,
-173,Working Family and Student Financial Assistance Agency,5517793,8197941,5330812,19223849,2018-19,1.447792067,education,
-174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,30410,33107,32823,33757,2018-19,0.007979161,finance,
-180,"Office for Film, Newspaper and Article Administration",46222,48345,48548,50316,2018-19,0.012128009,others,
-181,Trade and Industry Department,728440,802446,764524,775251,2018-19,0.191132515,economic,
-184,Transfers to Funds,23864000,8850000,4350000,2590000,2018-19,6.261581377,finance,
-186,Transport Department,2652148,3097346,2965377,4485915,2018-19,0.695886713,transport,
-188,Treasury,382883,391910,397654,406795,2018-19,0.100463169,finance,
-190,University Grants Committee,18610482,18661695,19002755,22207113,2018-19,4.883131391,education,
-194,Water Supplies Department,8001067,8282094,8317585,8403976,2018-19,2.099368594,infrastructure ,
-21,Chief Executive’s Office,116930,117007,117002,120545,2019-20,0.030813807,administration,
-22,"Agriculture, Fisheries and Conservation Department",1356295,1648525,1652784,1821273,2019-20,0.357415655,environment & food,
-23,Auxiliary Medical Service,94253,100803,103698,107321,2019-20,0.024837884,security,
-24,Audit Commission,169548,173725,178870,182882,2019-20,0.044679889,administration,
-25,Architectural Services Department,2065436,2177714,2240650,2379893,2019-20,0.544290999,development,
-26,Census and Statistics Department,644351,672580,666002,817789,2019-20,0.169801654,finance,
-27,Civil Aid Service,109414,116899,116255,124004,2019-20,0.028833164,security,
-28,Civil Aviation Department,1003054,1088247,1084000,1157484,2019-20,0.264328337,transport,
-30,Correctional Services Department,3864785,3969152,4064180,4228478,2019-20,1.018461811,security,
-31,Customs and Excise Department,3630607,4426311,4154876,4943961,2019-20,0.956750396,security,
-33,Civil Engineering and Development Department,2542264,2979134,2599913,3040354,2019-20,0.6699464,development,
-37,Department of Health,8323910,11080699,10399653,13300751,2019-20,2.1935462,health,
-39,Drainage Services Department,2646928,2821876,2828296,2935378,2019-20,0.697527827,infrastrcuture,
-42,Electrical and Mechanical Services Department,651289,915771,914084,1176102,2019-20,0.171629981,infrastructure,
-44,Environmental Protection Department,5251677,6167198,5269621,6959161,2019-20,1.383940495,environment & food,
-45,Fire Services Department,5894000,6676723,6487371,7161588,2019-20,1.553207724,security,
-46,General Expenses of the Civil Service,3388492,3825939,3646808,4106593,2019-20,0.892947395,finance,
-47,Government Secretariat: Office of the Government Chief Information Officer,759680,777508,785421,806504,2019-20,0.20019356,administration,
-48,Government Laboratory,473326,489331,502961,538622,2019-20,0.124732541,health,
-49,Food and Environmental Hygiene Department,6779014,7589878,7518333,8434909,2019-20,1.786429743,environment & food,
-51,Government Property Agency,1936292,2041673,1991456,2227077,2019-20,0.510258515,infrastructure,
-53,Government Secretariat: Home Affairs Bureau,1981368,2057808,9034903,2265617,2019-20,0.522137102,housing,
-55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Creative Industries Branch),366364,526430,455012,903866,2019-20,0.096545537,economic,
-59,Government Logistics Department,619377,574635,537246,568389,2019-20,0.163220417,transport/administration,
-60,Highways Department,2870321,3862156,3333921,4175667,2019-20,0.756397141,transport,
-62,Housing Department,304574,322650,332655,357962,2019-20,0.080262418,housing,
-63,Home Affairs Department,2571893,2902836,2865453,3260297,2019-20,0.677754339,community,
-70,Immigration Department,4457514,5683240,5099129,6152753,2019-20,1.174659853,security,
-72,Independent Commission Against Corruption,1080262,1120424,1160677,1167704,2019-20,0.284674462,judiciary,
-74,Information Services Department,512111,499386,521581,545982,2019-20,0.134953302,administration,
-76,Inland Revenue Department,1541401,1633897,1630140,1721902,2019-20,0.406195443,finance,
-78,Intellectual Property Department,157372,167172,178498,185778,2019-20,0.041471226,economic,
-79,Invest Hong Kong,134652,139008,144012,144307,2019-20,0.035483971,economic,
-80,Judiciary,1663915,1901759,1830704,2109451,2019-20,0.438480765,judiciary,
-82,Buildings Department,1394062,1570642,1572457,1656263,2019-20,0.367368148,infrastructure,
-90,Labour Department,1927367,2148376,2021678,2062711,2019-20,0.507906568,welfare,
-91,Lands Department,2509354,2750380,2790098,3017840,2019-20,0.66127384,development,
-92,Department of Justice,1641631,2290902,1769618,2329724,2019-20,0.432608407,judiciary,
-94,Legal Aid Department,1005841,1116769,1123802,1590214,2019-20,0.265062777,judiciary,
-95,Leisure and Cultural Services Department,8657462,9091340,9023475,9916896,2019-20,2.281445003,community,
-96,Government Secretariat: Overseas Economic and Trade Offices,370943,425335,374024,531495,2019-20,0.097752211,economic,
-100,Marine Department,1381427,1540054,1554438,1623339,2019-20,0.364038528,security,
-106,Miscellaneous Services,162522,16921008,442168,33152664,2019-20,0.042828372,others,
-112,Legislative Council Commission,853524,890077,911094,954274,2019-20,0.224923663,administration,
-114,Office of The Ombudsman,116644,117139,121546,122055,2019-20,0.030738439,judiciary,
-116,Official Receiver・s Office,180819,343556,339960,223201,2019-20,0.047650062,judiciary,
-118,Planning Department,686300,731245,721531,788965,2019-20,0.180856203,development,
-120,Pensions,34409640,37934730,37075410,39596125,2019-20,9.06775002,welfare,
-121,Independent Police Complaints Council,74673,76841,79199,95852,2019-20,0.019678093,judiciary,
-122,Hong Kong Police Force,18785027,19662158,19903364,20682101,2019-20,4.950296747,security,
-135,Government Secretariat: Innovation and Technology Bureau,51706,590202,430626,751008,2019-20,0.013625748,economic,
-136,Public Service Commission Secretariat,29519,27074,27532,27694,2019-20,0.007778951,administration,
-137,Government Secretariat: Environment Bureau,76721,91794,516053,1795931,2019-20,0.020217789,environment & food,
-138,Government Secretariat: Development Bureau (Planning and Lands Branch),382624,689936,603521,1015941,2019-20,0.10083043,development,
-139,Government Secretariat: Food and Health Bureau (Food Branch),150432,165583,163977,178304,2019-20,0.039642373,environment & food,
-140,Government Secretariat: Food and Health Bureau (Health Branch),57060922,63342179,65361489,71181690,2019-20,15.03689596,health,
-141,Government Secretariat: Labour and Welfare Bureau,821610,849047,849023,937078,2019-20,0.216513573,welfare,
-142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,941270,885635,801033,1030663,2019-20,0.248046799,administration,
-143,Government Secretariat: Civil Service Bureau,589318,652846,630327,733778,2019-20,0.155299163,administration,
-144,Government Secretariat: Constitutional and Mainland Affairs Bureau,696082,676072,683309,766755,2019-20,0.18343399,others,
-147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),309529,304311,308199,305311,2019-20,0.081568177,finance,
-148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),271973,770232,536683,872510,2019-20,0.071671287,finance,
-151,Government Secretariat: Security Bureau,467774,773518,619351,819927,2019-20,0.123269459,security,
-152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",1966189,2633651,2331704,3171327,2019-20,0.518137079,economic,
-155,Government Secretariat: Innovation and Technology Commission,618339,691955,686415,820794,2019-20,0.16294688,economic,
-156,Government Secretariat: Education Bureau,60087809,63702930,67640337,67944609,2019-20,15.83455192,education,
-158,Government Secretariat: Transport and Housing Bureau (Transport Branch),278504,293494,302168,337151,2019-20,0.073392359,transport & housing,
-159,Government Secretariat: Development Bureau (Works Branch),461670,583330,1504355,708532,2019-20,0.121660911,development,
-160,Radio Television Hong Kong,1008400,1012461,1040465,1021055,2019-20,0.265737134,others,
-162,Rating and Valuation Department,531459,555395,552914,689846,2019-20,0.140051955,finance,
-163,Registration and Electoral Office,351820,711357,409318,796430,2019-20,0.092712851,administration,
-166,Government Flying Service,517348,622890,1076026,735367,2019-20,0.136333375,security,
-168,Hong Kong Observatory,302784,338539,338842,381364,2019-20,0.07979071,community,
-169,"Secretariat, Commissioner on Interception of Communications and Surveillance",20186,24573,24054,25158,2019-20,0.005319486,security,
-170,Social Welfare Department,66195562,84204368,85841300,85115708,2019-20,17.44408859,welfare,
-173,Working Family and Student Financial Assistance Agency,5363480,19223849,6282740,18717089,2019-20,1.413403217,education,
-174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,32823,33757,37244,48349,2019-20,0.008649633,finance,
-180,"Office for Film, Newspaper and Article Administration",48232,50316,50214,51627,2019-20,0.012710267,others,
-181,Trade and Industry Department,736986,775251,794960,929794,2019-20,0.194213157,economic,
-184,Transfers to Funds,4350000,2590000,22600000,7074000,2019-20,1.146327383,finance,
-186,Transport Department,2913421,4485915,3889153,6727739,2019-20,0.767755005,transport,
-188,Treasury,396473,406795,415030,432932,2019-20,0.104479967,finance,
-190,University Grants Committee,18999780,22207113,22893329,22500710,2019-20,5.006889217,education,
-194,Water Supplies Department,8322096,8403976,8477163,8674551,2019-20,2.193068168,infrastructure,
-21,Chief Executive’s Office,116977,120545,123833,125491,2020-21,0.025388477,administration,
-22,"Agriculture, Fisheries and Conservation Department",1604858,1821273,1725984,1978618,2020-21,0.348315485,environment & food,
-23,Auxiliary Medical Service,95936,107321,107321,120951,2020-21,0.020821776,security,
-24,Audit Commission,177274,182882,189309,192707,2020-21,0.038475229,administration,
-25,Architectural Services Department,2231487,2379893,2449595,2616756,2020-21,0.484317913,development,
-26,Census and Statistics Department,665522,817789,760634,921701,2020-21,0.144443694,finance,
-27,Civil Aid Service,112147,124004,124004,141218,2020-21,0.024340183,security,
-28,Civil Aviation Department,1062930,1157484,1157388,1285967,2020-21,0.23069641,transport,
-30,Correctional Services Department,4061087,4228478,4336247,4586386,2020-21,0.881410996,security,
-31,Customs and Excise Department,4135699,4943961,4623823,5375131,2020-21,0.89760465,security,
-33,Civil Engineering and Development Department,2578131,3040354,3047527,3248677,2020-21,0.559552901,development,
-37,Department of Health,10229445,13300751,12517122,13632538,2020-21,2.220180288,health,
-39,Drainage Services Department,2828600,2935378,2944878,3117301,2020-21,0.613914241,infrastrcuture,
-42,Electrical and Mechanical Services Department,858717,1176102,1092509,1518386,2020-21,0.186374389,infrastructure,
-44,Environmental Protection Department,5212695,6959161,6288504,7514549,2020-21,1.131353919,environment & food,
-45,Fire Services Department,6503011,7161588,6951888,7711041,2020-21,1.411401776,security,
-46,General Expenses of the Civil Service,3550272,4106593,3857239,4312534,2020-21,0.77054463,finance,
-47,Government Secretariat: Office of the Government Chief Information Officer,769490,806504,839318,881583,2020-21,0.167008721,administration,
-48,Government Laboratory,502972,538622,553432,566010,2020-21,0.109164135,health,
-49,Food and Environmental Hygiene Department,7551598,8434909,8359135,9594974,2020-21,1.638985206,environment & food,
-51,Government Property Agency,1963245,2227077,2112156,2651412,2020-21,0.426099153,infrastructure,
-53,Government Secretariat: Home Affairs Bureau,8994386,2265617,2232143,2480313,2020-21,1.952125311,housing,
-55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Creative Industries Branch),475934,903866,520360,807414,2020-21,0.103295857,economic,
-59,Government Logistics Department,540544,568389,561369,582695,2020-21,0.117318695,transport/administration,
-60,Highways Department,3289940,4175667,3789554,4082017,2020-21,0.714042642,transport,
-62,Housing Department,322579,357962,1804506,2292097,2020-21,0.070011964,housing,
-63,Home Affairs Department,2809705,3260297,3198684,3368507,2020-21,0.609813304,community,
-70,Immigration Department,5109614,6152753,6020741,6635577,2020-21,1.108981405,security,
-72,Independent Commission Against Corruption,1147380,1167704,1210770,1245116,2020-21,0.249025285,judiciary,
-74,Information Services Department,521502,545982,569354,683621,2020-21,0.113185853,administration,
-76,Inland Revenue Department,1605078,1721902,1742127,1811682,2020-21,0.348363233,finance,
-78,Intellectual Property Department,177484,185778,190558,195933,2020-21,0.038520807,economic,
-79,Invest Hong Kong,143986,144307,144693,161178,2020-21,0.031250462,economic,
-80,Judiciary,1801888,2109451,2001907,2264028,2020-21,0.391078521,judiciary,
-82,Buildings Department,1556788,1656263,1704592,1870366,2020-21,0.337882459,infrastructure,
-90,Labour Department,1978118,2062711,1906438,2192386,2020-21,0.429327162,welfare,
-91,Lands Department,2753754,3017840,3123788,3298837,2020-21,0.5976698,development,
-92,Department of Justice,1740755,2329724,2002783,2447668,2020-21,0.377810325,judiciary,
-94,Legal Aid Department,1132580,1590214,1589574,1721172,2020-21,0.24581312,judiciary,
-95,Leisure and Cultural Services Department,9080260,9916896,9877170,10700397,2020-21,1.970763249,community,
-96,Government Secretariat: Overseas Economic and Trade Offices,349102,531495,448876,653822,2020-21,0.075768468,economic,
-100,Marine Department,1531814,1623339,1623495,1729622,2020-21,0.332462147,security,
-106,Miscellaneous Services,445685,33152664,713317,28499802,2020-21,0.096730668,others,
-112,Legislative Council Commission,886963,954274,973490,1021652,2020-21,0.192504849,administration,
-114,Office of The Ombudsman,121546,122055,127419,127856,2020-21,0.026380125,judiciary,
-116,Official Receiver・s Office,335660,223201,218729,237712,2020-21,0.072851041,judiciary,
-118,Planning Department,712284,788965,778849,839934,2020-21,0.154592834,development,
-120,Pensions,36783768,39596125,39459030,42660595,2020-21,7.983482647,welfare,
-121,Independent Police Complaints Council,79199,95852,105459,100929,2020-21,0.017189208,judiciary,
-122,Hong Kong Police Force,20036201,20682101,23590164,25789328,2020-21,4.348620919,security,
-135,Government Secretariat: Innovation and Technology Bureau,402888,751008,524184,699211,2020-21,0.087442085,economic,
-136,Public Service Commission Secretariat,27442,27694,28556,31948,2020-21,0.005955962,administration,
-137,Government Secretariat: Environment Bureau,360449,1795931,1944783,6781654,2020-21,0.078231201,environment & food,
-138,Government Secretariat: Development Bureau (Planning and Lands Branch),601017,1015941,974140,1622309,2020-21,0.130443645,development,
-139,Government Secretariat: Food and Health Bureau (Food Branch),161195,178304,177316,193908,2020-21,0.034985472,environment & food,
-140,Government Secretariat: Food and Health Bureau (Health Branch),65282861,71181690,73587436,78433213,2020-21,14.16887438,health,
-141,Government Secretariat: Labour and Welfare Bureau,842244,937078,945199,3513932,2020-21,0.182799118,welfare,
-142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,785528,1030663,30966363,1131273,2020-21,0.17048958,administration,
-143,Government Secretariat: Civil Service Bureau,619882,733778,673493,787054,2020-21,0.134538071,administration,
-144,Government Secretariat: Constitutional and Mainland Affairs Bureau,679064,766755,753068,845713,2020-21,0.147382825,others,
-147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),304738,305311,1239264,75159090,2020-21,0.066139786,finance,
-148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),522094,872510,767880,1165415,2020-21,0.11331434,finance,
-151,Government Secretariat: Security Bureau,702046,819927,742518,1045049,2020-21,0.152370797,security,
-152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",2238919,3171327,3129727,3432635,2020-21,0.485930941,economic,
-155,Government Secretariat: Innovation and Technology Commission,677900,820794,775037,826487,2020-21,0.147130193,economic,
-156,Government Secretariat: Education Bureau,67645260,67944609,69808369,76882730,2020-21,14.68160519,education,
-158,Government Secretariat: Transport and Housing Bureau (Transport Branch),301694,337151,341952,446970,2020-21,0.065479121,transport & housing,
-159,Government Secretariat: Development Bureau (Works Branch),1514029,708532,699853,871370,2020-21,0.328602123,development,
-160,Radio Television Hong Kong,1037585,1021055,1043043,1046340,2020-21,0.225195577,others,
-162,Rating and Valuation Department,548747,689846,600133,740388,2020-21,0.119099059,finance,
-163,Registration and Electoral Office,410120,796430,741242,1491634,2020-21,0.089011705,administration,
-166,Government Flying Service,1054694,735367,720521,616083,2020-21,0.228908883,security,
-168,Hong Kong Observatory,338248,381364,381364,412912,2020-21,0.073412736,community,
-169,"Secretariat, Commissioner on Interception of Communications and Surveillance",23845,25158,22555,24395,2020-21,0.005175276,security,
-170,Social Welfare Department,85058369,85115708,86980269,94496841,2020-21,18.46091496,welfare,
-173,Working Family and Student Financial Assistance Agency,6281861,18717089,18164444,7075040,2020-21,1.363403779,education,
-174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,37206,48349,48349,55044,2020-21,0.008075123,finance,
-180,"Office for Film, Newspaper and Article Administration",49622,51627,50801,53635,2020-21,0.010769869,others,
-181,Trade and Industry Department,780652,929794,969362,1648055,2020-21,0.169431302,economic,
-184,Transfers to Funds,22600000,7074000,7074000,1899000,2020-21,4.905063228,finance,
-186,Transport Department,3804756,6727739,5744891,8614118,2020-21,0.825777378,transport,
-188,Treasury,413063,432932,444951,509246,2020-21,0.089650448,finance,
-190,University Grants Committee,22888646,22500710,44691431,22791608,2020-21,4.967710435,education,
-194,Water Supplies Department,8475139,8674551,8765443,9293414,2020-21,1.839428879,infrastructure,
+﻿domain,domain_year_on_year_percentage_change,head_code,head_of_expenditure,report_year,actual_expenditure,head_year_on_year_percentage_change
+administration,,21,Chief Executive’s Office,2012-13,92388,
+administration,-8.84,21,Chief Executive’s Office,2013-14,94464,2.25
+administration,10.49,21,Chief Executive’s Office,2014-15,101073,7
+administration,13.8,21,Chief Executive’s Office,2015-16,106245,5.12
+administration,16.47,21,Chief Executive’s Office,2016-17,110498,4
+administration,-9.5,21,Chief Executive’s Office,2017-18,116930,5.82
+administration,-0.2,21,Chief Executive’s Office,2018-19,116977,0.04
+environment & food,,22,"Agriculture, Fisheries and Conservation Department",2012-13,1964540,
+environment & food,48.54,22,"Agriculture, Fisheries and Conservation Department",2013-14,1149867,-41.47
+environment & food,-9.46,22,"Agriculture, Fisheries and Conservation Department",2014-15,1140046,-0.85
+environment & food,-2.18,22,"Agriculture, Fisheries and Conservation Department",2015-16,1164528,2.15
+environment & food,0.08,22,"Agriculture, Fisheries and Conservation Department",2016-17,1250175,7.35
+environment & food,5.31,22,"Agriculture, Fisheries and Conservation Department",2017-18,1356295,8.49
+environment & food,9.38,22,"Agriculture, Fisheries and Conservation Department",2018-19,1604858,18.33
+security,,23,Auxiliary Medical Service,2012-13,71961,
+security,3.42,23,Auxiliary Medical Service,2013-14,74287,3.23
+security,7.99,23,Auxiliary Medical Service,2014-15,81553,9.78
+security,6.51,23,Auxiliary Medical Service,2015-16,84761,3.93
+security,3.24,23,Auxiliary Medical Service,2016-17,96385,13.71
+security,4.86,23,Auxiliary Medical Service,2017-18,94253,-2.21
+security,10.56,23,Auxiliary Medical Service,2018-19,95936,1.79
+administration,,24,Audit Commission,2012-13,132968,
+administration,-8.84,24,Audit Commission,2013-14,138253,3.97
+administration,10.49,24,Audit Commission,2014-15,148645,7.52
+administration,13.8,24,Audit Commission,2015-16,158413,6.57
+administration,16.47,24,Audit Commission,2016-17,164357,3.75
+administration,-9.5,24,Audit Commission,2017-18,169548,3.16
+administration,-0.2,24,Audit Commission,2018-19,177274,4.56
+development,,25,Architectural Services Department,2012-13,1673413,
+development,3.38,25,Architectural Services Department,2013-14,1760510,5.2
+development,7.31,25,Architectural Services Department,2014-15,1831630,4.04
+development,2.9,25,Architectural Services Department,2015-16,1944607,6.17
+development,6.67,25,Architectural Services Department,2016-17,2032677,4.53
+development,2.33,25,Architectural Services Department,2017-18,2065436,1.61
+development,20.16,25,Architectural Services Department,2018-19,2231487,8.04
+finance,,26,Census and Statistics Department,2012-13,550625,
+finance,5.56,26,Census and Statistics Department,2013-14,557047,1.17
+finance,-49.87,26,Census and Statistics Department,2014-15,606166,8.82
+finance,-6.05,26,Census and Statistics Department,2015-16,668960,10.36
+finance,215.13,26,Census and Statistics Department,2016-17,777868,16.28
+finance,-63.53,26,Census and Statistics Department,2017-18,644351,-17.16
+finance,163.78,26,Census and Statistics Department,2018-19,665522,3.29
+security,,27,Civil Aid Service,2012-13,88351,
+security,3.42,27,Civil Aid Service,2013-14,96196,8.88
+security,7.99,27,Civil Aid Service,2014-15,98365,2.25
+security,6.51,27,Civil Aid Service,2015-16,99390,1.04
+security,3.24,27,Civil Aid Service,2016-17,106138,6.79
+security,4.86,27,Civil Aid Service,2017-18,109414,3.09
+security,10.56,27,Civil Aid Service,2018-19,112147,2.5
+transport,,28,Civil Aviation Department,2012-13,832351,
+transport,9.3,28,Civil Aviation Department,2013-14,855633,2.8
+transport,6.42,28,Civil Aviation Department,2014-15,875614,2.34
+transport,9.72,28,Civil Aviation Department,2015-16,909849,3.91
+transport,5.72,28,Civil Aviation Department,2016-17,950005,4.41
+transport,5.84,28,Civil Aviation Department,2017-18,1003054,5.58
+transport,20.2,28,Civil Aviation Department,2018-19,1062930,5.97
+security,,30,Correctional Services Department,2012-13,3140130,
+security,3.42,30,Correctional Services Department,2013-14,3278777,4.42
+security,7.99,30,Correctional Services Department,2014-15,3465231,5.69
+security,6.51,30,Correctional Services Department,2015-16,3623644,4.57
+security,3.24,30,Correctional Services Department,2016-17,3775767,4.2
+security,4.86,30,Correctional Services Department,2017-18,3864785,2.36
+security,10.56,30,Correctional Services Department,2018-19,4061087,5.08
+security,,31,Customs and Excise Department,2012-13,2768626,
+security,3.42,31,Customs and Excise Department,2013-14,2960851,6.94
+security,7.99,31,Customs and Excise Department,2014-15,3142521,6.14
+security,6.51,31,Customs and Excise Department,2015-16,3292382,4.77
+security,3.24,31,Customs and Excise Department,2016-17,3497997,6.25
+security,4.86,31,Customs and Excise Department,2017-18,3630607,3.79
+security,10.56,31,Customs and Excise Department,2018-19,4135699,13.91
+development,,33,Civil Engineering and Development Department,2012-13,1799825,
+development,3.38,33,Civil Engineering and Development Department,2013-14,1845860,2.56
+development,7.31,33,Civil Engineering and Development Department,2014-15,2175728,17.87
+development,2.9,33,Civil Engineering and Development Department,2015-16,2273572,4.5
+development,6.67,33,Civil Engineering and Development Department,2016-17,2636662,15.97
+development,2.33,33,Civil Engineering and Development Department,2017-18,2542264,-3.58
+development,20.16,33,Civil Engineering and Development Department,2018-19,2578131,1.41
+health,,37,Department of Health,2012-13,4991733,
+health,-10.09,37,Department of Health,2013-14,5606137,12.31
+health,7.37,37,Department of Health,2014-15,5980330,6.67
+health,22.14,37,Department of Health,2015-16,6619063,10.68
+health,-10.56,37,Department of Health,2016-17,7304813,10.36
+health,6.52,37,Department of Health,2017-18,8323910,13.95
+health,15.42,37,Department of Health,2018-19,10229445,22.89
+infrastrcuture,,39,Drainage Services Department,2012-13,1939166,
+infrastrcuture,6.52,39,Drainage Services Department,2013-14,2000981,3.19
+infrastrcuture,3.46,39,Drainage Services Department,2014-15,2148869,7.39
+infrastrcuture,5.19,39,Drainage Services Department,2015-16,2393374,11.38
+infrastrcuture,4.55,39,Drainage Services Department,2016-17,2594150,8.39
+infrastrcuture,4.49,39,Drainage Services Department,2017-18,2646928,2.03
+infrastrcuture,4.47,39,Drainage Services Department,2018-19,2828600,6.86
+infrastructure,,42,Electrical and Mechanical Services Department,2012-13,379035,
+infrastructure,6.52,42,Electrical and Mechanical Services Department,2013-14,502948,32.69
+infrastructure,3.46,42,Electrical and Mechanical Services Department,2014-15,509269,1.26
+infrastructure,5.19,42,Electrical and Mechanical Services Department,2015-16,450554,-11.53
+infrastructure,4.55,42,Electrical and Mechanical Services Department,2016-17,477032,5.88
+infrastructure,4.49,42,Electrical and Mechanical Services Department,2017-18,651289,36.53
+infrastructure,4.47,42,Electrical and Mechanical Services Department,2018-19,858717,31.85
+environment & food,,44,Environmental Protection Department,2012-13,2732201,
+environment & food,48.54,44,Environmental Protection Department,2013-14,7961302,191.39
+environment & food,-9.46,44,Environmental Protection Department,2014-15,6149964,-22.75
+environment & food,-2.18,44,Environmental Protection Department,2015-16,5565097,-9.51
+environment & food,0.08,44,Environmental Protection Department,2016-17,4956727,-10.93
+environment & food,5.31,44,Environmental Protection Department,2017-18,5251677,5.95
+environment & food,9.38,44,Environmental Protection Department,2018-19,5212695,-0.74
+security,,45,Fire Services Department,2012-13,4482731,
+security,3.42,45,Fire Services Department,2013-14,4676837,4.33
+security,7.99,45,Fire Services Department,2014-15,4968947,6.25
+security,6.51,45,Fire Services Department,2015-16,5464973,9.98
+security,3.24,45,Fire Services Department,2016-17,5563723,1.81
+security,4.86,45,Fire Services Department,2017-18,5894000,5.94
+security,10.56,45,Fire Services Department,2018-19,6503011,10.33
+finance,,46,General Expenses of the Civil Service,2012-13,2699636,
+finance,5.56,46,General Expenses of the Civil Service,2013-14,2809903,4.08
+finance,-49.87,46,General Expenses of the Civil Service,2014-15,2984349,6.21
+finance,-6.05,46,General Expenses of the Civil Service,2015-16,3104023,4.01
+finance,215.13,46,General Expenses of the Civil Service,2016-17,3261294,5.07
+finance,-63.53,46,General Expenses of the Civil Service,2017-18,3388492,3.9
+finance,163.78,46,General Expenses of the Civil Service,2018-19,3550272,4.77
+administration,,47,Government Secretariat: Office of the Government Chief Information Officer,2012-13,627154,
+administration,-8.84,47,Government Secretariat: Office of the Government Chief Information Officer,2013-14,670825,6.96
+administration,10.49,47,Government Secretariat: Office of the Government Chief Information Officer,2014-15,694800,3.57
+administration,13.8,47,Government Secretariat: Office of the Government Chief Information Officer,2015-16,719330,3.53
+administration,16.47,47,Government Secretariat: Office of the Government Chief Information Officer,2016-17,735443,2.24
+administration,-9.5,47,Government Secretariat: Office of the Government Chief Information Officer,2017-18,759680,3.3
+administration,-0.2,47,Government Secretariat: Office of the Government Chief Information Officer,2018-19,769490,1.29
+health,,48,Government Laboratory,2012-13,380116,
+health,-10.09,48,Government Laboratory,2013-14,409531,7.74
+health,7.37,48,Government Laboratory,2014-15,408825,-0.17
+health,22.14,48,Government Laboratory,2015-16,451624,10.47
+health,-10.56,48,Government Laboratory,2016-17,473487,4.84
+health,6.52,48,Government Laboratory,2017-18,473326,-0.03
+health,15.42,48,Government Laboratory,2018-19,502972,6.26
+environment & food,,49,Food and Environmental Hygiene Department,2012-13,5004521,
+environment & food,48.54,49,Food and Environmental Hygiene Department,2013-14,5329353,6.49
+environment & food,-9.46,49,Food and Environmental Hygiene Department,2014-15,5762513,8.13
+environment & food,-2.18,49,Food and Environmental Hygiene Department,2015-16,6036130,4.75
+environment & food,0.08,49,Food and Environmental Hygiene Department,2016-17,6511923,7.88
+environment & food,5.31,49,Food and Environmental Hygiene Department,2017-18,6779014,4.1
+environment & food,9.38,49,Food and Environmental Hygiene Department,2018-19,7551598,11.4
+infrastructure,,51,Government Property Agency,2012-13,1735985,
+infrastructure,6.52,51,Government Property Agency,2013-14,1866265,7.5
+infrastructure,3.46,51,Government Property Agency,2014-15,1871217,0.27
+infrastructure,5.19,51,Government Property Agency,2015-16,1901407,1.61
+infrastructure,4.55,51,Government Property Agency,2016-17,1936934,1.87
+infrastructure,4.49,51,Government Property Agency,2017-18,1936292,-0.03
+infrastructure,4.47,51,Government Property Agency,2018-19,1963245,1.39
+community,,53,Government Secretariat: Home Affairs Bureau,2012-13,1302385,
+community,161.12,53,Government Secretariat: Home Affairs Bureau,2013-14,16388205,1158.32
+community,-56.1,53,Government Secretariat: Home Affairs Bureau,2014-15,1561994,-90.47
+community,8.08,53,Government Secretariat: Home Affairs Bureau,2015-16,1693601,8.43
+community,8.45,53,Government Secretariat: Home Affairs Bureau,2016-17,1808372,6.78
+community,4.24,53,Government Secretariat: Home Affairs Bureau,2017-18,1981368,9.57
+community,57.05,53,Government Secretariat: Home Affairs Bureau,2018-19,8994386,353.95
+economic,,55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Creative Industries Branch),2012-13,307486,
+economic,8.08,55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Creative Industries Branch),2013-14,296821,-3.47
+economic,6.05,55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Creative Industries Branch),2014-15,295309,-0.51
+economic,11.91,55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Creative Industries Branch),2015-16,282943,-4.19
+economic,-3.49,55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Creative Industries Branch),2016-17,367022,29.72
+economic,4.35,55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Creative Industries Branch),2017-18,366364,-0.18
+economic,19.18,55,Government Secretariat: Commerce and Economic Development Bureau (Communications and Creative Industries Branch),2018-19,475934,29.91
+transport,,59,Government Logistics Department,2012-13,504657,
+transport,9.3,59,Government Logistics Department,2013-14,511954,1.45
+transport,6.42,59,Government Logistics Department,2014-15,536524,4.8
+transport,9.72,59,Government Logistics Department,2015-16,549695,2.45
+transport,5.72,59,Government Logistics Department,2016-17,602465,9.6
+transport,5.84,59,Government Logistics Department,2017-18,619377,2.81
+transport,20.2,59,Government Logistics Department,2018-19,540544,-12.73
+transport,,60,Highways Department,2012-13,2361588,
+transport,9.3,60,Highways Department,2013-14,2485815,5.26
+transport,6.42,60,Highways Department,2014-15,2610597,5.02
+transport,9.72,60,Highways Department,2015-16,2647348,1.41
+transport,5.72,60,Highways Department,2016-17,2810029,6.15
+transport,5.84,60,Highways Department,2017-18,2870321,2.15
+transport,20.2,60,Highways Department,2018-19,3289940,14.62
+housing,,62,Housing Department,2012-13,2074459,
+housing,13.6,62,Housing Department,2013-14,2356518,13.6
+housing,-44.3,62,Housing Department,2014-15,1312666,-44.3
+housing,7.93,62,Housing Department,2015-16,1416806,7.93
+housing,-79.7,62,Housing Department,2016-17,287593,-79.7
+housing,5.9,62,Housing Department,2017-18,304574,5.9
+housing,5.91,62,Housing Department,2018-19,322579,5.91
+community,,63,Home Affairs Department,2012-13,1865952,
+community,161.12,63,Home Affairs Department,2013-14,1970358,5.6
+community,-56.1,63,Home Affairs Department,2014-15,2205853,11.95
+community,8.08,63,Home Affairs Department,2015-16,2397197,8.67
+community,8.45,63,Home Affairs Department,2016-17,2425682,1.19
+community,4.24,63,Home Affairs Department,2017-18,2571893,6.03
+community,57.05,63,Home Affairs Department,2018-19,2809705,9.25
+security,,70,Immigration Department,2012-13,3380067,
+security,3.42,70,Immigration Department,2013-14,3602630,6.58
+security,7.99,70,Immigration Department,2014-15,3828945,6.28
+security,6.51,70,Immigration Department,2015-16,4027151,5.18
+security,3.24,70,Immigration Department,2016-17,4275049,6.16
+security,4.86,70,Immigration Department,2017-18,4457514,4.27
+security,10.56,70,Immigration Department,2018-19,5109614,14.63
+judiciary,,72,Independent Commission Against Corruption,2012-13,861921,
+judiciary,3.66,72,Independent Commission Against Corruption,2013-14,909050,5.47
+judiciary,6.33,72,Independent Commission Against Corruption,2014-15,961182,5.73
+judiciary,4.13,72,Independent Commission Against Corruption,2015-16,1006621,4.73
+judiciary,7.92,72,Independent Commission Against Corruption,2016-17,1044691,3.78
+judiciary,5,72,Independent Commission Against Corruption,2017-18,1080262,3.4
+judiciary,10.33,72,Independent Commission Against Corruption,2018-19,1147380,6.21
+administration,,74,Information Services Department,2012-13,382516,
+administration,-8.84,74,Information Services Department,2013-14,391215,2.27
+administration,10.49,74,Information Services Department,2014-15,408698,4.47
+administration,13.8,74,Information Services Department,2015-16,447532,9.5
+administration,16.47,74,Information Services Department,2016-17,466367,4.21
+administration,-9.5,74,Information Services Department,2017-18,512111,9.81
+administration,-0.2,74,Information Services Department,2018-19,521502,1.83
+finance,,76,Inland Revenue Department,2012-13,1265192,
+finance,5.56,76,Inland Revenue Department,2013-14,1331804,5.26
+finance,-49.87,76,Inland Revenue Department,2014-15,1415748,6.3
+finance,-6.05,76,Inland Revenue Department,2015-16,1453411,2.66
+finance,215.13,76,Inland Revenue Department,2016-17,1503710,3.46
+finance,-63.53,76,Inland Revenue Department,2017-18,1541401,2.51
+finance,163.78,76,Inland Revenue Department,2018-19,1605078,4.13
+economic,,78,Intellectual Property Department,2012-13,113448,
+economic,8.08,78,Intellectual Property Department,2013-14,121601,7.19
+economic,6.05,78,Intellectual Property Department,2014-15,131634,8.25
+economic,11.91,78,Intellectual Property Department,2015-16,137649,4.57
+economic,-3.49,78,Intellectual Property Department,2016-17,145793,5.92
+economic,4.35,78,Intellectual Property Department,2017-18,157372,7.94
+economic,19.18,78,Intellectual Property Department,2018-19,177484,12.78
+economic,,79,Invest Hong Kong,2012-13,113675,
+economic,8.08,79,Invest Hong Kong,2013-14,116135,2.16
+economic,6.05,79,Invest Hong Kong,2014-15,115948,-0.16
+economic,11.91,79,Invest Hong Kong,2015-16,115681,-0.23
+economic,-3.49,79,Invest Hong Kong,2016-17,125539,8.52
+economic,4.35,79,Invest Hong Kong,2017-18,134652,7.26
+economic,19.18,79,Invest Hong Kong,2018-19,143986,6.93
+judiciary,,80,Judiciary,2012-13,1147414,
+judiciary,3.66,80,Judiciary,2013-14,1198624,4.46
+judiciary,6.33,80,Judiciary,2014-15,1277485,6.58
+judiciary,4.13,80,Judiciary,2015-16,1382772,8.24
+judiciary,7.92,80,Judiciary,2016-17,1521355,10.02
+judiciary,5,80,Judiciary,2017-18,1663915,9.37
+judiciary,10.33,80,Judiciary,2018-19,1801888,8.29
+infrastructure,,82,Buildings Department,2012-13,1029782,
+infrastructure,6.52,82,Buildings Department,2013-14,1106303,7.43
+infrastructure,3.46,82,Buildings Department,2014-15,1142668,3.29
+infrastructure,5.19,82,Buildings Department,2015-16,1251817,9.55
+infrastructure,4.55,82,Buildings Department,2016-17,1359915,8.64
+infrastructure,4.49,82,Buildings Department,2017-18,1394062,2.51
+infrastructure,4.47,82,Buildings Department,2018-19,1556788,11.67
+welfare,,90,Labour Department,2012-13,1436590,
+welfare,38.83,90,Labour Department,2013-14,1641286,14.25
+welfare,-10.4,90,Labour Department,2014-15,1760329,7.25
+welfare,11.09,90,Labour Department,2015-16,1815895,3.16
+welfare,4.79,90,Labour Department,2016-17,1851634,1.97
+welfare,4.38,90,Labour Department,2017-18,1927367,4.09
+welfare,20.62,90,Labour Department,2018-19,1978118,2.63
+development,,91,Lands Department,2012-13,1992005,
+development,3.38,91,Lands Department,2013-14,2087882,4.81
+development,7.31,91,Lands Department,2014-15,2210450,5.87
+development,2.9,91,Lands Department,2015-16,2323574,5.12
+development,6.67,91,Lands Department,2016-17,2402600,3.4
+development,2.33,91,Lands Department,2017-18,2509354,4.44
+development,20.16,91,Lands Department,2018-19,2753754,9.74
+judiciary,,92,Department of Justice,2012-13,1272067,
+judiciary,3.66,92,Department of Justice,2013-14,1351778,6.27
+judiciary,6.33,92,Department of Justice,2014-15,1482725,9.69
+judiciary,4.13,92,Department of Justice,2015-16,1509258,1.79
+judiciary,7.92,92,Department of Justice,2016-17,1531123,1.45
+judiciary,5,92,Department of Justice,2017-18,1641631,7.22
+judiciary,10.33,92,Department of Justice,2018-19,1740755,6.04
+judiciary,,94,Legal Aid Department,2012-13,870972,
+judiciary,3.66,94,Legal Aid Department,2013-14,841508,-3.38
+judiciary,6.33,94,Legal Aid Department,2014-15,849082,0.9
+judiciary,4.13,94,Legal Aid Department,2015-16,860536,1.35
+judiciary,7.92,94,Legal Aid Department,2016-17,1023633,18.95
+judiciary,5,94,Legal Aid Department,2017-18,1005841,-1.74
+judiciary,10.33,94,Legal Aid Department,2018-19,1132580,12.6
+community,,95,Leisure and Cultural Services Department,2012-13,6240150,
+community,161.12,95,Leisure and Cultural Services Department,2013-14,6587022,5.56
+community,-56.1,95,Leisure and Cultural Services Department,2014-15,7024637,6.64
+community,8.08,95,Leisure and Cultural Services Department,2015-16,7580770,7.92
+community,8.45,95,Leisure and Cultural Services Department,2016-17,8431164,11.22
+community,4.24,95,Leisure and Cultural Services Department,2017-18,8657462,2.68
+community,57.05,95,Leisure and Cultural Services Department,2018-19,9080260,4.88
+economic,,96,Government Secretariat: Overseas Economic and Trade Offices,2012-13,306355,
+economic,8.08,96,Government Secretariat: Overseas Economic and Trade Offices,2013-14,314183,2.56
+economic,6.05,96,Government Secretariat: Overseas Economic and Trade Offices,2014-15,326019,3.77
+economic,11.91,96,Government Secretariat: Overseas Economic and Trade Offices,2015-16,314386,-3.57
+economic,-3.49,96,Government Secretariat: Overseas Economic and Trade Offices,2016-17,337878,7.47
+economic,4.35,96,Government Secretariat: Overseas Economic and Trade Offices,2017-18,370943,9.79
+economic,19.18,96,Government Secretariat: Overseas Economic and Trade Offices,2018-19,349102,-5.89
+security,,100,Marine Department,2012-13,1017935,
+security,3.42,100,Marine Department,2013-14,1060721,4.2
+security,7.99,100,Marine Department,2014-15,1203688,13.48
+security,6.51,100,Marine Department,2015-16,1195756,-0.66
+security,3.24,100,Marine Department,2016-17,1307032,9.31
+security,4.86,100,Marine Department,2017-18,1381427,5.69
+security,10.56,100,Marine Department,2018-19,1531814,10.89
+others,,106,Miscellaneous Services,2012-13,107451,
+others,20.11,106,Miscellaneous Services,2013-14,198821,85.03
+others,1.82,106,Miscellaneous Services,2014-15,93832,-52.81
+others,7.62,106,Miscellaneous Services,2015-16,129601,38.12
+others,9.82,106,Miscellaneous Services,2016-17,115825,-10.63
+others,9.05,106,Miscellaneous Services,2017-18,162522,40.32
+others,15.49,106,Miscellaneous Services,2018-19,445685,174.23
+administration,,112,Legislative Council Commission,2012-13,642090,
+administration,-8.84,112,Legislative Council Commission,2013-14,679728,5.86
+administration,10.49,112,Legislative Council Commission,2014-15,734491,8.06
+administration,13.8,112,Legislative Council Commission,2015-16,776867,5.77
+administration,16.47,112,Legislative Council Commission,2016-17,874052,12.51
+administration,-9.5,112,Legislative Council Commission,2017-18,853524,-2.35
+administration,-0.2,112,Legislative Council Commission,2018-19,886963,3.92
+judiciary,,114,Office of The Ombudsman,2012-13,99085,
+judiciary,3.66,114,Office of The Ombudsman,2013-14,102461,3.41
+judiciary,6.33,114,Office of The Ombudsman,2014-15,107171,4.6
+judiciary,4.13,114,Office of The Ombudsman,2015-16,111296,3.85
+judiciary,7.92,114,Office of The Ombudsman,2016-17,115095,3.41
+judiciary,5,114,Office of The Ombudsman,2017-18,116644,1.35
+judiciary,10.33,114,Office of The Ombudsman,2018-19,121546,4.2
+judiciary,,116,Official Receiver・s Office,2012-13,133875,
+judiciary,3.66,116,Official Receiver・s Office,2013-14,139798,4.42
+judiciary,6.33,116,Official Receiver・s Office,2014-15,149824,7.17
+judiciary,4.13,116,Official Receiver・s Office,2015-16,156898,4.72
+judiciary,7.92,116,Official Receiver・s Office,2016-17,188998,20.46
+judiciary,5,116,Official Receiver・s Office,2017-18,180819,-4.33
+judiciary,10.33,116,Official Receiver・s Office,2018-19,335660,85.63
+development,,118,Planning Department,2012-13,523549,
+development,3.38,118,Planning Department,2013-14,545906,4.27
+development,7.31,118,Planning Department,2014-15,591421,8.34
+development,2.9,118,Planning Department,2015-16,636909,7.69
+development,6.67,118,Planning Department,2016-17,662442,4.01
+development,2.33,118,Planning Department,2017-18,686300,3.6
+development,20.16,118,Planning Department,2018-19,712284,3.79
+welfare,,120,Pensions,2012-13,21843494,
+welfare,38.83,120,Pensions,2013-14,23913477,9.48
+welfare,-10.4,120,Pensions,2014-15,26412460,10.45
+welfare,11.09,120,Pensions,2015-16,29432807,11.44
+welfare,4.79,120,Pensions,2016-17,31948165,8.55
+welfare,4.38,120,Pensions,2017-18,34409640,7.7
+welfare,20.62,120,Pensions,2018-19,36783768,6.9
+judiciary,,121,Independent Police Complaints Council,2012-13,46685,
+judiciary,3.66,121,Independent Police Complaints Council,2013-14,50916,9.06
+judiciary,6.33,121,Independent Police Complaints Council,2014-15,57272,12.48
+judiciary,4.13,121,Independent Police Complaints Council,2015-16,58903,2.85
+judiciary,7.92,121,Independent Police Complaints Council,2016-17,64215,9.02
+judiciary,5,121,Independent Police Complaints Council,2017-18,74673,16.29
+judiciary,10.33,121,Independent Police Complaints Council,2018-19,79199,6.06
+security,,122,Hong Kong Police Force,2012-13,14598280,
+security,3.42,122,Hong Kong Police Force,2013-14,15144195,3.74
+security,7.99,122,Hong Kong Police Force,2014-15,16547206,9.26
+security,6.51,122,Hong Kong Police Force,2015-16,17064732,3.13
+security,3.24,122,Hong Kong Police Force,2016-17,17855006,4.63
+security,4.86,122,Hong Kong Police Force,2017-18,18785027,5.21
+security,10.56,122,Hong Kong Police Force,2018-19,20036201,6.66
+economic,,135,Government Secretariat: Innovation and Technology Bureau,2012-13,0,
+economic,8.08,135,Government Secretariat: Innovation and Technology Bureau,2013-14,0,0
+economic,6.05,135,Government Secretariat: Innovation and Technology Bureau,2014-15,0,0
+economic,11.91,135,Government Secretariat: Innovation and Technology Bureau,2015-16,10959,0
+economic,-3.49,135,Government Secretariat: Innovation and Technology Bureau,2016-17,38837,254.38
+economic,4.35,135,Government Secretariat: Innovation and Technology Bureau,2017-18,51706,33.14
+economic,19.18,135,Government Secretariat: Innovation and Technology Bureau,2018-19,402888,679.19
+administration,,136,Public Service Commission Secretariat,2012-13,18329,
+administration,-8.84,136,Public Service Commission Secretariat,2013-14,20434,11.48
+administration,10.49,136,Public Service Commission Secretariat,2014-15,21448,4.96
+administration,13.8,136,Public Service Commission Secretariat,2015-16,22575,5.25
+administration,16.47,136,Public Service Commission Secretariat,2016-17,24871,10.17
+administration,-9.5,136,Public Service Commission Secretariat,2017-18,29519,18.69
+administration,-0.2,136,Public Service Commission Secretariat,2018-19,27442,-7.04
+environment & food,,137,Government Secretariat: Environment Bureau,2012-13,58580,
+environment & food,48.54,137,Government Secretariat: Environment Bureau,2013-14,68572,17.06
+environment & food,-9.46,137,Government Secretariat: Environment Bureau,2014-15,78247,14.11
+environment & food,-2.18,137,Government Secretariat: Environment Bureau,2015-16,76808,-1.84
+environment & food,0.08,137,Government Secretariat: Environment Bureau,2016-17,77626,1.06
+environment & food,5.31,137,Government Secretariat: Environment Bureau,2017-18,76721,-1.17
+environment & food,9.38,137,Government Secretariat: Environment Bureau,2018-19,360449,369.82
+development,,138,Government Secretariat: Development Bureau (Planning and Lands Branch),2012-13,622041,
+development,3.38,138,Government Secretariat: Development Bureau (Planning and Lands Branch),2013-14,537452,-13.6
+development,7.31,138,Government Secretariat: Development Bureau (Planning and Lands Branch),2014-15,474062,-11.79
+development,2.9,138,Government Secretariat: Development Bureau (Planning and Lands Branch),2015-16,305491,-35.56
+development,6.67,138,Government Secretariat: Development Bureau (Planning and Lands Branch),2016-17,307301,0.59
+development,2.33,138,Government Secretariat: Development Bureau (Planning and Lands Branch),2017-18,382624,24.51
+development,20.16,138,Government Secretariat: Development Bureau (Planning and Lands Branch),2018-19,601017,57.08
+environment & food,,139,Government Secretariat: Food and Health Bureau (Food Branch),2012-13,58414,
+environment & food,48.54,139,Government Secretariat: Food and Health Bureau (Food Branch),2013-14,74809,28.07
+environment & food,-9.46,139,Government Secretariat: Food and Health Bureau (Food Branch),2014-15,73860,-1.27
+environment & food,-2.18,139,Government Secretariat: Food and Health Bureau (Food Branch),2015-16,74779,1.24
+environment & food,0.08,139,Government Secretariat: Food and Health Bureau (Food Branch),2016-17,131095,75.31
+environment & food,5.31,139,Government Secretariat: Food and Health Bureau (Food Branch),2017-18,150432,14.75
+environment & food,9.38,139,Government Secretariat: Food and Health Bureau (Food Branch),2018-19,161195,7.15
+health,,140,Government Secretariat: Food and Health Bureau (Health Branch),2012-13,53249857,
+health,-10.09,140,Government Secretariat: Food and Health Bureau (Health Branch),2013-14,46692450,-12.31
+health,7.37,140,Government Secretariat: Food and Health Bureau (Health Branch),2014-15,50204378,7.52
+health,22.14,140,Government Secretariat: Food and Health Bureau (Health Branch),2015-16,62053414,23.6
+health,-10.56,140,Government Secretariat: Food and Health Bureau (Health Branch),2016-17,54049368,-12.9
+health,6.52,140,Government Secretariat: Food and Health Bureau (Health Branch),2017-18,57060922,5.57
+health,15.42,140,Government Secretariat: Food and Health Bureau (Health Branch),2018-19,65282861,14.41
+welfare,,141,Government Secretariat: Labour and Welfare Bureau,2012-13,619977,
+welfare,38.83,141,Government Secretariat: Labour and Welfare Bureau,2013-14,15713109,2434.47
+welfare,-10.4,141,Government Secretariat: Labour and Welfare Bureau,2014-15,741536,-95.28
+welfare,11.09,141,Government Secretariat: Labour and Welfare Bureau,2015-16,755297,1.86
+welfare,4.79,141,Government Secretariat: Labour and Welfare Bureau,2016-17,782636,3.62
+welfare,4.38,141,Government Secretariat: Labour and Welfare Bureau,2017-18,821610,4.98
+welfare,20.62,141,Government Secretariat: Labour and Welfare Bureau,2018-19,842244,2.51
+administration,,142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,2012-13,669577,
+administration,-8.84,142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,2013-14,701076,4.7
+administration,10.49,142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,2014-15,795067,13.41
+administration,13.8,142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,2015-16,846702,6.49
+administration,16.47,142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,2016-17,911989,7.71
+administration,-9.5,142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,2017-18,941270,3.21
+administration,-0.2,142,Government Secretariat: Offices of the Chief Secretary for Administration and the Financial Secretary,2018-19,785528,-16.55
+administration,,143,Government Secretariat: Civil Service Bureau,2012-13,464775,
+administration,-8.84,143,Government Secretariat: Civil Service Bureau,2013-14,484380,4.22
+administration,10.49,143,Government Secretariat: Civil Service Bureau,2014-15,520109,7.38
+administration,13.8,143,Government Secretariat: Civil Service Bureau,2015-16,544261,4.64
+administration,16.47,143,Government Secretariat: Civil Service Bureau,2016-17,569040,4.55
+administration,-9.5,143,Government Secretariat: Civil Service Bureau,2017-18,589318,3.56
+administration,-0.2,143,Government Secretariat: Civil Service Bureau,2018-19,619882,5.19
+others,,144,Government Secretariat: Constitutional and Mainland Affairs Bureau,2012-13,451033,
+others,20.11,144,Government Secretariat: Constitutional and Mainland Affairs Bureau,2013-14,497496,10.3
+others,1.82,144,Government Secretariat: Constitutional and Mainland Affairs Bureau,2014-15,574640,15.51
+others,7.62,144,Government Secretariat: Constitutional and Mainland Affairs Bureau,2015-16,584572,1.73
+others,9.82,144,Government Secretariat: Constitutional and Mainland Affairs Bureau,2016-17,608814,4.15
+others,9.05,144,Government Secretariat: Constitutional and Mainland Affairs Bureau,2017-18,696082,14.33
+others,15.49,144,Government Secretariat: Constitutional and Mainland Affairs Bureau,2018-19,679064,-2.44
+finance,,147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),2012-13,14486536,
+finance,5.56,147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),2013-14,4531500,-68.72
+finance,-49.87,147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),2014-15,1971803,-56.49
+finance,-6.05,147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),2015-16,425891,-78.4
+finance,215.13,147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),2016-17,342091,-19.68
+finance,-63.53,147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),2017-18,309529,-9.52
+finance,163.78,147,Government Secretariat: Financial Services and the Treasury Bureau (The Treasury Branch),2018-19,304738,-1.55
+finance,,148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),2012-13,216852,
+finance,5.56,148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),2013-14,230951,6.5
+finance,-49.87,148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),2014-15,239409,3.66
+finance,-6.05,148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),2015-16,241082,0.7
+finance,215.13,148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),2016-17,764942,217.3
+finance,-63.53,148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),2017-18,271973,-64.45
+finance,163.78,148,Government Secretariat: Financial Services and the Treasury Bureau (Financial Services Branch),2018-19,522094,91.97
+security,,151,Government Secretariat: Security Bureau,2012-13,251931,
+security,3.42,151,Government Secretariat: Security Bureau,2013-14,276674,9.82
+security,7.99,151,Government Secretariat: Security Bureau,2014-15,303039,9.53
+security,6.51,151,Government Secretariat: Security Bureau,2015-16,335475,10.7
+security,3.24,151,Government Secretariat: Security Bureau,2016-17,371884,10.85
+security,4.86,151,Government Secretariat: Security Bureau,2017-18,467774,25.78
+security,10.56,151,Government Secretariat: Security Bureau,2018-19,702046,50.08
+economic,,152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",2012-13,1326011,
+economic,8.08,152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",2013-14,1480694,11.67
+economic,6.05,152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",2014-15,1631285,10.17
+economic,11.91,152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",2015-16,2173288,33.23
+economic,-3.49,152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",2016-17,1884689,-13.28
+economic,4.35,152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",2017-18,1966189,4.32
+economic,19.18,152,"Government Secretariat: Commerce and Economic Development Bureau (Commerce, Industry and Tourism Branch)",2018-19,2238919,13.87
+economic,,155,Government Secretariat: Innovation and Technology Commission,2012-13,533963,
+economic,8.08,155,Government Secretariat: Innovation and Technology Commission,2013-14,550979,3.19
+economic,6.05,155,Government Secretariat: Innovation and Technology Commission,2014-15,594192,7.84
+economic,11.91,155,Government Secretariat: Innovation and Technology Commission,2015-16,617752,3.97
+economic,-3.49,155,Government Secretariat: Innovation and Technology Commission,2016-17,590739,-4.37
+economic,4.35,155,Government Secretariat: Innovation and Technology Commission,2017-18,618339,4.67
+economic,19.18,155,Government Secretariat: Innovation and Technology Commission,2018-19,677900,9.63
+education,,156,Government Secretariat: Education Bureau,2012-13,50534721,
+education,-0.19,156,Government Secretariat: Education Bureau,2013-14,49731487,-1.59
+education,-1.67,156,Government Secretariat: Education Bureau,2014-15,47975828,-3.53
+education,8.09,156,Government Secretariat: Education Bureau,2015-16,52286462,8.99
+education,5.64,156,Government Secretariat: Education Bureau,2016-17,54815376,4.84
+education,6.98,156,Government Secretariat: Education Bureau,2017-18,60087809,9.62
+education,14.64,156,Government Secretariat: Education Bureau,2018-19,67645260,12.58
+transport,,158,Government Secretariat: Transport and Housing Bureau (Transport Branch),2012-13,146961,
+transport,9.3,158,Government Secretariat: Transport and Housing Bureau (Transport Branch),2013-14,179998,22.48
+transport,6.42,158,Government Secretariat: Transport and Housing Bureau (Transport Branch),2014-15,195093,8.39
+transport,9.72,158,Government Secretariat: Transport and Housing Bureau (Transport Branch),2015-16,206169,5.68
+transport,5.72,158,Government Secretariat: Transport and Housing Bureau (Transport Branch),2016-17,231057,12.07
+transport,5.84,158,Government Secretariat: Transport and Housing Bureau (Transport Branch),2017-18,278504,20.53
+transport,20.2,158,Government Secretariat: Transport and Housing Bureau (Transport Branch),2018-19,301694,8.33
+development,,159,Government Secretariat: Development Bureau (Works Branch),2012-13,329303,
+development,3.38,159,Government Secretariat: Development Bureau (Works Branch),2013-14,396795,20.5
+development,7.31,159,Government Secretariat: Development Bureau (Works Branch),2014-15,415600,4.74
+development,2.9,159,Government Secretariat: Development Bureau (Works Branch),2015-16,437867,5.36
+development,6.67,159,Government Secretariat: Development Bureau (Works Branch),2016-17,408782,-6.64
+development,2.33,159,Government Secretariat: Development Bureau (Works Branch),2017-18,461670,12.94
+development,20.16,159,Government Secretariat: Development Bureau (Works Branch),2018-19,1514029,227.95
+others,,160,Radio Television Hong Kong,2012-13,615328,
+others,20.11,160,Radio Television Hong Kong,2013-14,723177,17.53
+others,1.82,160,Radio Television Hong Kong,2014-15,775720,7.27
+others,7.62,160,Radio Television Hong Kong,2015-16,840937,8.41
+others,9.82,160,Radio Television Hong Kong,2016-17,985439,17.18
+others,9.05,160,Radio Television Hong Kong,2017-18,1008400,2.33
+others,15.49,160,Radio Television Hong Kong,2018-19,1037585,2.89
+finance,,162,Rating and Valuation Department,2012-13,434085,
+finance,5.56,162,Rating and Valuation Department,2013-14,459786,5.92
+finance,-49.87,162,Rating and Valuation Department,2014-15,475604,3.44
+finance,-6.05,162,Rating and Valuation Department,2015-16,495537,4.19
+finance,215.13,162,Rating and Valuation Department,2016-17,512928,3.51
+finance,-63.53,162,Rating and Valuation Department,2017-18,531459,3.61
+finance,163.78,162,Rating and Valuation Department,2018-19,548747,3.25
+administration,,163,Registration and Electoral Office,2012-13,548589,
+administration,-8.84,163,Registration and Electoral Office,2013-14,81784,-85.09
+administration,10.49,163,Registration and Electoral Office,2014-15,179971,120.06
+administration,13.8,163,Registration and Electoral Office,2015-16,479939,166.68
+administration,16.47,163,Registration and Electoral Office,2016-17,920958,91.89
+administration,-9.5,163,Registration and Electoral Office,2017-18,351820,-61.8
+administration,-0.2,163,Registration and Electoral Office,2018-19,410120,16.57
+security,,166,Government Flying Service,2012-13,641940,
+security,3.42,166,Government Flying Service,2013-14,312188,-51.37
+security,7.99,166,Government Flying Service,2014-15,359686,15.21
+security,6.51,166,Government Flying Service,2015-16,1023012,184.42
+security,3.24,166,Government Flying Service,2016-17,536119,-47.59
+security,4.86,166,Government Flying Service,2017-18,517348,-3.5
+security,10.56,166,Government Flying Service,2018-19,1054694,103.87
+community,,168,Hong Kong Observatory,2012-13,239103,
+community,161.12,168,Hong Kong Observatory,2013-14,245768,2.79
+community,-56.1,168,Hong Kong Observatory,2014-15,267278,8.75
+community,8.08,168,Hong Kong Observatory,2015-16,281467,5.31
+community,8.45,168,Hong Kong Observatory,2016-17,298044,5.89
+community,4.24,168,Hong Kong Observatory,2017-18,302784,1.59
+community,57.05,168,Hong Kong Observatory,2018-19,338248,11.71
+security,,169,"Secretariat, Commissioner on Interception of Communications and Surveillance",2012-13,15928,
+security,3.42,169,"Secretariat, Commissioner on Interception of Communications and Surveillance",2013-14,16855,5.82
+security,7.99,169,"Secretariat, Commissioner on Interception of Communications and Surveillance",2014-15,18340,8.81
+security,6.51,169,"Secretariat, Commissioner on Interception of Communications and Surveillance",2015-16,20419,11.34
+security,3.24,169,"Secretariat, Commissioner on Interception of Communications and Surveillance",2016-17,19146,-6.23
+security,4.86,169,"Secretariat, Commissioner on Interception of Communications and Surveillance",2017-18,20186,5.43
+security,10.56,169,"Secretariat, Commissioner on Interception of Communications and Surveillance",2018-19,23845,18.13
+welfare,,170,Social Welfare Department,2012-13,44476987,
+welfare,38.83,170,Social Welfare Department,2013-14,53658843,20.64
+welfare,-10.4,170,Social Welfare Department,2014-15,56142958,4.63
+welfare,11.09,170,Social Welfare Department,2015-16,62482922,11.29
+welfare,4.79,170,Social Welfare Department,2016-17,64434066,3.12
+welfare,4.38,170,Social Welfare Department,2017-18,66195562,2.73
+welfare,20.62,170,Social Welfare Department,2018-19,85058369,28.5
+education,,173,Working Family and Student Financial Assistance Agency,2012-13,4589213,
+education,-0.19,173,Working Family and Student Financial Assistance Agency,2013-14,4917424,7.15
+education,-1.67,173,Working Family and Student Financial Assistance Agency,2014-15,4789189,-2.61
+education,8.09,173,Working Family and Student Financial Assistance Agency,2015-16,4857908,1.43
+education,5.64,173,Working Family and Student Financial Assistance Agency,2016-17,5517793,13.58
+education,6.98,173,Working Family and Student Financial Assistance Agency,2017-18,5363480,-2.8
+education,14.64,173,Working Family and Student Financial Assistance Agency,2018-19,6281861,17.12
+finance,,174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,2012-13,27537,
+finance,5.56,174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,2013-14,30251,9.86
+finance,-49.87,174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,2014-15,31538,4.25
+finance,-6.05,174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,2015-16,30712,-2.62
+finance,215.13,174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,2016-17,30410,-0.98
+finance,-63.53,174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,2017-18,32823,7.93
+finance,163.78,174,Joint Secretariat for the Advisory Bodies on Civil Service and Judicial Salaries and Conditions of Service,2018-19,37206,13.35
+others,,180,"Office for Film, Newspaper and Article Administration",2012-13,41251,
+others,20.11,180,"Office for Film, Newspaper and Article Administration",2013-14,39941,-3.18
+others,1.82,180,"Office for Film, Newspaper and Article Administration",2014-15,41739,4.5
+others,7.62,180,"Office for Film, Newspaper and Article Administration",2015-16,44102,5.66
+others,9.82,180,"Office for Film, Newspaper and Article Administration",2016-17,46222,4.81
+others,9.05,180,"Office for Film, Newspaper and Article Administration",2017-18,48232,4.35
+others,15.49,180,"Office for Film, Newspaper and Article Administration",2018-19,49622,2.88
+economic,,181,Trade and Industry Department,2012-13,707043,
+economic,8.08,181,Trade and Industry Department,2013-14,803082,13.58
+economic,6.05,181,Trade and Industry Department,2014-15,811980,1.11
+economic,11.91,181,Trade and Industry Department,2015-16,719041,-11.45
+economic,-3.49,181,Trade and Industry Department,2016-17,728440,1.31
+economic,4.35,181,Trade and Industry Department,2017-18,736986,1.17
+economic,19.18,181,Trade and Industry Department,2018-19,780652,5.92
+finance,,184,Transfers to Funds,2012-13,52000,
+finance,5.56,184,Transfers to Funds,2013-14,10893000,20848.08
+finance,-49.87,184,Transfers to Funds,2014-15,2529000,-76.78
+finance,-6.05,184,Transfers to Funds,2015-16,3180000,25.74
+finance,215.13,184,Transfers to Funds,2016-17,23864000,650.44
+finance,-63.53,184,Transfers to Funds,2017-18,4350000,-81.77
+finance,163.78,184,Transfers to Funds,2018-19,22600000,419.54
+transport,,186,Transport Department,2012-13,1558120,
+transport,9.3,186,Transport Department,2013-14,1852711,18.91
+transport,6.42,186,Transport Department,2014-15,2041407,10.18
+transport,9.72,186,Transport Department,2015-16,2507943,22.85
+transport,5.72,186,Transport Department,2016-17,2652148,5.75
+transport,5.84,186,Transport Department,2017-18,2913421,9.85
+transport,20.2,186,Transport Department,2018-19,3804756,30.59
+finance,,188,Treasury,2012-13,338614,
+finance,5.56,188,Treasury,2013-14,341911,0.97
+finance,-49.87,188,Treasury,2014-15,366078,7.07
+finance,-6.05,188,Treasury,2015-16,377218,3.04
+finance,215.13,188,Treasury,2016-17,382883,1.5
+finance,-63.53,188,Treasury,2017-18,396473,3.55
+finance,163.78,188,Treasury,2018-19,413063,4.18
+education,,190,University Grants Committee,2012-13,15315776,
+education,-0.19,190,University Grants Committee,2013-14,15656765,2.23
+education,-1.67,190,University Grants Committee,2014-15,16365753,4.53
+education,8.09,190,University Grants Committee,2015-16,17581142,7.43
+education,5.64,190,University Grants Committee,2016-17,18610482,5.85
+education,6.98,190,University Grants Committee,2017-18,18999780,2.09
+education,14.64,190,University Grants Committee,2018-19,22888646,20.47
+infrastructure ,,194,Water Supplies Department,2012-13,6570580,
+infrastructure ,6.52,194,Water Supplies Department,2013-14,6873476,4.61
+infrastructure ,3.46,194,Water Supplies Department,2014-15,7183442,4.51
+infrastructure ,5.19,194,Water Supplies Department,2015-16,7658947,6.62
+infrastructure ,4.55,194,Water Supplies Department,2016-17,8001067,4.47
+infrastructure ,4.49,194,Water Supplies Department,2017-18,8322096,4.01
+infrastructure ,4.47,194,Water Supplies Department,2018-19,8475139,1.84

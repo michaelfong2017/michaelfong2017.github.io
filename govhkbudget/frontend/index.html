@@ -188,9 +188,7 @@
                                     d.forEach(function(dSub) {
                                         var keys = Object.keys(dSub);
                                         keys.forEach((key) => {
-                                            if (key == "estimate" || key == "actual_expenditure" ||
-                                                key == "approved_estimate" || key == "revised_estimate" ||
-                                                key == "share(actual)") {
+                                            if (key == "actual_expenditure" || key == "head_year_on_year_percentage_change") {
                                                 children.push(dSub[key]);
                                             }
                                         });
@@ -204,8 +202,8 @@
 
                             /* Metadata */
                             years = [
-                                "2014-2015", "2015-2016", "2016-2017",
-                                "2017-2018", "2018-2019", "2019-2020", "2020-2021"
+                                "2012-2013", "2013-2014", "2014-2015", "2015-2016",
+                                "2016-2017", "2017-2018", "2018-2019"
                             ]
 
 
@@ -327,7 +325,7 @@
 
 
                             function update(year_i) {
-                                var root = d3.hierarchy(nestedData[year_i], function(d) {
+                                var root_actual_expenditure = d3.hierarchy(nestedData[year_i], function(d) {
                                         return d.values;
                                     })
                                     .sum(function(d) {
@@ -339,42 +337,23 @@
                                         return b.value - a.value;
                                     });
 
-                                packLayout(root)
-
 
                                 /* For displaying other data */
-                                var root_actual_expenditure = d3.hierarchy(nestedData[year_i], function(d) {
+                                var root_head_year_on_year_percentage_change = d3.hierarchy(nestedData[year_i], function(d) {
                                         return d.values;
                                     })
                                     .sum(function(d) {
                                         if (d.value != null) {
                                             return d.value[1];
                                         }
-                                    });
-                                var root_approved_estimate = d3.hierarchy(nestedData[year_i], function(d) {
-                                        return d.values;
                                     })
-                                    .sum(function(d) {
-                                        if (d.value != null) {
-                                            return d.value[2];
-                                        }
+                                    .sort(function(a, b) {
+                                        return b.value - a.value;
                                     });
-                                var root_revised_estimate = d3.hierarchy(nestedData[year_i], function(d) {
-                                        return d.values;
-                                    })
-                                    .sum(function(d) {
-                                        if (d.value != null) {
-                                            return d.value[3];
-                                        }
-                                    });
-                                var root_share_actual = d3.hierarchy(nestedData[year_i], function(d) {
-                                        return d.values;
-                                    })
-                                    .sum(function(d) {
-                                        if (d.value != null) {
-                                            return d.value[4];
-                                        }
-                                    });
+
+
+                                packLayout(root_actual_expenditure)
+
 
 
                                 chart_group.selectAll('circle').remove()
@@ -382,7 +361,7 @@
 
 
                                 chart_group.selectAll('circle')
-                                    .data(root.descendants(), function(d) {
+                                    .data(root_actual_expenditure.descendants(), function(d) {
                                         return d.data.key
                                     })
                                     .enter()
@@ -406,38 +385,20 @@
                                         return d.r;
                                     })
                                     .on("mouseover", (d) => {
-                                        var node = root.descendants().filter(function(des) {
-                                            return des.depth == d.depth
-                                        }).filter(function(des) {
-                                            return des.data.key == d.data.key
-                                        });
                                         var node_actual_expenditure = root_actual_expenditure.descendants().filter(function(des) {
                                             return des.depth == d.depth
                                         }).filter(function(des) {
                                             return des.data.key == d.data.key
                                         });
-                                        var node_approved_estimate = root_approved_estimate.descendants().filter(function(des) {
-                                            return des.depth == d.depth
-                                        }).filter(function(des) {
-                                            return des.data.key == d.data.key
-                                        });
-                                        var node_revised_estimate = root_revised_estimate.descendants().filter(function(des) {
-                                            return des.depth == d.depth
-                                        }).filter(function(des) {
-                                            return des.data.key == d.data.key
-                                        });
-                                        var node_share_actual = root_share_actual.descendants().filter(function(des) {
+                                        var node_head_year_on_year_percentage_change = root_head_year_on_year_percentage_change.descendants().filter(function(des) {
                                             return des.depth == d.depth
                                         }).filter(function(des) {
                                             return des.data.key == d.data.key
                                         });
                                         tooltip.style("visibility", "visible").text(
                                             "Domain / Head of expenditure: " + (d.data.key.startsWith("20") ? "All" : d.data.key) + "\n" +
-                                            "Estimate: " + node[0].value + "\n" +
-                                            "Actual expenditure: " + node_actual_expenditure[0].value + "\n" +
-                                            "Approved estimate: " + node_approved_estimate[0].value + "\n" +
-                                            "Revised estimate: " + node_revised_estimate[0].value + "\n" +
-                                            "Share(actual): " + node_share_actual[0].value
+                                            "Actual expenditure: $" + node_actual_expenditure[0].value + "\n" +
+                                            "Year-on-year percentage change: " + node_head_year_on_year_percentage_change[0].value + "%"
                                         )
                                     })
                                     .on("mousemove", function() {
