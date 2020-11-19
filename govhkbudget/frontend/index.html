@@ -189,7 +189,7 @@
                                         var keys = Object.keys(dSub);
                                         keys.forEach((key) => {
                                             if (key == "actual_expenditure" || key == "head_year_on_year_percentage_change" ||
-                                                key == "domain_year_on_year_percentage_change") {
+                                                key == "domain_year_on_year_percentage_change" || key == "all_year_on_year_percentage_change") {
                                                 children.push(dSub[key]);
                                             }
                                         });
@@ -324,7 +324,7 @@
                                 .attr("class", "tooltip")
                                 .style("background-color", "black")
                                 .style("border-radius", "5px")
-                                .style("width", "330px")
+                                .style("width", "340px")
                                 .style("padding", "10px")
                                 .style("color", "white")
                                 .style("white-space", "pre-wrap")
@@ -336,24 +336,24 @@
                                     })
                                     .sum(function(d) {
                                         if (d.value != null) {
-                                            return d.value[1];
+                                            return d.value[0];
                                         }
                                     })
                                     /* Sort by size */
-                                    .sort(function(a, b) {
-                                        return b.value - a.value
-                                    })
-                                    /* Sort by year_on_year_percentage_change */
                                     // .sort(function(a, b) {
-                                    //     switch (a.depth) {
-                                    //         case 2:
-                                    //             return b.data.value[2] - a.data.value[2]
-                                    //         case 1:
-                                    //             return b.data.values[0].value[0] - a.data.values[0].value[0]
-                                    //         default:
-                                    //             console.log("This line should not be executed")
-                                    //     }
-                                    // });
+                                    //     return b.value - a.value
+                                    // })
+                                    /* Sort by year_on_year_percentage_change */
+                                    .sort(function(a, b) {
+                                        switch (a.depth) {
+                                            case 2:
+                                                return b.data.value[1] - a.data.value[1]
+                                            case 1:
+                                                return b.data.values[0].value[2] - a.data.values[0].value[2]
+                                            default:
+                                                console.log("This line should not be executed")
+                                        }
+                                    });
 
 
                                 /* For displaying other data */
@@ -362,7 +362,7 @@
                                     })
                                     .sum(function(d) {
                                         if (d.value != null) {
-                                            return d.value[2];
+                                            return d.value[1];
                                         }
                                     })
                                     .sort(function(a, b) {
@@ -375,7 +375,21 @@
                                     })
                                     // .sum(function(d) {
                                     //     if (d.value != null) {
-                                    //         return d.value[0];
+                                    //         return d.value[2];
+                                    //     }
+                                    // })
+                                    .sort(function(a, b) {
+                                        return b.value - a.value;
+                                    });
+
+
+                                /**/
+                                var root_all_year_on_year_percentage_change = d3.hierarchy(nestedData[year_i], function(d) {
+                                        return d.values;
+                                    })
+                                    // .sum(function(d) {
+                                    //     if (d.value != null) {
+                                    //         return d.value[2];
                                     //     }
                                     // })
                                     .sort(function(a, b) {
@@ -397,29 +411,34 @@
                                     })
                                     .enter()
                                     .append('circle')
-                                    .filter(function(d) {
-                                        return d.depth >= 1
-                                    })
+                                    /* Depends on whether outermost bubble is displayed */
+                                    // .filter(function(d) {
+                                    //     return d.depth >= 1
+                                    // })
                                     .style("fill", d => {
-                                        if (d.depth == 0) {
-                                            return "lightblue"
-                                        }
-                                        // while (d.depth > 1) d = d.parent;
-                                        else if (d.depth == 1) {
-                                            var node_domain_year_on_year_percentage_change = root_domain_year_on_year_percentage_change.descendants().filter(function(des) {
-                                                return des.depth == d.depth
-                                            }).filter(function(des) {
-                                                return des.data.key == d.data.key
-                                            });
-                                            console.log(node_domain_year_on_year_percentage_change)
-                                            return d3.interpolateRdYlGn(colorScale(d.depth == 2 ? node_head_year_on_year_percentage_change[0].value : node_domain_year_on_year_percentage_change[0].data.values[0].value[0]));
-                                        } else if (d.depth == 2) {
-                                            var node_head_year_on_year_percentage_change = root_head_year_on_year_percentage_change.descendants().filter(function(des) {
-                                                return des.depth == d.depth
-                                            }).filter(function(des) {
-                                                return des.data.key == d.data.key
-                                            });
-                                            return d3.interpolateRdYlGn(colorScale(node_head_year_on_year_percentage_change[0].value));
+                                        switch (d.depth) {
+                                            case 0:
+                                                var node_all_year_on_year_percentage_change = root_all_year_on_year_percentage_change.descendants().filter(function(des) {
+                                                    return des.depth == d.depth
+                                                }).filter(function(des) {
+                                                    return des.data.key == d.data.key
+                                                });
+                                                return d3.interpolateRdYlGn(colorScale(node_all_year_on_year_percentage_change[0].data.values[0].values[0].value[3]));
+                                            case 1:
+                                                // while (d.depth > 1) d = d.parent;
+                                                var node_domain_year_on_year_percentage_change = root_domain_year_on_year_percentage_change.descendants().filter(function(des) {
+                                                    return des.depth == d.depth
+                                                }).filter(function(des) {
+                                                    return des.data.key == d.data.key
+                                                });
+                                                return d3.interpolateRdYlGn(colorScale(node_domain_year_on_year_percentage_change[0].data.values[0].value[2]));
+                                            case 2:
+                                                var node_head_year_on_year_percentage_change = root_head_year_on_year_percentage_change.descendants().filter(function(des) {
+                                                    return des.depth == d.depth
+                                                }).filter(function(des) {
+                                                    return des.data.key == d.data.key
+                                                });
+                                                return d3.interpolateRdYlGn(colorScale(node_head_year_on_year_percentage_change[0].value));
                                         }
                                     })
                                     .style('stroke-width', '2')
@@ -434,12 +453,12 @@
                                         return d.r;
                                     })
                                     .on("mouseover", (d) => {
-                                        var node_domain_year_on_year_percentage_change = root_domain_year_on_year_percentage_change.descendants().filter(function(des) {
+                                        var node_actual_expenditure = root_actual_expenditure.descendants().filter(function(des) {
                                             return des.depth == d.depth
                                         }).filter(function(des) {
                                             return des.data.key == d.data.key
                                         });
-                                        var node_actual_expenditure = root_actual_expenditure.descendants().filter(function(des) {
+                                        var node_domain_year_on_year_percentage_change = root_domain_year_on_year_percentage_change.descendants().filter(function(des) {
                                             return des.depth == d.depth
                                         }).filter(function(des) {
                                             return des.data.key == d.data.key
@@ -449,10 +468,16 @@
                                         }).filter(function(des) {
                                             return des.data.key == d.data.key
                                         });
+                                        var node_all_year_on_year_percentage_change = root_all_year_on_year_percentage_change.descendants().filter(function(des) {
+                                            return des.depth == d.depth
+                                        }).filter(function(des) {
+                                            return des.data.key == d.data.key
+                                        });
                                         tooltip.style("visibility", "visible").text(
                                             "Domain / Head of expenditure: " + (d.data.key.startsWith("20") ? "All" : d.data.key) + "\n" +
                                             "Actual expenditure: $" + node_actual_expenditure[0].value + "\n" +
-                                            "Year-on-year percentage change: " + (d.depth == 2 ? node_head_year_on_year_percentage_change[0].value : node_domain_year_on_year_percentage_change[0].data.values[0].value[0]) + "%"
+                                            "Year-on-year percentage change: " + (d.depth == 2 ? (node_head_year_on_year_percentage_change[0].value[1]) : (d.depth == 1) ?
+                                                (node_domain_year_on_year_percentage_change[0].data.values[0].value[2]) : (node_all_year_on_year_percentage_change[0].data.values[0].values[0].value[3])) + "%"
                                         )
                                     })
                                     .on("mousemove", function() {
