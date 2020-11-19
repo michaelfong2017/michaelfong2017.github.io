@@ -475,7 +475,7 @@
                                         });
                                         var year_on_year_percentage_change_text = (d.depth == 2 ? (node_head_year_on_year_percentage_change[0].value) : (d.depth == 1) ?
                                             (node_domain_year_on_year_percentage_change[0].data.values[0].value[2]) : (node_all_year_on_year_percentage_change[0].data.values[0].values[0].value[3])) + "%"
-                                        if (year_on_year_percentage_change_text == "%") year_on_year_percentage_change_text = "0%"
+                                        if (year_i == 0) year_on_year_percentage_change_text = "Data unavailable"
                                         tooltip.style("visibility", "visible").text(
                                             "Domain / Head of expenditure: " + (d.data.key.startsWith("20") ? "All" : d.data.key) + "\n" +
                                             "Actual expenditure: $" + node_actual_expenditure[0].value + "\n" +
