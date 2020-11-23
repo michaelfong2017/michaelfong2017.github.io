@@ -493,6 +493,66 @@
 
                             update(6)
 
+
+                            var legend_group = svg.append("g");
+                            legend_group
+                                .attr("transform", "translate(950,50)");
+
+
+                            colors = [d3.interpolateRdYlGn(colorScale(30)), d3.interpolateRdYlGn(colorScale(0)), d3.interpolateRdYlGn(colorScale(-30))]
+                            var linearGradientWidth = 70;
+                            var linearGradientHeight = 210;
+
+
+                            var linearGradient = legend_group.append('defs')
+                                .append('linearGradient')
+                                .attr('id', 'linear-gradient')
+                                .attr('x1', '0%')
+                                .attr('x2', '0%')
+                                .attr('y1', '0%')
+                                .attr('y2', '100%');
+
+                            linearGradient.selectAll('stop')
+                                .data(colors)
+                                .enter()
+                                .append('stop')
+                                .style('stop-color', function(d) {
+                                    return d;
+                                })
+                                .attr('offset', function(d, i) {
+                                    return i / (colors.length - 1);
+                                })
+                            console.log(colors)
+
+                            legend_group.append('rect')
+                                .attr('x', 10)
+                                .attr('y', 10)
+                                .attr('width', linearGradientWidth)
+                                .attr('height', linearGradientHeight)
+                                .style('fill', 'url(#linear-gradient)');
+
+
+                            var y = d3.scaleLinear().range([linearGradientHeight + 10, 0 + 10]).domain([-30, 30]);
+                            let tickLabels = ['\u2264 \u221230', '-20', '-10', '0', '10', '20', '\u2265 30'];
+                            var yAxisGenerator = d3.axisLeft(y)
+                                .ticks(5)
+                                .tickFormat((d, i) => tickLabels[i]);
+                            // Add the y Axis
+                            legend_group.append("g")
+                                .style("font-size", "15px")
+                                .call(yAxisGenerator)
+
+                            // text label for the y axis
+                            legend_group.append("text")
+                                .attr("transform", "rotate(-90)")
+                                .attr("y", -70)
+                                .attr("x", -10 - (linearGradientHeight / 2))
+                                .attr("dy", "1em")
+                                .style("text-anchor", "middle")
+                                .style("font-size", "15px")
+                                .text("Year-on-year percentage change");
+
+
                         });
                     </script>
 
