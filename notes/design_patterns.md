@@ -29,3 +29,24 @@ public void initResultsCoordinates() {
   resultsCoordinates = new Integer[numberOfResults][];
 }
 ```
+
+For another example,
+```java
+private int xCoordinate = 10;
+public int getXCoordinate() {
+  return xCoordinate;
+}
+private int yCoordinate = 20;
+public int getYCoordinate() {
+  return yCoordinate;
+}
+
+public static void main(String args[]) {
+  int x = getXCoordinate();
+  // ......
+  int y = getYCoordinate();
+  // ......
+}
+```
+
+Clients should not need to care about how the coordinates are got. For instance, the coordinates can be got by reading a json file or doing some calculations. These can be achieved by amending the `getXCoordinate()` and `getYCoordinate()` functions without modifying clients' codes.

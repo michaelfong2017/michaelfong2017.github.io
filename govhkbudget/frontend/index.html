@@ -340,20 +340,20 @@
                                         }
                                     })
                                     /* Sort by size */
-                                    // .sort(function(a, b) {
-                                    //     return b.value - a.value
-                                    // })
-                                    /* Sort by year_on_year_percentage_change */
                                     .sort(function(a, b) {
-                                        switch (a.depth) {
-                                            case 2:
-                                                return b.data.value[1] - a.data.value[1]
-                                            case 1:
-                                                return b.data.values[0].value[2] - a.data.values[0].value[2]
-                                            default:
-                                                console.log("This line should not be executed")
-                                        }
-                                    });
+                                        return b.value - a.value
+                                    })
+                                    /* Sort by year_on_year_percentage_change */
+                                    // .sort(function(a, b) {
+                                    //     switch (a.depth) {
+                                    //         case 2:
+                                    //             return b.data.value[1] - a.data.value[1]
+                                    //         case 1:
+                                    //             return b.data.values[0].value[2] - a.data.values[0].value[2]
+                                    //         default:
+                                    //             console.log("This line should not be executed")
+                                    //     }
+                                    // });
 
 
                                 /* For displaying other data */
