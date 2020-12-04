@@ -1,6 +1,9 @@
-# Design patterns
+Design patterns
+================
+
 ## Encapsulation
-```java
+
+``` java
 private List<Integer[]> resultsCoordinates;
 public List<Integer[]> getResultsCoordinates() {
   return resultsCoordinates;
@@ -17,9 +20,17 @@ public static void main(String args[]) {
 }
 ```
 
-**Why do we need encapsulation here instead of just calling `resultsCoordinates = new ArrayList<>();` directly by clients (clients can be in other scripts)?**
-Consider changing the data representation of `resultsCoordinates`. For example, if its type is changed from `List<Integer[]>` to `Integer[][]`, initialization will change from `resultsCoordinates = new ArrayList<>();` to `resultsCoordinates = new int[M][];`. Without encapsulation, all clients need to update the initialization process. Missing any one of them leads to bugs in program. With encapsulation, all we need to update is just:
-```java
+**Why do we need encapsulation here instead of just calling
+`resultsCoordinates = new ArrayList<>();` directly by clients (clients
+can be in other scripts)?** Consider changing the data representation of
+`resultsCoordinates`. For example, if its type is changed from
+`List<Integer[]>` to `Integer[][]`, initialization will change from
+`resultsCoordinates = new ArrayList<>();` to `resultsCoordinates = new
+int[M][];`. Without encapsulation, all clients need to update the
+initialization process. Missing any one of them leads to bugs in
+program. With encapsulation, all we need to update is just:
+
+``` java
 private int numberOfResults = 5;
 private Integer[][] resultsCoordinates;
 public Integer[][] getResultsCoordinates() {
@@ -31,7 +42,8 @@ public void initResultsCoordinates() {
 ```
 
 For another example,
-```java
+
+``` java
 private int xCoordinate = 10;
 public int getXCoordinate() {
   return xCoordinate;
@@ -49,4 +61,8 @@ public static void main(String args[]) {
 }
 ```
 
-Clients should not need to care about how the coordinates are got. For instance, the coordinates can be got by reading a json file or doing some calculations. These can be achieved by amending the `getXCoordinate()` and `getYCoordinate()` functions without modifying clients' codes.
+Clients should not need to care about how the coordinates are got. For
+instance, the coordinates can be got by reading a json file or doing
+some calculations. These can be achieved by amending the
+`getXCoordinate()` and `getYCoordinate()` functions without modifying
+clients’ codes.
