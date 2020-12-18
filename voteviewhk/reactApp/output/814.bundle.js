@@ -1,0 +1,1 @@
+(self.webpackChunkreactApp=self.webpackChunkreactApp||[]).push([[814],{814:(e,l,t)=>{"use strict";t.r(l),t.d(l,{default:()=>a});var r=t(709);const a=function(){return r.createElement("div",{className:"hello-world"},r.createElement("h1",null,"Hello World!"))}}}]);
