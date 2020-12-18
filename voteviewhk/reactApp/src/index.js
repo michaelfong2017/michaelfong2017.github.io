@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.js';
-
-ReactDOM.render(<App />, document.getElementById('root'));
+import HelloWorld from './components/HelloWorld';
+import './styles/app.scss';
+ReactDOM.render( <
+    HelloWorld / > ,
+    document.getElementById('app')
+);
