@@ -5,6 +5,7 @@ function App() {
   const [state, setState] = useState("CLICK ME");
 
   const HelloWorld = lazy(() => import("./HelloWorld"));
+  const Example = lazy(() => import("./d3Example"));
 
   function MyComponent() {
     if (state == "CLICKED") {
@@ -12,6 +13,7 @@ function App() {
         <div>
           <Suspense fallback={<div>Loading...</div>}>
             <HelloWorld />
+            <Example />
           </Suspense>
         </div>
       );
