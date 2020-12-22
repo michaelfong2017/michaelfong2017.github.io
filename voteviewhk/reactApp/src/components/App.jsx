@@ -6,6 +6,7 @@ function App() {
 
   const HelloWorld = lazy(() => import("./HelloWorld"));
   const Example = lazy(() => import("./d3Example"));
+  const Example2 = lazy(() => import("./d3Example2"));
 
   function MyComponent() {
     if (state == "CLICKED") {
@@ -14,6 +15,7 @@ function App() {
           <Suspense fallback={<div>Loading...</div>}>
             <HelloWorld />
             <Example />
+            <Example2 />
           </Suspense>
         </div>
       );

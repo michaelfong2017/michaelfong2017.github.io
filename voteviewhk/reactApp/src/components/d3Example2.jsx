@@ -1,6 +1,5 @@
 import * as selection from "d3-selection";
-import { format } from "d3-format";
-import { scaleLinear } from "d3-scale";
+import { min, extent, range, descending } from "d3-array";
 import * as request from "d3-request"; // d3 submodule (contains d3.csv, d3.json, etc)
 
 // create a Object with only the subset of functions/submodules/plugins that we need
@@ -8,21 +7,23 @@ const d3 = Object.assign(
   {},
   selection,
   {
-    format,
-    scaleLinear,
+    min,
+    extent,
+    range,
+    descending,
   },
   request
 );
 
-function Example() {
+function Example2() {
   d3.select("body")
-    .selectAll("p")
+    .selectAll("h2")
     .data([4, 8, 15, 16, 23, 42])
     .enter()
-    .append("p")
+    .append("h2")
     .text(function (d) {
       return "I’m number " + d + "!";
     });
   return null;
 }
-export default Example;
+export default Example2;
