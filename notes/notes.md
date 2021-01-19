@@ -124,5 +124,7 @@ Works during lazy loading too.
 ## yarn vs npm
 yarn is much faster.
 
+## react hook + d3 tutorial
+https://medium.com/@compatt84/a-simple-dashboard-using-react-hooks-and-d3-1eca02ea0d18
 
 
