@@ -1,50 +1,85 @@
-import React, { useState } from "react";
-import { scaleLinear, max, line, select } from "d3";
-
-// set the dimensions and margins of the graph
-var margin = { top: 10, right: 30, bottom: 30, left: 60 },
-  width = 460 - margin.left - margin.right,
-  height = 400 - margin.top - margin.bottom;
+import React, { useState, useRef, useEffect } from "react";
+import * as d3 from "d3";
 
 const Scatterplot = (props) => {
-  const { selectedGroup, lineColour, positionX, positionY } = props;
-  const margin = { top: 20, right: 10, bottom: 0, left: 50 };
-  //   const selectedData = lineChartData.filter(
-  //     (datum) => datum.group === selectedGroup
-  //   );
-  const width = 500 - margin.left - margin.right;
-  const height = 150 - margin.top - margin.bottom;
+  const d3Container = useRef(null);
 
-  //the scaling functions (xScale, yScale) are common for both components
-  //   const xScale = scaleLinear()
-  //     .domain([0, selectedData.length - 1])
-  //     .range([0, width]);
+  useEffect(() => {
+    if (props.data && d3Container.current) {
+      const svg = d3.select(d3Container.current);
+      // set the dimensions and margins of the graph
+      var margin = { top: 10, right: 30, bottom: 30, left: 60 },
+        width = 800,
+        height = 400;
 
-  //   const yScale = scaleLinear()
-  //     .domain([0, max(selectedData, (d) => d.measure)])
-  //     .range([height, 0]);
+      // append the svg object to the body of the page
+      svg
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .select("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      //Read the data
+      var data = props.data
+        .filter((d) => {
+          return d.name_ch != null && d.name_en != null;
+        })
+        .map((d) => {
+          return {
+            coord1D: d.coord1D,
+            coord2D: d.coord2D,
+          };
+        });
+      console.log(data);
+
+      // Add X axis
+      var x = d3.scaleLinear().domain([-1, 1]).range([0, width]);
+      svg
+        .select("g")
+        .select("g .x-axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
+
+      // Add Y axis
+      var y = d3.scaleLinear().domain([-0.5, 0.5]).range([height, 0]);
+      svg.select("g").select("g .y-axis").call(d3.axisLeft(y));
+
+      // Add chart body
+      var chartBody = svg
+        .select("g")
+        .select("g .chart-body")
+        .attr("width", width)
+        .attr("height", height);
+
+      var update = chartBody.selectAll("circle").data(data);
+
+      update
+        .enter()
+        .append("circle")
+        .attr("cx", function (d) {
+          console.log(d);
+          return x(d.coord1D == null ? 0 : d.coord1D);
+        })
+        .attr("cy", function (d) {
+          return y(d.coord2D == null ? 0 : d.coord2D);
+        })
+        .attr("r", 2)
+        .style("fill", "#fc7f03")
+        .style("opacity", 1)
+        .on("click", (d, i) => {
+          props.onChangeLegislator(i);
+        });
+
+      update.exit().remove();
+    }
+  }, [props.data, d3Container.current]);
 
   return (
-    <svg viewBox="-2 -2 100 100">
-      <g transform={`translate(${positionX}, ${positionY})`}>
-        <text
-          textAnchor="middle"
-          // style={lineSubTitleTextStyle}
-          fill="lightgrey"
-          x={400}
-          y={400}
-        >
-          Performance 2012
-        </text>
-        <text
-          textAnchor="middle"
-          // style={lineTitleTextStyle}
-          fill="grey"
-          x={400}
-          y={410}
-        >
-          {/* {selectedData[selectedData.length - 1].measure} */}
-        </text>
+    <svg className="d3-component" ref={d3Container}>
+      <g>
+        <g class="x-axis"></g>
+        <g class="y-axis"></g>
+        <g class="chart-body"></g>
       </g>
     </svg>
   );
