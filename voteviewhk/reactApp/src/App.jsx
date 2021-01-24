@@ -22,14 +22,16 @@ const App = (props) => {
   };
 
   const fetchData = (dataUrl) => {
-    try {
-      d3.csv(dataUrl, function (data) {
-        setData(data); // set State
+    d3.csv(dataUrl, function (error, d) {
+      if (error) {
+        console.log(error);
+        setData([]);
         console.log(data);
-      });
-    } catch (err) {
-      console.error(err.message);
-    }
+      } else {
+        setData(d); // set State
+        console.log(data);
+      }
+    });
   };
 
   useEffect(() => {
@@ -39,7 +41,7 @@ const App = (props) => {
   return (
     <div class="column">
       <input id="data_url" type="text" placeholder="Data url" />
-      <button style={{marginBottom: "5px"}} onClick={updateDataUrl}>
+      <button style={{ marginBottom: "5px" }} onClick={updateDataUrl}>
         Submit data url
       </button>
       <Suspense fallback={<div>Loading...</div>}>

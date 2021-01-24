@@ -141,3 +141,10 @@ a[0]*10000] is fastest and a = [0 for i in range(10000)] is useful for 2d list.
 ## Send audio/video
 UDP for audio, TCP for video and image
 For video and image, trim each frame into byte arrays. First, send the total byte length first. Then, trim. Then, send one by one.
+
+## React Hooks Lifecycle
+https://medium.com/@guptagaruda/react-hooks-understanding-component-re-renders-9708ddee9928
+Child useEffect before parent.
+Parent render before child.
+setState (e.g. setData) causes re-render.
+states inside useEffect do not update immediately. They are updated after next render. Therefore, console.log() gives the previous values.
