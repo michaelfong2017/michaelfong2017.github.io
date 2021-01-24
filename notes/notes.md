@@ -41,6 +41,9 @@ Append the following:
 sudo mysql.server start
 sudo mysql.server stop
 
+## How to start mysql server on Windows
+Open ```C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstaller.exe```
+
 ## react.js lazy loading
 ```
 import React, { lazy, Suspense, useState } from "react";
@@ -123,8 +126,18 @@ Works during lazy loading too.
 
 ## yarn vs npm
 yarn is much faster.
+npm install -g yarn
 
 ## react hook + d3 tutorial
 https://medium.com/@compatt84/a-simple-dashboard-using-react-hooks-and-d3-1eca02ea0d18
 
+## python list initialization
+Average time taken by for loop: 0.012432687282562256
+Average time taken by while loop: 0.017907898426055908
+Average time taken by list comprehensions: 0.0034629487991333007
+Average time taken by * operator: 0.0001951146125793457
+a[0]*10000] is fastest and a = [0 for i in range(10000)] is useful for 2d list.
 
+## Send audio/video
+UDP for audio, TCP for video and image
+For video and image, trim each frame into byte arrays. First, send the total byte length first. Then, trim. Then, send one by one.
