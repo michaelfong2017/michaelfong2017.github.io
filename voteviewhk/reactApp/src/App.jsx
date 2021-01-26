@@ -10,7 +10,7 @@ const App = (props) => {
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_jiTlHFOZzByz7pPiBiho4jhtoYTIAXm4VZJz3mnSSjI7fo-wv0eB1GKVos3XsK-HOoqhw876N0CP/pub?gid=1897012944&single=true&output=csv"
   );
   const [data, setData] = useState(null);
-  const [selectedLegislator, setSelectedLegislator] = useState("All");
+  const [selectedLegislator, setSelectedLegislator] = useState(null);
 
   //function that will hook into the state to change it
   function updateLegislator(legislator) {
@@ -47,7 +47,7 @@ const App = (props) => {
       <Suspense fallback={<div>Loading...</div>}>
         <Scatterplot data={data} onChangeLegislator={updateLegislator} />
       </Suspense>
-      <p>Legislator {selectedLegislator}</p>
+      <p>{data && selectedLegislator && data[selectedLegislator] ? "Legislator " + data[selectedLegislator]['name_ch'] : data ? "No legislator selected" : "Loading..."}</p>
     </div>
   );
 };
