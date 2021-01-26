@@ -32,6 +32,16 @@ const Scatterplot = (props) => {
         });
       console.log(data);
 
+      // svg background select nothing when clicked
+      svg
+        .select("rect")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .style("opacity", 0)
+        .on("click", (d, i) => {
+          props.onChangeLegislator(null);
+        });
+
       // Add X axis
       var x = d3.scaleLinear().domain([-1, 1]).range([0, width]);
       svg
@@ -76,6 +86,7 @@ const Scatterplot = (props) => {
 
   return (
     <svg className="d3-component" ref={d3Container}>
+      <rect class="svg-background"></rect>
       <g>
         <g class="x-axis"></g>
         <g class="y-axis"></g>
