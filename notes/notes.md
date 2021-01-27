@@ -146,5 +146,57 @@ For video and image, trim each frame into byte arrays. First, send the total byt
 https://medium.com/@guptagaruda/react-hooks-understanding-component-re-renders-9708ddee9928
 Child useEffect before parent.
 Parent render before child.
-setState (e.g. setData) causes re-render.
+Parent re-render causes children to re-render irrespective of whether they consume the props or not.
+setState (e.g. setData) causes re-render (not useEffect).
 states inside useEffect do not update immediately. They are updated after next render. Therefore, console.log() gives the previous values.
+
+When setState handler is called multiple times, React batches these calls and triggers re-render only once when the calling code is inside React based event handlers. If these calls are made from non-React based handlers like setTimeout, each call will trigger a re-render.
+
+### useEffect
+useEffect cleanup handler does not run the first time.
+Cleanup handler returned from the previous useEffect call ran now (using previous component state).
+After re-render, useEffect cleanup handler -> useEffect handler.
+When the component is un-mounted, React makes sure to run the cleanup handler related to the last effect.
+useEffect: state change -> browser paints long quote -> useEffect handler -> browser paints short quote.
+Therefore, there is a blink due to time delay between 2 paints.
+useLayoutEffect: will be flushed synchronously, before the browser has a chance to paint.
+
+### useCallback
+We don’t want a new function reference with every re-render. useCallback hook is what we are looking for. It takes a function and returns a memoized function whose reference won’t change between re-renders unless one of its dependencies change. 
+
+### useMemo
+This code-snippet shows the memoized TickerComponent leveraging the useMemo hook. React skips re-rendering the component and returns the previously cached result unless one of the listed dependencies change (ticker, onRemove handler).
+
+On top of that React also stores previous values given the inputs and will return the previous value given the same previous inputs. That's memoization at work.
+
+### Dependency list
+If variables are (non-primitive) objects/arrays/functions/etc, they will change every time and useEffect will be called every time.
+
+## Filelist can be casted by "Array.from" in order to use .map
+
+## Read multiple files
+arr.map() is synchronous and FileReader works asynchronously, use Promise.all on the array returned by map.
+```
+handleFileChosen = async (file) => {
+  return new Promise((resolve, reject) => {
+    let fileReader = new FileReader();
+    fileReader.onload = () => {
+      resolve(fileReader.result);
+    };
+    fileReader.onerror = reject;
+    fileReader.readAsText(file);
+  });
+}
+
+
+readAllFiles = async (AllFiles) => {
+  const results = await Promise.all(AllFiles.map(async (file) => {
+    const fileContents = await handleFileChosen(file);
+    return fileContents;
+  }));
+  console.log(results);
+  return results;
+}
+```
+
+
