@@ -199,4 +199,54 @@ readAllFiles = async (AllFiles) => {
 }
 ```
 
+## Docker-compose
+When you ran the container with ```docker run```, the named volume was created automatically. However, that does not happen when running with Compose. You need to define the volume in the top-level volumes: section then specify the mountpoint in the service config. By simply providing only the volume name, the default options are used.
+Example:
+```
+version: "3.9"
+services:
+	db:
+		volumes:
+				- db-data:/var/lib/postgresql/data
+volumes:
+	db-data:
+```	
 
+## socket.io
+Must use namespace.
+Don’t just connect to root namespace.
+The root namespace doesn’t receive any “emit” events.
+
+## Send message from Android app to Unity game
+http://jeanmeyblum.weebly.com/scripts--tutorials/communication-between-an-android-app-and-unity
+
+1. On my side, I write an android broadcast sender and an android broadcast receiver using java. I compile the Receiver.java to Receiver.jar and send it to you.
+
+2. On your side, you move the .jar file to Assets/Plugins/Android/
+
+3. Create an AndroidManifest.xml and put it in Assets/Plugins/Android/
+This file lets Android knows that the Receiver class exists in your game and knows what intent your game is listening at (in this case you listen at the “send broadcast” event).
+Suppose this AndroidManifest.xml will be automatically merged into your default manifest and there should be no conflicts.
+
+4. When my broadcast sender emits “send broadcast” event. Your Receiver class receives this event since you already registered to receive this broadcast in your AndroidManifest.xml.
+
+5. The method that your Receiver class plugin transfers the broadcast message to your .cs classes is that Receiver class’s associated static variable “text” will be updated upon receiving broadcast.
+Your .cs classes fetch the static variable Receiver.text to get the message.
+
+## Key idea of polymorphism
+Use ArrayList<Superclass> to store an array of objects of different subclasses.
+Pointer of superclass type to point to object of subclass type.
+
+## Concept of "Class" and "Object"
+Class is the fundamental unit of Java program.
+All Java programs are classes.
+A class is a template or blueprint for objects.
+
+An object is an instance of a class.
+Unique address in memory is an object's identity.
+
+An object is a chunk of memory: 
+	- holds field values
+	- holds an associated object type
+All objects of the same type share code
+	- they all have same object type, but can have different field values.
