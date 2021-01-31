@@ -250,3 +250,67 @@ An object is a chunk of memory:
 	- holds an associated object type
 All objects of the same type share code
 	- they all have same object type, but can have different field values.
+	
+## React Native
+Basically, you write Javascript. The Javascript communicates with native components (Java on Android, Objective C on iOS, C# on Windows).
+
+The communication occurs through the so-called "bridge". If at any time you feel that this communication slows things down too much, you can choose to implement the Javascript functionality in Java, Objective C, or C# respectively in order to run purely native. In this case, you are writing directly in native code, so there's no Javascript to native compilation.
+
+## Flutter
+Using the Dart language allows Flutter to compile the source code ahead-of-time to native code. 
+Fast startup and execution of an app are the benefits of compilation to native code.
+
+## Java garbage collection
+Heap memory is called garbage collectable heap.
+If object is not referenced by any variable.
+Objective-C/C++ needs to release the memory.
+
+## Cantonese tokenization
+Pycantonese uses the 150,000-word Hong Kong Cantonese Corpus (HKCanCor) by Kang Kwong Luke as the dictionary.
+songotsti uses:
+Cantonese dictionary generated using Cantonese data from Facebook
+Cantonese dictionary generated using Cantonese data from Telegram
+Word list of 粵典
+Words from Hong Kong Cantonese Corpus (HKCanCor)
+
+songotsti is based on jiebaR and just adds the above dictionaries.
+Jieba3k is for python3, jieba does not support python3.
+
+## LDA (Latent Dirichlet Allocation)
+Parameters of LDA
+Alpha parameter is Dirichlet prior concentration parameter that represents document-topic density — with a higher alpha, documents are assumed to be made up of more topics and result in more specific topic distribution per document.
+Beta parameter is the same prior concentration parameter that represents topic-word density — with high beta, topics are assumed to made of up most of the words and result in a more specific word distribution per topic.
+
+## Chinese stopwords
+https://github.com/fxsjy/jieba/blob/master/extra_dict/stop_words.txt
+Another 4 from https://github.com/goto456/stopwords
+Many from https://github.com/stopwords-iso/stopwords-iso/blob/master/CREDITS.md
+https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/stopwords.zip
+
+Translate myself to include both simplified Chinese and traditional Chinese.
+Then remove any duplicates myself. 
+Include roman numerals as stopword.
+3594 stopwords of Chinese, English and symbols.
+
+## Stopwords
+Remove stopwords after tokenization.
+
+## Vocabulary
+Cantonese vocabulary comes from songotsti (jieba custom dictionary)
+English vocabulary:
+1. NLTK
+```
+import nltk
+nltk.download('all-corpora')
+```
+2. Spacy
+When I use ```conda install -c conda-forge spacy-model-en_core_web_lg```,
+```
+import en_core_web_lg
+nlp = en_core_web_lg.load()
+with open(os.path.join(FILE_DIR, "data/vocabulary/spacy_en_core_web_lg.txt"), "w") as f:
+    f.write('\n'.join([line for line in list(nlp.vocab.strings)]))
+```
+3. 30 from https://github.com/chrisjmccormick/inspect_word2vec/tree/master/vocabulary
+
+
