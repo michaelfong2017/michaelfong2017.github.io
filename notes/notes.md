@@ -313,4 +313,25 @@ with open(os.path.join(FILE_DIR, "data/vocabulary/spacy_en_core_web_lg.txt"), "w
 ```
 3. 30 from https://github.com/chrisjmccormick/inspect_word2vec/tree/master/vocabulary
 
+## Docker volume
+Don't use something like ```C:\Data\pgdata:/var/lib/postgresql/data```.
+Use ```pgdata:/var/lib/postgresql/data``` since docker will manage itself (have to google to find the location of the volumes).
 
+On the first invocation of docker-compose up the volume will be created. The same volume will be reused on following invocations.
+
+## Django csrf_exempt
+Permit individual function with an annotation.
+```from django.views.decorators.csrf import csrf_exempt```
+```
+@csrf_exempt
+def post_credential(request):
+	## ......
+```
+
+## Docker compose make migrations
+docker-compose.yml
+command: bash -c "python manage.py makemigrations temi_api && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+
+Remember to make migrations for the apps and for the whole.
+```python manage.py makemigrations temi_api``` has to be before
+```python manage.py migrate```.
