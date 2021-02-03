@@ -328,10 +328,25 @@ def post_credential(request):
 	## ......
 ```
 
-## Docker compose make migrations
+## Docker compose django make migrations
 docker-compose.yml
 command: bash -c "python manage.py makemigrations temi_api && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+
+## Django database recreate table
+After manually delete the table:
+1. Delete all except for init.py in migrations folder.
+2. In database,
+```
+delete from django_migrations where app = 'temi_api'
+```
+3. ```python manage.py makemigrations temi_api```, followed by ```python manage.py migrate```.
 
 Remember to make migrations for the apps and for the whole.
 ```python manage.py makemigrations temi_api``` has to be before
 ```python manage.py migrate```.
+
+## Rename/Change models in models.py in Django
+Need to delete related migrations in migrations folder in source code.
+
+## React.js e.preventDefault()
+e.g. Prevent the webpage from being refreshed on form submitted.
