@@ -229,3 +229,47 @@ RUN npm install -g bower
 RUN npm install -g grunt-cli
 RUN hg clone <repository>
 ```
+
+## Install homebrew and homebrew-cask
+
+Advantages of homebrew installation:
+CLI tools like that allow you to install / uninstall software in no time and never again be bothered by insufficient permissions. They allow you to manage versions too.
+Pre-built installer for your platform requires admin permissions (sudo) to install package globally.
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+```brew --version```
+```brew tap homebrew/cask```
+
+## Install node.js and yarn
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+brew install nvm
+nvm install node
+npm install --global yarn
+```
+
+## conda-forge
+No future worry, better than default anaconda channel.
+
+After ```conda config --add channels conda-forge```,
+.condarc then looks like:
+
+```
+channels:
+  - conda-forge
+  - defaults
+```
+
+## .gitignore_global
+*~
+.DS_Store
+.idea
+
+
+
+
+
+
+
