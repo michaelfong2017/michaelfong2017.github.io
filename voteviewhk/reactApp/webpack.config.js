@@ -9,20 +9,21 @@ module.exports = {
       filename: 'bundle.js'
    },
    devServer: {
-        contentBase: './src',
-        publicPath: '/output'
+      contentBase: './src',
+      publicPath: '/output'
    },
+   devtool: "eval-source-map",
    resolve: {
       extensions: ['.js', '.jsx']
    },
    module: {
       rules: [
          {
-             test: /\.(js|jsx)/,
-             use: {
-                loader: 'babel-loader',
-                options: { presets: ['@babel/preset-react', '@babel/preset-env'] }
-             }
+            test: /\.(js|jsx)/,
+            use: {
+               loader: 'babel-loader',
+               options: { presets: ['@babel/preset-react', '@babel/preset-env'] }
+            }
          },
          {
             test: /\.scss/,
@@ -30,7 +31,7 @@ module.exports = {
          }
       ]
    },
-   plugins:[
+   plugins: [
       new HtmlWebpackPlugin({
          template: './src/index.html'
       })

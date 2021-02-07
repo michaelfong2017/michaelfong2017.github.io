@@ -267,7 +267,21 @@ channels:
 .DS_Store
 .idea
 
+## React + Webpack debugger
+1. In webpack.config.js,
+```
+module.exports = {
+   ......
+   devtool: "eval-source-map",
+   ......
+}
 
+```
+2. In Chrome -> Inspect -> Sources,
+Under your folder that contains config files,
+Locate the generated source maps from the "." folder.
+They look the same as source codes.
+3. Add breakpoints and debug!
 
 
 
