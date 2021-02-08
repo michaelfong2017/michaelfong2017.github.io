@@ -22,6 +22,10 @@ const App = (props) => {
   };
 
   const fetchData = (dataUrl) => {
+    if (process.env.NODE_ENV !== 'production') {
+      // not for production
+      console.log("yoyo")
+    }
     d3.csv(dataUrl, function (error, d) {
       if (error) {
         console.log(error);
