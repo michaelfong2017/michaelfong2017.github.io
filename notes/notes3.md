@@ -35,12 +35,21 @@ docker exec -ti f5d26ac7c207 apt update
 docker exec -ti f5d26ac7c207 apt install net-tools
 docker exec -ti f5d26ac7c207 apt update
 ```
-
 ```docker exec -ti f5d26ac7c207 bash``` connects to the container.
+
+## docker exec
+--tty , -t		Allocate a pseudo-TTY
+--interactive , -i		Keep STDIN open even if not attached
+"-it" is the same as "-ti".
+Can also supply container name instead of container id. For example,
+```docker exec -it exim4 bash```
 
 ## Smarthost
 e.g. "Setup Exim to Send Email Using Gmail in Debian"
 Overmore, a Smarthost will remove any annoying ISP sending limits, allow you to send using port 25 (blocked by most ISPs) and provide support along the way. If you are sending a high volume of emails on a regular basis, it is absolutely necessary to use a Smarthost so that they are delivered smartly and avoid blacklists along the way.
+
+## Exim quick send email test
+```echo "Subject: test" | /usr/sbin/exim4 -v michaelfong2017@gmail.com```
 
 ## Gmail 2FA is required for using Exim
 https://arnaudr.io/2017/07/04/using-gmail-to-send-system-mails-on-debian/
