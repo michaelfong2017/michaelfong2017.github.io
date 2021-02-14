@@ -111,16 +111,9 @@ Check status:
 ```ufw status```
 ```apt-get install iputils-ping```
 
-## Mailu
-### Mailu Requirements
-1. Public IPv4
-2. Domain name
-3. DNS server management access
-4. >2GB RAM if with ClamAV
-5. Any modern Linux distribution
-6. Root access to install and control Docker
+## Docker network bridge driver
+Docker提供的 user-defined 网络驱动有是那种：bridge、overlay 和 macvlan。其中后两种主要用于创建跨主机网络，我们先关注 bridge 驱动
 
-## Docker network
 https://www.youtube.com/watch?v=IWpzLf4hBhk
 One of the issues that beginners will encounter is IP assignment to docker containers. By default, IP address are assigned as "first come, first serve". Meaning that depending on the order you start your containers, they can have different IP address.
 
@@ -140,4 +133,29 @@ docker network disconnect docker-network mysql-5.7
 
 Then, mysql-5.6 will be assigned 172.18.0.2 and mysql-5.7 will be assigned 172.18.0.3 regardless of the order of starting the containers. Note that 172.17.0.2 and 172.17.0.3 will still be assigned in a "first come, first serve" basis.
 
+同时，静态IP也可以直接通过 --ip 进行手动指定。但是只有手动指定了 --subnet 才可以指定 --ip。且指定的 ip 必须在 --subnet 网络内。
+
+## Docker public ip / Docker network macvlan driver
+You can use the macvlan network driver to assign a MAC address to each container’s virtual network interface, making it appear to be a physical network interface directly connected to the physical network.
+
+For ```--driver macvlan```, you also need to specify the parent (parent=eth0), which is the interface the traffic will physically go through on the Docker host.
+
+https://micropyramid.medium.com/assign-public-ip-address-to-docker-container-without-port-binding-2fa696e97cf6
+```docker network create -d macvlan -o macvlan_mode=bridge --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=eth0 macvlan_bridge```
+```docker run --name nginx --net=macvlan_bridge --mac-address c2:45:98:86:d4:d9 -itd nginx```
+```docker run --name my-macvlan-alpine --net=macvlan_bridge --mac-address c2:45:98:86:d4:d9 -itd alpine```
+
+## Mailu
+### Mailu Requirements
+1. Public IPv4
+2. Domain name
+3. DNS server management access
+4. >2GB RAM if with ClamAV
+5. Any modern Linux distribution
+6. Root access to install and control Docker
+
+https://www.youtube.com/watch?v=ScarlmgD0dU
+https://blog.hanlee.co/mailu-mail-server-install/
+
+Debian 10 supercedes Debian 9.
 
