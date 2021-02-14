@@ -197,7 +197,9 @@ WEBROOT_REDIRECT=/webmail
 11. Go to https://mail.michaelfong.co/admin.
 User email is admin@michaelfong.co.
 Password is ```<PASSWORD>```.
+
 (Later). Linode edit Reverse DNS in public IPv4 to mail.michaelfong.co.
+
 12. Go to Mail domains -> Actions -> Details,
 Domain name: michaelfong.co
 DNS MX entry: ```michaelfong.co. 600 IN MX 10 mail.michaelfong.co.```
@@ -215,6 +217,29 @@ SMTP Banner Check: OK - Reverse DNS matches SMTP Banner
 SMTP TLS: OK - Supports TLS.
 SMTP Open Relay: OK - Not an open relay.
 
+15. 
+Inbox emails are under ```/mailu/mail/admin@michaelfong.co/cur```.
+Sent emails are under ```/mailu/mail/admin@michaelfong.co/.Sent/cur```.
+
+** Note that we cannot send emails to gmail yet.
+
+### Override folders
+How can I override settings?
+Postfix, Dovecot, Nginx and Rspamd support overriding configuration files. Override files belong in ```$ROOT/overrides``` (i.e. ```/mailu/overrides```). Please refer to the official documentation of those programs for the correct syntax. The following file names will be taken as override configuration:
+
+Postfix - postfix.cf in postfix sub-directory;
+Dovecot - dovecot.conf in dovecot sub-directory;
+Nginx - All *.conf files in the nginx sub-directory;
+Rspamd - All files in the rspamd sub-directory.
+
+### Spam filtering
+Follow rspamd documentation at https://rspamd.com/doc/tutorials/writing_rules.html.
+Also, https://mailu.io/master/antispam.html.
+
+** Reload Rspamd by stopping the Rspamd container and starting the Rspamd container again. Example for docker-compose setup:
+Without mailu/rspamd:1.7: ```docker-compose -p mailu up --scale antispam=0 -d```
+With mailu/rspamd:1.7: ```docker-compose -p mailu up --scale antispam=1 -d```
+```-p mailu``` specifies the project name. Note that it must be before "up".
 
 
 ## SPF record
