@@ -154,8 +154,58 @@ https://micropyramid.medium.com/assign-public-ip-address-to-docker-container-wit
 5. Any modern Linux distribution
 6. Root access to install and control Docker
 
-https://www.youtube.com/watch?v=ScarlmgD0dU
-https://blog.hanlee.co/mailu-mail-server-install/
-
 Debian 10 supercedes Debian 9.
 
+### Mailu installation
+https://www.youtube.com/watch?v=ScarlmgD0dU
+https://blog.hanlee.co/mailu-mail-server-install/
+1. Go to Linode to rent a linux server.
+2. ```ssh root@<server-ip>```
+3. Install docker and docker-compose
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+docker-compose --version
+```
+4. Go to https://setup.mailu.io/.
+Domain: michaelfong.co
+主機名稱: mail.michaelfong.co
+
+Notice that we need to uncheck anti-virus because we only have 1GB RAM.
+5. 
+```
+mkdir /mailu
+cd /mailu
+wget http://setup.mailu.io/1.7/file/6aa449aa-7708-4ba3-b08f-a46c102fd8a0/docker-compose.yml
+wget http://setup.mailu.io/1.7/file/6aa449aa-7708-4ba3-b08f-a46c102fd8a0/mailu.env
+```
+6. Check docker-compose.yml and mailu.env. Change SECRET_KEY in mailu.env.
+
+mailu.env:
+SECRET_KEY=<>
+DB_PW=<>
+WEBROOT_REDIRECT=/webmail
+
+7. docker-compose -p mailu up -d
+8. Wait for a while until all containers are started.
+9. ```docker-compose -p mailu exec admin flask mailu admin admin michaelfong.co <PASSWORD>```
+10. Go to porkbun and add a DNS record:
+```mail.michaelfong.co  IN  A  <server-ip>```
+11. Go to https://mail.michaelfong.co/admin.
+User email is admin@michaelfong.co.
+Password is ```<PASSWORD>```.
+12. Linode edit Reverse DNS in public IPv4 to mail.michaelfong.co.
+
+
+## SPF record
+SPF record specifies which hosts are allowed to send email on our behalf.
+
+## Docker remove all containers and images and volumes
+For Unix
+To delete all containers including its volumes use,
+```docker rm -vf $(docker ps -a -q)```
+To delete all the images,
+```docker rmi -f $(docker images -a -q)```
