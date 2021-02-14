@@ -197,7 +197,24 @@ WEBROOT_REDIRECT=/webmail
 11. Go to https://mail.michaelfong.co/admin.
 User email is admin@michaelfong.co.
 Password is ```<PASSWORD>```.
-12. Linode edit Reverse DNS in public IPv4 to mail.michaelfong.co.
+(Later). Linode edit Reverse DNS in public IPv4 to mail.michaelfong.co.
+12. Go to Mail domains -> Actions -> Details,
+Domain name: michaelfong.co
+DNS MX entry: ```michaelfong.co. 600 IN MX 10 mail.michaelfong.co.```
+
+DNS SPF entries: ```michaelfong.co. 600 IN TXT "v=spf1 mx a:mail.michaelfong.co -all"```
+(Quotation marks are not needed)
+
+(This is unnecessary)```michaelfong.co. 600 IN SPF "v=spf1 mx a:mail.michaelfong.co -all"```
+13. Go to https://mail.michaelfong.co/webmail and test.
+14. Go to https://mxtoolbox.com/ and lookup michaelfong.co.
+The most important parts are under SMTP.
+
+SMTP Valid Hostname: OK - Reverse DNS is a valid Hostname
+SMTP Banner Check: OK - Reverse DNS matches SMTP Banner
+SMTP TLS: OK - Supports TLS.
+SMTP Open Relay: OK - Not an open relay.
+
 
 
 ## SPF record
