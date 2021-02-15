@@ -221,7 +221,33 @@ SMTP Open Relay: OK - Not an open relay.
 Inbox emails are under ```/mailu/mail/admin@michaelfong.co/cur```.
 Sent emails are under ```/mailu/mail/admin@michaelfong.co/.Sent/cur```.
 
+16. 
+Mail domains Generate keys.
+DKIM public key: ```MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDyEfP6LUvDqfWesBYkKK+apNNCNZScUg9IzMkMD2infQLqKc9aM+ZI3CtDSRitGOOML7xn8fsVu32urkik0EKbxNuiwmHzkEs0LQG7Gpo6TxWMo84Ck6oRR37oUceLJXrPeZ6mfP4QOX8nYOtdw9kUcBIxs/5yGGGLLfpnq8hLQIDAQAB```
+DNS DKIM entry: ```dkim._domainkey.michaelfong.co. 600 IN TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDyEfP6LUvDqfWesBYkKK+apNNCNZScUg9IzMkMD2infQLqKc9aM+ZI3CtDSRitGOOML7xn8fsVu32urkik0EKbxNuiwmHzkEs0LQG7Gpo6TxWMo84Ck6oRR37oUceLJXrPeZ6mfP4QOX8nYOtdw9kUcBIxs/5yGGGLLfpnq8hLQIDAQAB"```
+DNS DMARC entry: ```_dmarc.michaelfong.co. 600 IN TXT "v=DMARC1; p=reject; rua=mailto:admin@michaelfong.co; ruf=mailto:admin@michaelfong.co; adkim=s; aspf=s"```
+
+17. Add entries in porkbun.
+
+18. https://mxtoolbox.com can be used to lookup records and test smtp server.
+
 ** Note that we cannot send emails to gmail yet.
+
+### Mail manipulation notes
+1. We have to create folders using roundcube webmail. The directory inside linux machine will be updated automatically.
+2. 
+```mv /mailu/mail/admin@michaelfong.co/cur/<mail> /mailu/mail/admin@michaelfong.co/.Junk/cur``` works.
+3. 
+```cp /mailu/mail/admin@michaelfong.co/cur/<mail> /mailu/mail/admin@michaelfong.co/.Junk/cur``` does not work.
+4. 
+```mv /mailu/mail/admin@michaelfong.co/cur/<mail> /mailu/mail/admin@michaelfong.co```
+-> ```mv /mailu/mail/admin@michaelfong.co/<mail> /mailu/mail/admin@michaelfong.co/cur``` works.
+5. 
+```cp /mailu/mail/admin@michaelfong.co/cur/<mail> /mailu/mail/admin@michaelfong.co``` adds an email to roundcube but it never shows up
+-> ```rm /mailu/mail/admin@michaelfong.co/cur/<mail>```
+-> ```mv /mailu/mail/admin@michaelfong.co/<mail> /mailu/mail/admin@michaelfong.co/cur``` original mail in roundcube is corrupted
+
+
 
 ### Override folders
 How can I override settings?
