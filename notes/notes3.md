@@ -185,9 +185,14 @@ wget http://setup.mailu.io/1.7/file/6aa449aa-7708-4ba3-b08f-a46c102fd8a0/mailu.e
 6. Check docker-compose.yml and mailu.env. Change SECRET_KEY in mailu.env.
 
 mailu.env:
-SECRET_KEY=<>
-DB_PW=<>
-WEBROOT_REDIRECT=/webmail
+(Optional). SECRET_KEY=<>
+(May not exist). DB_PW=<>
+(May already be alright). WEBROOT_REDIRECT=/webmail
+```
+RELAYHOST=[smtp.gmail.com]:587
+RELAYUSER=michaelfong2017@gmail.com
+RELAYPASSWORD=zfetfmpgqytgxabp
+```
 
 7. docker-compose -p mailu up -d
 8. Wait for a while until all containers are started.
@@ -233,6 +238,96 @@ DNS DMARC entry: ```_dmarc.michaelfong.co. 600 IN TXT "v=DMARC1; p=reject; rua=m
 
 ** Note that we cannot send emails to gmail yet.
 
+### Configure postfix to use gmail as a mail relay (not yet success)
+https://www.howtoforge.com/tutorial/configure-postfix-to-use-gmail-as-a-mail-relay/
+https://github.com/Mailu/Mailu/issues/387
+
+1. Create relay_conf.sh
+```
+#!/bin/sh
+
+# Configuration for the script
+POSTFIX_CONFIG=/overrides/postfix.cf
+POSTFIX_SASL=/etc/postfix/sasl_passwd
+
+# Set a safe umask
+umask 077
+
+# Add the relay host params  
+cat >> $POSTFIX_CONFIG << EOF
+# Enable SASL authentication
+smtp_sasl_auth_enable = yes
+# Disallow methods that allow anonymous authentication
+smtp_sasl_security_options = noanonymous
+# Location of sasl_passwd
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+# Enable STARTTLS encryption
+smtp_tls_security_level = encrypt
+# Location of CA certificates
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+EOF
+
+# Remove old
+rm -f $POSTFIX_SASL
+
+# Create new
+cat > $POSTFIX_SASL << EOF
+$RELAYHOST $RELAY_LOGIN:$RELAY_PASSWORD
+EOF
+
+chmod 600 $POSTFIX_SASL
+postmap $POSTFIX_SASL
+
+# Reload Postfix
+# postconf compatibility_level=2
+postfix reload
+```
+```
+sudo chmod +x relay_conf.sh 
+sudo docker cp ./relay_conf.sh mailu_smtp_1:/relay_conf.sh 
+sudo docker exec -e .env -it  mailu_smtp_1 /relay_conf.sh
+```
+(Unknown)
+smtp_tls_security_level = encrypt
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:$POSTFIX_SASL
+smtp_sasl_security_options = noanonymous
+smtpd_sasl_authenticated_header = yes
+smtp_sasl_mechanism_filter = AUTH LOGIN
+smtp_sasl_tls_security_options = noanonymous
+
+### 透過Postfix 以Gmail發信與 常用指令與設定
+Inside smtp service, ```apk update``` and ```apk add mailx``` if ```mail``` command not found.
+列出目前在 Mail Queue 中的信件
+```mailq```
+
+刪除所有在 Queue 中的郵件
+```postsuper -d ALL```
+
+刪除所有正在 deferred 佇列中的郵件 ( 刪除曾經發送失敗的信 )
+```postsuper -d ALL deferred```
+
+### Use a custom domain in gmail client app
+** Need to remove SPF, DKIM, DMARC records first.
+https://www.hostinger.com/tutorials/how-to-use-free-google-smtp-server
+
+In gmail settings:
+Once you’ve obtained the app password, log in to your Gmail account and follow these steps:
+
+1. Navigate to the Settings by clicking the “gear icon” in the top right.
+2. Hit the Accounts tab and click on Add another email address.
+3. 
+Name: Michael Fong
+Email address: admin@michaelfong.co
+(Check)
+4. 
+SMTP Server: smtp.gmail.com
+Port: 587
+Username: michaelfong2017@gmail.com
+Password: ```<App Password>```
+(Choose TLS)
+5. A verification email will be sent to your custom email address. Open it and click the confirmation link.
+
 ### Mail manipulation notes
 1. We have to create folders using roundcube webmail. The directory inside linux machine will be updated automatically.
 2. 
@@ -277,3 +372,23 @@ To delete all containers including its volumes use,
 ```docker rm -vf $(docker ps -a -q)```
 To delete all the images,
 ```docker rmi -f $(docker images -a -q)```
+
+## letsencrypt rate limit
+https://letsencrypt.org/docs/rate-limits/
+
+Renewals are treated specially: they don’t count against your Certificates per Registered Domain limit, but they are subject to a Duplicate Certificate limit of 5 per week. Note: renewals used to count against your Certificate per Registered Domain limit until March 2019, but they don’t anymore. Exceeding the Duplicate Certificate limit is reported with the error message "too many certificates already issued for exact set of domains".
+
+Be careful!
+```
+{
+  "type": "urn:ietf:params:acme:error:rateLimited",
+  "detail": "Error creating new order :: too many certificates already issued for exact set of domains: mail.michaelfong.co: see https://letsencrypt.org/docs/rate-limits/",
+  "status": 429
+}
+```
+
+### mailu letsencrypt issues
+In order to determine the exact problem on TLS / Let’s encrypt issues, it might be helpful to check the logs.
+
+```docker-compose logs front | less -R```
+```docker-compose exec front less /var/log/letsencrypt/letsencrypt.log```
