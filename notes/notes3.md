@@ -392,3 +392,8 @@ In order to determine the exact problem on TLS / Let’s encrypt issues, it migh
 
 ```docker-compose logs front | less -R```
 ```docker-compose exec front less /var/log/letsencrypt/letsencrypt.log```
+
+### acme challenge
+https://letsencrypt.org/docs/challenge-types/
+DNS-01 challenge
+This challenge asks you to prove that you control the DNS for your domain name by putting a specific value in a TXT record under that domain name. It is harder to configure than HTTP-01, but can work in scenarios that HTTP-01 can’t. It also allows you to issue wildcard certificates. After Let’s Encrypt gives your ACME client a token, your client will create a TXT record derived from that token and your account key, and put that record at ```_acme-challenge.<YOUR_DOMAIN>```. Then Let’s Encrypt will query the DNS system for that record. If it finds a match, you can proceed to issue a certificate!

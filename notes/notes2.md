@@ -250,6 +250,10 @@ nvm install node
 npm install --global yarn
 ```
 
+For Windows, use chocolatey.
+Restart computer after installing node.js.
+Remember that for Windows, .CMD must be inside ```%PATHEXT%```.
+
 ## conda-forge
 No future worry, better than default anaconda channel.
 
