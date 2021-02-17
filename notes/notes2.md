@@ -142,6 +142,22 @@ echo ""
 echo "https-server"
 ```
 
+### For Windows:
+https://blog.didierstevens.com/2015/03/30/howto-make-your-own-cert-with-openssl-on-windows/
+
+Set if not yet set:
+```
+set RANDFILE=c:\demo\.rnd
+set OPENSSL_CONF=C:\OpenSSL-Win32\bin\openssl.cfg
+```
+
+```
+mkdir .localhost-ssl
+cd .localhost-ssl
+openssl genrsa -out localhost.key 2048
+openssl req -new -x509 -key localhost.key -out localhost.crt -days 3650 -subj /CN=localhost
+```
+
 ## nonce
 From OpenID Connect Core 1.0 incorporating errata set 1:
 https://openid.net/specs/openid-connect-core-1_0.html#NonceNotes
