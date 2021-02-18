@@ -51,3 +51,38 @@ Seems the same:
 
 ```<NavDropdown title="Dropdown" id="collasible-nav-dropdown">```
 
+## Publish npm package (also yarn)
+https://jasonwatmore.com/post/2018/04/14/react-npm-how-to-publish-a-react-component-to-npm
+1. In webpack.config.prod.js,
+```
+output: {
+        // ......
+        libraryTarget: 'commonjs2'
+    },
+```
+
+2. Create an .npmignore file
+```
+src
+.babelrc
+webpack.config.dev.js
+webpack.config.prod.js
+localhost.key
+localhost.crt
+```
+
+3. ```npm run build```
+4. ```npm login```
+5. ```npm publish --access=public``` or ```npm publish``` (for private, requires payment)
+
+Note: 
+```
+npm ERR! code EPRIVATE
+npm ERR! This package has been marked as private
+npm ERR! Remove the 'private' field from the package.json to publish it.
+```
+** Package name must match with username, e.g. ```@michaelfong2017/test```
+
+## Better publish npm package
+https://medium.com/groftware/how-to-publish-your-react-component-on-npm-9cf48d91944d
+
