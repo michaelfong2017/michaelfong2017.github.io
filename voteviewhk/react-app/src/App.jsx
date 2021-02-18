@@ -2,6 +2,8 @@ import React, { lazy, Suspense, useState, useEffect } from "react";
 import "./styles/app.scss";
 import * as d3 from "d3";
 
+const NavBar = lazy(() => import("./components/NavBar"))
+
 const Scatterplot = lazy(() => import("./components/Scatterplot"));
 
 const App = (props) => {
@@ -44,6 +46,10 @@ const App = (props) => {
 
   return (
     <div class="column">
+      <Suspense fallback={<div>Loading...</div>}>
+        <NavBar />
+      </Suspense>
+
       <input id="data_url" type="text" placeholder="Data url" />
       <button style={{ marginBottom: "5px" }} onClick={updateDataUrl}>
         Submit data url
