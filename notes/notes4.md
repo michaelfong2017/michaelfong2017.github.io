@@ -178,3 +178,18 @@ Password: ```user```
 ```
 fluid is needed for width to be 100% across all viewport and device sizes.
 Row is needed so that one element is on the left and one element is on the right.
+
+## When to React to use useRef
+In plain JavaScript you had to use getElementById or querySelector to select a DOM node.
+
+But this is not an ideal solution in React.
+
+In React you want to use the useRef hook or if you’re in a React class component, you want to use createRef.
+
+The reason you don’t want to use getElementById or querySelector is because you may be designing your React app to output multiple of the same ID’s, which is a no no.
+
+Another reason to use useRef is because it helps with the unidirectional (single direction) data flow.
+
+You can define a node reference in a parent component and toss them down to child components.
+
+Hence the single direction data flow.
