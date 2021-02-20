@@ -448,3 +448,12 @@ Then, under the correct parent, set
 }
 ```
 to hide the toggler.
+
+## react-bootstrap Col and Row
+```style={{ flexDirection: "row" }}``` or ```style={{ flexDirection: "column" }}``` is effective only for `<Row>` but not `<Col>`.
+`<Col>` enclosed by `<Col>` is useless.
+`<Col>` has to be enclosed by `<Row>` to be effective.
+
+Default flex-direction for `<Row>` is "row".
+
+Remember to add `noGutters` to `<Row>` (default value is "false") to remove the gutter spacing between Cols as well as any added negative margins.
