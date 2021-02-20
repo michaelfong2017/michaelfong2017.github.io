@@ -250,3 +250,35 @@ export default MyNavbar;
 Even though I use another component exactly named "Navbar", there will be no conflicts.
 
 In my App.jsx, ```const Navbar = lazy(() => import("./components/Navbar"));```, I can still import and use the name "Navbar" to refer to my own Navbar.
+
+## scss styles directory structure
+```
+styles
+├── app.scss
+├── components
+│   ├── navbar.scss
+│   ├── sidebar.scss
+│
+└── utils
+    ├── variables
+```
+
+In app.scss,
+```
+@import "bootstrap/scss/bootstrap.scss";
+
+@import 'utils/variables.scss';
+
+@import 'components/navbar.scss';
+@import 'components/sidebar.scss';
+```
+
+In variables.scss,
+```$theme-color: #26004d;```
+
+In navbar.scss, directly use the global variables without import.
+```
+.navbar {
+  background-color: $theme-color;
+}
+```
