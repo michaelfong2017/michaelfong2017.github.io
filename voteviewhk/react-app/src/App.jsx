@@ -1,8 +1,25 @@
 import React, { lazy, Suspense, useState, useEffect } from "react";
-import "./styles/app.scss";
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from "recoil"
+
+import {
+  Container,
+  Col,
+  Row,
+} from "react-bootstrap"
+
+import "styles/app.scss";
 import * as d3 from "d3";
 
-const Scatterplot = lazy(() => import("./components/Scatterplot"));
+const Navbar = lazy(() => import("components/Navbar"));
+const Sidebar = lazy(() => import("components/Sidebar"));
+
+const Scatterplot = lazy(() => import("components/Scatterplot"));
 
 const App = (props) => {
   // React hooks with common state values for all components
@@ -43,15 +60,37 @@ const App = (props) => {
   }, [dataUrl]);
 
   return (
-    <div class="column">
-      <input id="data_url" type="text" placeholder="Data url" />
-      <button style={{ marginBottom: "5px" }} onClick={updateDataUrl}>
-        Submit data url
-      </button>
+    <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <Scatterplot data={data} onChangeLegislator={updateLegislator} />
+        <Navbar />
       </Suspense>
-      <p>{data && selectedLegislator && data[selectedLegislator] ? "Legislator " + data[selectedLegislator]['name_ch'] : data ? "No legislator selected" : "Loading..."}</p>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Row noGutters>
+
+          <Col xs="auto" xl="auto" sm="auto" md="auto" lg="auto">
+            <Sidebar />
+          </Col>
+
+          <Col>
+            <Row style={{ flexDirection: "column" }} noGutters>
+              
+              <input id="data_url" type="text" placeholder="Data url" />
+              <button style={{ marginBottom: "5px" }} onClick={updateDataUrl}>
+                Submit data url
+              </button>
+
+              <Suspense fallback={<div>Loading...</div>}>
+                <Scatterplot data={data} onChangeLegislator={updateLegislator} />
+              </Suspense>
+              <p>{data && selectedLegislator && data[selectedLegislator] ? "Legislator " + data[selectedLegislator]['name_ch'] : data ? "No legislator selected" : "Loading..."}</p>
+
+            </Row>
+          </Col>
+
+        </Row>
+      </Suspense>
+
     </div>
   );
 };

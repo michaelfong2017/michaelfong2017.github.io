@@ -32,7 +32,15 @@ module.exports = {
    },
    devtool: 'source-map',
    resolve: {
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx'],
+      roots: [
+         path.resolve(__dirname, 'node_modules'),
+         path.resolve(__dirname, 'src')
+      ],
+      modules: [
+         path.resolve(__dirname, 'node_modules'),
+         path.resolve(__dirname, 'src')
+      ]
    },
    module: {
       rules: [
