@@ -421,3 +421,30 @@ In Sidebar.jsx,
 import variables from "styles/_variables.module.scss"
 const sidebarBorderWidth = variables.sidebarBorderWidth.slice(0, -2)
 ```
+
+## React-bootstrap Col width depends on children
+In App.jsx,
+```
+<Row noGutters>
+    <Col xs="auto" xl="auto" sm="auto" md="auto" lg="auto">
+        <Sidebar />
+    </Col>
+
+    <Col>
+    </Col>
+
+</Row>
+```
+
+Set ```xs="auto" xl="auto" sm="auto" md="auto" lg="auto"``` so that column width is determined by the contents so that switching different sidebars can result in different column widths without changing the codes in App.jsx.
+
+### React bootstrap Navbar NavDropdown
+Push content down when
+```expand="true"``` is set in Navbar.
+Then, under the correct parent, set
+```
+.navbar-toggler {
+    display: none;
+}
+```
+to hide the toggler.
