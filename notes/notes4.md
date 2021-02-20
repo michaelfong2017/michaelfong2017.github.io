@@ -193,3 +193,49 @@ Another reason to use useRef is because it helps with the unidirectional (single
 You can define a node reference in a parent component and toss them down to child components.
 
 Hence the single direction data flow.
+
+## React Col auto
+```<Col xs={"auto"} md={"auto"} lg={"auto"}>```
+So that Col will have width depending on the width of child, otherwise, the width is fixed and cannot be changed.
+
+## React css height
+Since the outer layout elements are not the rendering elements, their height and width usually depend on the inner elements. It is good to just use ```100vh``` for inner elements, which means 100% viewport height.
+
+## scss over css
+Every valid CSS stylesheet is a valid SCSS file with the same meaning.
+
+1. SCSS contains all the features of CSS and contains more features that are not present in CSS which makes it a good choice for developers to use it.
+2. SCSS is full of advanced features.
+3. SCSS offers variables, you can shorten your code by using variables. It is a great advantage over conventional CSS.
+
+```@import "bootstrap/scss/bootstrap.scss";``` instead of ```@import "bootstrap/dist/css/bootstrap.css";```
+
+## css class style override
+```
+.myclass{
+    //bunch of other stuff
+    float:left;
+}
+```
+and I define another class like this:
+```
+.myclass-right{
+    float:right;
+}
+```
+and I define a div this way:
+
+```<div class="myclass myclass-right"></div>```
+
+Then, as long as the selectors have the same specificity (in this case they do) and .myclass-right style block is defined after .myclass, div inherits everything from myclass, but override the float property to float:right.
+
+** Using ```!important``` is one way to do it.
+
+.myclass-right{
+    float:right !important;
+}
+In addition if you are more specific with your selector it should override as well.
+
+div.myclass-right{
+    float:right;
+}
