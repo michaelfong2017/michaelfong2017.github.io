@@ -202,6 +202,9 @@ So that Col will have width depending on the width of child, otherwise, the widt
 Since the outer layout elements are not the rendering elements, their height and width usually depend on the inner elements. It is good to just use ```100vh``` for inner elements, which means 100% viewport height.
 
 ## scss over css
+https://marksheet.io/sass-variables.html
+** One of the first reasons people turn to Sass is the existence of CSS variables. Change once, update everywhere.
+
 Every valid CSS stylesheet is a valid SCSS file with the same meaning.
 
 1. SCSS contains all the features of CSS and contains more features that are not present in CSS which makes it a good choice for developers to use it.
@@ -249,7 +252,7 @@ export default MyNavbar;
 ```
 Even though I use another component exactly named "Navbar", there will be no conflicts.
 
-In my App.jsx, ```const Navbar = lazy(() => import("./components/Navbar"));```, I can still import and use the name "Navbar" to refer to my own Navbar.
+In my App.jsx, ```const Navbar = lazy(() => import("components/Navbar"));```, I can still import and use the name "Navbar" to refer to my own Navbar.
 
 ## scss styles directory structure
 ```
@@ -282,3 +285,104 @@ In navbar.scss, directly use the global variables without import.
   background-color: $theme-color;
 }
 ```
+
+## scss nested class and pseudo-selectors
+```
+//scss
+.parent{
+  .child{}
+}
+
+// becomes in css
+.parent .child{}
+```
+
+```.parent .child``` targets HTML elements with ```class="child"``` nested within ```class="parent"```.
+
+```
+//scss
+.parent{
+  &:hover{}
+  &.other-class{}
+}
+
+// compile to css
+.parent:hover{}
+.parent.other-class{}
+```
+
+The ```.parent.other-class``` will target HTML elements that have ```class="parent other-class"```.
+
+## css mobile-first or desktop-first
+A mobile-first CSS would use ```min-width``` media queries in order to apply specific rules for larger viewports:
+```
+@media (min-width: 768px) {
+  /* Rules for tablets and bigger viewports */
+}
+
+@media (min-width: 992px) {
+  /* Rules for laptops, small desktop screens and bigger viewports */
+}
+
+@media (min-width: 1200px) {
+  /* Rules for larger desktop screens only */
+}
+```
+
+A desktop-first approach starts with styles for large screens and ```max-width``` media queries in order to apply specific rules for smaller viewports:
+```
+@media (max-width: 1199px) {
+  /* Rules for laptops, small desktop screens, and smaller viewports */
+}
+
+@media (max-width: 991px) {
+  /* Rules for tablets and smaller viewports */
+}
+
+@media (max-width: 767px) {
+  /* Rules for smartphones only */
+}
+```
+
+Notice how the desktop-first max-width values are 1 fewer than the mobile-first min-width. 
+
+### css orientation parameter
+The orientation parameter can detect if the viewport is in either of the following modes.
+```
+@media (orientation: portrait) {
+  /* For vertical viewports */
+}
+
+@media (orientation: landscape) {
+  /* For horizontal viewports */
+}
+```
+### css combinators
+https://www.w3schools.com/css/css_combinators.asp
+There are four different combinators in CSS:
+
+descendant selector (space)
+child selector (>)
+adjacent sibling selector (+)
+general sibling selector (~)
+
+## react webpack resolve path
+```
+resolve: {
+    /* If multiple files share the same name but have different extensions, webpack will 
+    resolve the one with the extension listed first in the array and skip the rest. */
+
+    extensions: ['.js', '.jsx'],
+    roots: [
+        path.resolve(__dirname, 'node_modules'),
+        path.resolve(__dirname, 'src')
+    ],
+    modules: [
+        path.resolve(__dirname, 'node_modules'),
+        path.resolve(__dirname, 'src')
+    ]
+},
+```
+This resolves the paths so that something like ```./components/``` 
+and ```../../styles/``` are not needed anymore.
+All 4 paths above are required.
