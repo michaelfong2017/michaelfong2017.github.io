@@ -179,6 +179,8 @@ Password: ```user```
 fluid is needed for width to be 100% across all viewport and device sizes.
 Row is needed so that one element is on the left and one element is on the right.
 
+```<Row noGutters>``` removes the gutter spacing between Cols as well as any added negative margins.
+
 ## When to React to use useRef
 In plain JavaScript you had to use getElementById or querySelector to select a DOM node.
 
@@ -259,27 +261,26 @@ In my App.jsx, ```const Navbar = lazy(() => import("components/Navbar"));```, I 
 styles
 ├── app.scss
 ├── components
-│   ├── navbar.scss
-│   ├── sidebar.scss
-│
-└── utils
-    ├── variables
+│   ├── _navbar.scss
+│   ├── _sidebar.scss
+├── _variables.module.scss
+└── _variables.scss
 ```
 
 In app.scss,
 ```
 @import "bootstrap/scss/bootstrap.scss";
 
-@import 'utils/variables.scss';
+@import 'variables';
 
-@import 'components/navbar.scss';
-@import 'components/sidebar.scss';
+@import 'components/navbar';
+@import 'components/sidebar';
 ```
 
-In variables.scss,
+In _variables.scss, only have variables.
 ```$theme-color: #26004d;```
 
-In navbar.scss, directly use the global variables without import.
+In _navbar.scss, directly use the global variables without import.
 ```
 .navbar {
   background-color: $theme-color;
@@ -386,3 +387,37 @@ resolve: {
 This resolves the paths so that something like ```./components/``` 
 and ```../../styles/``` are not needed anymore.
 All 4 paths above are required.
+
+### css negative margin
+We have negative margin but not negative padding.
+
+## scss filename, structure and import
+https://stackoverflow.com/questions/17598996/sass-use-variables-across-multiple-files
+Import without extension ".scss" and prefix the files with underscore.
+
+Should use ```@use```, don't use ```@import```.
+Reasons: https://sass-lang.com/documentation/at-rules/import.
+
+## export scss variables to jsx
+Must use the filename "_variables.module.scss" (or "variables.module.scss").
+In _variables.module.scss,
+```
+@import 'variables';
+
+:export {
+    sidebarBorderWidth: $sidebar-border-width;
+}
+```
+
+In _variables.scss,
+```
+// Other variables above
+
+$sidebar-border-width: 12px;
+```
+
+In Sidebar.jsx,
+```
+import variables from "styles/_variables.module.scss"
+const sidebarBorderWidth = variables.sidebarBorderWidth.slice(0, -2)
+```
