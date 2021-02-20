@@ -239,3 +239,14 @@ In addition if you are more specific with your selector it should override as we
 div.myclass-right{
     float:right;
 }
+
+## React export import naming
+In my component, name the file as "Navbar.jsx".
+```
+const MyNavbar = () => {
+}
+export default MyNavbar;
+```
+Even though I use another component exactly named "Navbar", there will be no conflicts.
+
+In my App.jsx, ```const Navbar = lazy(() => import("./components/Navbar"));```, I can still import and use the name "Navbar" to refer to my own Navbar.
