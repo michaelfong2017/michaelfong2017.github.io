@@ -457,3 +457,54 @@ to hide the toggler.
 Default flex-direction for `<Row>` is "row".
 
 Remember to add `noGutters` to `<Row>` (default value is "false") to remove the gutter spacing between Cols as well as any added negative margins.
+
+## Chrome download all resources
+https://chrome.google.com/webstore/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb/related?hl=en-US
+
+Need to restart Chrome/open a new window.
+
+Sometimes I need to manually download the files under "Network". For example, the .ttf font file encountered today.
+
+## Webpack ttf woff
+https://chriscourses.com/blog/loading-fonts-webpack
+
+### js bundle name
+Have your bundles suffixed with a bundle hash that is pretty to avoid browser caching issues when you update your app.
+
+## Webpack copy static folder
+One advantage that the aforementioned copy-webpack-plugin brings that hasn't been explained before is that all the other methods mentioned here still bundle the resources into your bundle files (and require you to "require" or "import" them somewhere). If I just want to move some images around or some template partials, I don't want to clutter up my javascript bundle file with useless references to them, I just want the files emitted in the right place. I haven't found any other way to do this in webpack. Admittedly it's not what webpack originally was designed for, but it's definitely a current use case. (@BreakDS I hope this answers your question - it's only a benefit if you want it)
+
+1. ```yarn add copy-webpack-plugin -D```
+2. In webpack.config.prod.js,
+```const CopyWebpackPlugin = require('copy-webpack-plugin');```
+3. In webpack.config.prod.js,
+```
+plugins: [
+    // Other plugins above
+    new CopyWebpackPlugin({
+         patterns: [
+            {
+               from: path.resolve(__dirname, 'src', 'pages', 'dashboard'),
+               to: path.resolve(__dirname, 'build', 'pages', 'dashboard')
+            }
+         ]
+    })
+],
+```
+Note for the directory structure.
+```
+react-app
+├── webpack.config.prod.js
+├── src
+│   ├── pages
+│       ├── dashboard
+│           ├── assets
+│           ├── index.html
+└── build
+```
+4. In App.jsx,
+```
+<ul>
+    <li><a href="pages/dashboard/index.html">Dashboard</a></li>
+</ul>
+```
