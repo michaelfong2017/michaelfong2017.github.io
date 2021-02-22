@@ -1,6 +1,17 @@
+@import "variables";
+
+@import "components/navbar";
+@import "components/sidebar";
+
 @import "bootstrap/scss/bootstrap.scss";
 
-@import 'variables';
-
-@import 'components/navbar';
-@import 'components/sidebar';
+// @import "pages/dashboard/theme.min.css";
+// @import "pages/dashboard/style.css";
+// @font-face {
+//     font-family: "The-Icon-of";
+//     src: url("pages/dashboard/fonts/The-Icon-of.ttf?ww946b");
+//     src: url("pages/dashboard/fonts/The-Icon-of.ttf?ww946b");
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: block;
+// }

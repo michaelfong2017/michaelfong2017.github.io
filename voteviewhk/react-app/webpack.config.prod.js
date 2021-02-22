@@ -4,6 +4,7 @@ const fs = require('fs')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
    entry: [path.resolve(__dirname, 'src', 'index.js')],
@@ -54,8 +55,8 @@ module.exports = {
             use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'] // Note that postcss loader must come before sass-loader
          },
          {
-           test: /\.(svg|png|jpg|gif)$/,
-           use: 'file-loader',
+            test: /\.(svg|png|jpg|gif|ttf)$/,
+            use: 'file-loader',
          }
       ]
    },
@@ -67,6 +68,14 @@ module.exports = {
       new webpack.DefinePlugin({
          'process.env.NODE_ENV': JSON.stringify('production')
       }),
+      // new CopyWebpackPlugin({
+      //    patterns: [
+      //       {
+      //          from: path.resolve(__dirname, 'src', 'pages', 'dashboard'),
+      //          to: path.resolve(__dirname, 'build', 'pages', 'dashboard')
+      //       }
+      //    ]
+      // })
    ],
    optimization: {
       splitChunks: { chunks: "all" }
