@@ -9,7 +9,7 @@ const Scatterplot = (props) => {
       const svg = d3.select(d3Container.current);
       // set the dimensions and margins of the graph
       var margin = { top: 10, right: 30, bottom: 30, left: 60 },
-        width = 800,
+        width = 700,
         height = 400;
 
       // append the svg object to the body of the page

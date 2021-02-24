@@ -18,6 +18,7 @@ import "styles/app.scss";
 import * as d3 from "d3";
 
 const Navbar = lazy(() => import("components/Navbar"));
+const MemberCards = lazy(() => import("components/MemberCards"));
 
 const Scatterplot = lazy(() => import("components/Scatterplot"));
 
@@ -70,7 +71,7 @@ const App = (props) => {
         <Navbar />
       </Suspense>
 
-      <Container>
+      <Container style={{margin: "0px"}}>
         <Row>
 
         </Row>
@@ -91,6 +92,16 @@ const App = (props) => {
           </Suspense>
           <p>{data && selectedLegislator && data[selectedLegislator] ? "Legislator " + data[selectedLegislator]['name_ch'] : data ? "No legislator selected" : "Loading..."}</p>
 
+        </Row>
+
+        <Row>
+          <Suspense fallback={
+            <Spinner animation="border" role="status">
+              <span className="sr-only">Loading...</span>
+            </Spinner>
+          }>
+            <MemberCards />
+          </Suspense>
         </Row>
 
       </Container>

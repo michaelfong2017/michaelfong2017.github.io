@@ -1,0 +1,66 @@
+import React, { useState } from "react";
+import {
+  Card,
+  CardColumns,
+} from "react-bootstrap"
+import styled from "styled-components"
+import cardInfo from "./MemberCardsData"
+
+const MyMemberCards = () => {
+
+  const MyCardColumns = styled(CardColumns)`
+    // @media (min-width: 576px) {
+      column-count: 4
+    // }
+  `;
+  const MyCard = styled(Card)`
+    && {
+      display: inline-flex;
+      flex-direction: row;
+      width: 200px;
+      height: 100px;
+    }
+  `;
+  const MyCardImg = styled(Card.Img)`
+    && {
+      width: auto;
+      height: 100%;
+    }
+  `;
+  const MyCardBody = styled(Card.Body)`
+    padding: 0.5rem;
+    > .card-title {
+      font-size: 12px;
+    }
+    // > .card-subtitle {
+    //   font-size: 12px;
+    // }
+    > .card-text {
+      font-size: 12px;
+    }
+  `;
+
+  const renderCard = (card, index) => {
+    return (
+      <MyCard key={index}>
+        <MyCardImg variant="top" src={card.image} />
+        <MyCardBody>
+          <Card.Title>{card.title}</Card.Title>
+          <Card.Subtitle>{card.subtitle}</Card.Subtitle>
+          <Card.Text>
+            {card.text}
+          </Card.Text>
+        </MyCardBody>
+      </MyCard>
+    );
+  };
+
+  return (
+    <MyCardColumns>
+      {cardInfo.map(renderCard)}
+    </MyCardColumns>
+
+  );
+};
+
+export default MyMemberCards;
