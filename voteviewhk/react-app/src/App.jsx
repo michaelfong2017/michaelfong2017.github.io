@@ -11,13 +11,13 @@ import {
   Container,
   Col,
   Row,
+  Spinner,
 } from "react-bootstrap"
 
 import "styles/app.scss";
 import * as d3 from "d3";
 
 const Navbar = lazy(() => import("components/Navbar"));
-const Sidebar = lazy(() => import("components/Sidebar"));
 
 const Scatterplot = lazy(() => import("components/Scatterplot"));
 
@@ -61,35 +61,40 @@ const App = (props) => {
 
   return (
     <div>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+
+      }>
         <Navbar />
       </Suspense>
 
-      <Suspense fallback={<div>Loading...</div>}>
-        <Row noGutters>
-
-          <Col xs="auto" xl="auto" sm="auto" md="auto" lg="auto">
-            <Sidebar />
-          </Col>
-
-          <Col>
-            <Row style={{ flexDirection: "column" }} noGutters>
-              
-              <input id="data_url" type="text" placeholder="Data url" />
-              <button style={{ marginBottom: "5px" }} onClick={updateDataUrl}>
-                Submit data url
-              </button>
-
-              <Suspense fallback={<div>Loading...</div>}>
-                <Scatterplot data={data} onChangeLegislator={updateLegislator} />
-              </Suspense>
-              <p>{data && selectedLegislator && data[selectedLegislator] ? "Legislator " + data[selectedLegislator]['name_ch'] : data ? "No legislator selected" : "Loading..."}</p>
-
-            </Row>
-          </Col>
+      <Container>
+        <Row>
 
         </Row>
-      </Suspense>
+        <Row style={{ flexDirection: "column" }} noGutters>
+
+          <input id="data_url" type="text" placeholder="Data url" />
+          <button style={{ marginBottom: "5px" }} onClick={updateDataUrl}>
+            Submit data url
+              </button>
+
+          <Suspense fallback={
+            <Spinner animation="border" role="status">
+              <span className="sr-only">Loading...</span>
+            </Spinner>
+
+          }>
+            <Scatterplot data={data} onChangeLegislator={updateLegislator} />
+          </Suspense>
+          <p>{data && selectedLegislator && data[selectedLegislator] ? "Legislator " + data[selectedLegislator]['name_ch'] : data ? "No legislator selected" : "Loading..."}</p>
+
+        </Row>
+
+      </Container>
+
 
     </div>
   );

@@ -1,6 +1,6 @@
 // This library allows us to combine paths easily
 const path = require('path');
-const fs = require('fs')
+// const fs = require('fs')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -18,18 +18,18 @@ module.exports = {
    devServer: {
       contentBase: path.resolve(__dirname, 'build'),
       port: 8080,
-      https: {
-         cert: fs.readFileSync(path.resolve(__dirname, 'localhost.crt')),
-         key: fs.readFileSync(path.resolve(__dirname, 'localhost.key')),
-      },
-      proxy: [
-         {
-            context: ['/authorize', '/api'],
-            target: 'https://localhost:8443',
-            secure: false,
-            changeOrigin: true,
-         },
-      ],
+      // https: {
+      //    cert: fs.readFileSync(path.resolve(__dirname, 'localhost.crt')),
+      //    key: fs.readFileSync(path.resolve(__dirname, 'localhost.key')),
+      // },
+      // proxy: [
+      //    {
+      //       context: ['/authorize', '/api'],
+      //       target: 'https://localhost:8443',
+      //       secure: false,
+      //       changeOrigin: true,
+      //    },
+      // ],
    },
    devtool: 'source-map',
    resolve: {

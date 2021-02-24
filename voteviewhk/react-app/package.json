@@ -6,7 +6,8 @@
     "private": true,
     "scripts": {
         "dev": "webpack serve --config webpack.config.dev.js",
-        "build": "webpack --config webpack.config.prod.js"
+        "build": "webpack --config webpack.config.prod.js",
+        "docker": "docker rm -vf voteview-web && docker rmi -f voteview-web && docker build -t voteview-web . && docker run -d -p 8080:80 --name voteview-web voteview-web"
     },
     "devDependencies": {
         "@babel/core": "^7.12.13",

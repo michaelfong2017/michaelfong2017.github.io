@@ -1,10 +1,11 @@
 // This library allows us to combine paths easily
 const path = require('path');
-const fs = require('fs')
+// const fs = require('fs')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+   cache: false,
    entry: [path.resolve(__dirname, 'src', 'index.js')],
    output: {
       path: path.resolve(__dirname, 'build'),
@@ -19,18 +20,18 @@ module.exports = {
       contentBase: path.resolve(__dirname, 'src'),
       hot: true,
       port: 8080,
-      https: {
-         cert: fs.readFileSync(path.resolve(__dirname, 'localhost.crt')),
-         key: fs.readFileSync(path.resolve(__dirname, 'localhost.key')),
-      },
-      proxy: [
-         {
-            context: ['/authorize', '/api'],
-            target: 'https://localhost:8443',
-            secure: false,
-            changeOrigin: true,
-         },
-      ],
+      // https: {
+      //    cert: fs.readFileSync(path.resolve(__dirname, 'localhost.crt')),
+      //    key: fs.readFileSync(path.resolve(__dirname, 'localhost.key')),
+      // },
+      // proxy: [
+      //    {
+      //       context: ['/authorize', '/api'],
+      //       target: 'https://localhost:8443',
+      //       secure: false,
+      //       changeOrigin: true,
+      //    },
+      // ],
    },
    devtool: 'eval',
    resolve: {
