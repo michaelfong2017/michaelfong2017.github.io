@@ -4,7 +4,7 @@ import {
   CardColumns,
 } from "react-bootstrap"
 import styled from "styled-components"
-import cardInfo from "./MemberCardsData"
+import memberData from "./MemberData"
 
 const MyMemberCards = () => {
 
@@ -57,7 +57,7 @@ const MyMemberCards = () => {
 
   return (
     <MyCardColumns>
-      {cardInfo.map(renderCard)}
+      {memberData.map(renderCard)}
     </MyCardColumns>
 
   );

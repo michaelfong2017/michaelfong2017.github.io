@@ -1,6 +1,8 @@
-const cardInfo = [
+const memberData = [
   {
     "index": 1,
+    "name_ch": "梁君彥",
+    "name_en": "Andrew LEUNG",
     "title": "梁君彥, Andrew LEUNG",
     "summary": "Functional Constituency - Industrial (First)",
     "image": "https://www.legco.gov.hk/images/mem_1620/lky.jpg",
@@ -10,6 +12,8 @@ const cardInfo = [
   },
   {
     "index": 2,
+    "name_ch": "涂謹申",
+    "name_en": "James TO",
     "title": "涂謹申, James TO",
     "summary": "",
     "image": "",
@@ -19,6 +23,8 @@ const cardInfo = [
   },
   {
     "index": 3,
+    "name_ch": "梁耀忠",
+    "name_en": "LEUNG Yiu-chung",
     "title": "梁耀忠, LEUNG Yiu-chung",
     "summary": "",
     "image": "",
@@ -28,6 +34,8 @@ const cardInfo = [
   },
   {
     "index": 4,
+    "name_ch": "石禮謙",
+    "name_en": "Abraham SHEK",
     "title": "石禮謙, Abraham SHEK",
     "summary": "Functional Constituency - Real Estate and Construction",
     "image": "https://www.legco.gov.hk/images/mem_1620/slh.jpg",
@@ -37,6 +45,8 @@ const cardInfo = [
   },
   {
     "index": 5,
+    "name_ch": "張宇人",
+    "name_en": "Tommy CHEUNG",
     "title": "張宇人, Tommy CHEUNG",
     "summary": "Functional Constituency - Catering",
     "image": "https://www.legco.gov.hk/images/mem_1620/cyy.jpg",
@@ -46,6 +56,8 @@ const cardInfo = [
   },
   {
     "index": 6,
+    "name_ch": "李國麟",
+    "name_en": "Prof Joseph LEE",
     "title": "李國麟, Prof Joseph LEE",
     "summary": "",
     "image": "",
@@ -55,6 +67,8 @@ const cardInfo = [
   },
   {
     "index": 7,
+    "name_ch": "林健鋒",
+    "name_en": "Jeffrey LAM",
     "title": "林健鋒, Jeffrey LAM",
     "summary": "Functional Constituency - Commercial (First)",
     "image": "https://www.legco.gov.hk/images/mem_1620/lkf.jpg",
@@ -64,6 +78,8 @@ const cardInfo = [
   },
   {
     "index": 8,
+    "name_ch": "黃定光",
+    "name_en": "WONG Ting-kwong",
     "title": "黃定光, WONG Ting-kwong",
     "summary": "Functional Constituency - Import and Export",
     "image": "https://www.legco.gov.hk/images/mem_small_1620/wtk.jpg",
@@ -73,6 +89,8 @@ const cardInfo = [
   },
   {
     "index": 9,
+    "name_ch": "李慧琼",
+    "name_en": "Starry LEE",
     "title": "李慧琼, Starry LEE",
     "summary": "Functional Constituency - District Council (Second)",
     "image": "https://www.legco.gov.hk/images/mem_1620/lwks.jpg",
@@ -82,6 +100,8 @@ const cardInfo = [
   },
   {
     "index": 10,
+    "name_ch": "陳克勤",
+    "name_en": "CHAN Hak-kan",
     "title": "陳克勤, CHAN Hak-kan",
     "summary": "Geographical Constituency - New Territories East",
     "image": "https://www.legco.gov.hk/images/mem_1620/chk.jpg",
@@ -91,6 +111,8 @@ const cardInfo = [
   },
   {
     "index": 11,
+    "name_ch": "陳健波",
+    "name_en": "CHAN Kin-por",
     "title": "陳健波, CHAN Kin-por",
     "summary": "Functional Constituency - Insurance",
     "image": "https://www.legco.gov.hk/images/mem_1620/ckp.jpg",
@@ -100,6 +122,8 @@ const cardInfo = [
   },
   {
     "index": 12,
+    "name_ch": "梁美芬",
+    "name_en": "Dr Priscilla LEUNG",
     "title": "梁美芬, Dr Priscilla LEUNG",
     "summary": "Geographical Constituency - Kowloon West",
     "image": "https://www.legco.gov.hk/images/mem_1620/lmf.jpg",
@@ -109,6 +133,8 @@ const cardInfo = [
   },
   {
     "index": 13,
+    "name_ch": "黃國健",
+    "name_en": "WONG Kwok-kin",
     "title": "黃國健, WONG Kwok-kin",
     "summary": "Geographical Constituency - Kowloon East",
     "image": "https://www.legco.gov.hk/images/mem_small_1620/wkk.jpg",
@@ -118,6 +144,8 @@ const cardInfo = [
   },
   {
     "index": 14,
+    "name_ch": "葉劉淑儀",
+    "name_en": "Mrs Regina IP",
     "title": "葉劉淑儀, Mrs Regina IP",
     "summary": "Geographical Constituency - Hong Kong Island",
     "image": "https://www.legco.gov.hk/images/mem_1620/ilsy.jpg",
@@ -127,6 +155,8 @@ const cardInfo = [
   },
   {
     "index": 15,
+    "name_ch": "謝偉俊",
+    "name_en": "Paul TSE",
     "title": "謝偉俊, Paul TSE",
     "summary": "Geographical Constituency – Kowloon East",
     "image": "https://www.legco.gov.hk/images/mem_small_1620/twc.jpg",
@@ -136,6 +166,8 @@ const cardInfo = [
   },
   {
     "index": 16,
+    "name_ch": "毛孟靜",
+    "name_en": "Claudia MO",
     "title": "毛孟靜, Claudia MO",
     "summary": "",
     "image": "",
@@ -145,6 +177,8 @@ const cardInfo = [
   },
   {
     "index": 17,
+    "name_ch": "田北辰",
+    "name_en": "Michael TIEN",
     "title": "田北辰, Michael TIEN",
     "summary": "Geographical Constituency – New Territories West",
     "image": "https://www.legco.gov.hk/images/mem_1620/tps.jpg",
@@ -154,6 +188,8 @@ const cardInfo = [
   },
   {
     "index": 18,
+    "name_ch": "何俊賢",
+    "name_en": "Steven HO",
     "title": "何俊賢, Steven HO",
     "summary": "Functional Constituency - Agriculture and Fisheries",
     "image": "https://www.legco.gov.hk/images/mem_1620/hcys.jpg",
@@ -163,6 +199,8 @@ const cardInfo = [
   },
   {
     "index": 19,
+    "name_ch": "易志明",
+    "name_en": "Frankie YICK",
     "title": "易志明, Frankie YICK",
     "summary": "Functional Constituency - Transport",
     "image": "https://www.legco.gov.hk/images/mem_1620/ycm.jpg",
@@ -172,6 +210,8 @@ const cardInfo = [
   },
   {
     "index": 20,
+    "name_ch": "胡志偉",
+    "name_en": "WU Chi-wai",
     "title": "胡志偉, WU Chi-wai",
     "summary": "",
     "image": "",
@@ -181,6 +221,8 @@ const cardInfo = [
   },
   {
     "index": 21,
+    "name_ch": "姚思榮",
+    "name_en": "YIU Si-wing",
     "title": "姚思榮, YIU Si-wing",
     "summary": "Functional Constituency - Tourism",
     "image": "https://www.legco.gov.hk/images/mem_1620/ysw.jpg",
@@ -190,6 +232,8 @@ const cardInfo = [
   },
   {
     "index": 22,
+    "name_ch": "馬逢國",
+    "name_en": "MA Fung-kwok",
     "title": "馬逢國, MA Fung-kwok",
     "summary": "Functional Constituency - Sports, Performing Arts, Culture and Publication",
     "image": "https://www.legco.gov.hk/images/mem_1620/mfk.jpg",
@@ -199,6 +243,8 @@ const cardInfo = [
   },
   {
     "index": 23,
+    "name_ch": "莫乃光",
+    "name_en": "Charles Peter MOK",
     "title": "莫乃光, Charles Peter MOK",
     "summary": "",
     "image": "",
@@ -208,6 +254,8 @@ const cardInfo = [
   },
   {
     "index": 24,
+    "name_ch": "陳志全",
+    "name_en": "CHAN Chi-chuen",
     "title": "陳志全, CHAN Chi-chuen",
     "summary": "",
     "image": "",
@@ -217,6 +265,8 @@ const cardInfo = [
   },
   {
     "index": 25,
+    "name_ch": "陳恒鑌",
+    "name_en": "CHAN Han-pan",
     "title": "陳恒鑌, CHAN Han-pan",
     "summary": "Geographical Constituency – New Territories West",
     "image": "https://www.legco.gov.hk/images/mem_1620/chp.jpg",
@@ -226,6 +276,8 @@ const cardInfo = [
   },
   {
     "index": 26,
+    "name_ch": "梁志祥",
+    "name_en": "LEUNG Che-cheung",
     "title": "梁志祥, LEUNG Che-cheung",
     "summary": "Geographical Constituency - New Territories West",
     "image": "https://www.legco.gov.hk/images/mem_1620/lcc.jpg",
@@ -235,6 +287,8 @@ const cardInfo = [
   },
   {
     "index": 27,
+    "name_ch": "梁繼昌",
+    "name_en": "Kenneth LEUNG",
     "title": "梁繼昌, Kenneth LEUNG",
     "summary": "",
     "image": "",
@@ -244,6 +298,8 @@ const cardInfo = [
   },
   {
     "index": 28,
+    "name_ch": "麥美娟",
+    "name_en": "Alice MAK",
     "title": "麥美娟, Alice MAK",
     "summary": "Geographical Constituency – New Territories West",
     "image": "https://www.legco.gov.hk/images/mem_1620/mmk.jpg",
@@ -253,6 +309,8 @@ const cardInfo = [
   },
   {
     "index": 29,
+    "name_ch": "郭家麒",
+    "name_en": "Dr KWOK Ka-ki",
     "title": "郭家麒, Dr KWOK Ka-ki",
     "summary": "",
     "image": "",
@@ -262,6 +320,8 @@ const cardInfo = [
   },
   {
     "index": 30,
+    "name_ch": "郭偉强",
+    "name_en": "KWOK Wai-keung",
     "title": "郭偉强, KWOK Wai-keung",
     "summary": "Geographical Constituency - Hong Kong Island",
     "image": "https://www.legco.gov.hk/images/mem_1620/kwk.jpg",
@@ -271,6 +331,8 @@ const cardInfo = [
   },
   {
     "index": 31,
+    "name_ch": "郭榮鏗",
+    "name_en": "Dennis KWOK",
     "title": "郭榮鏗, Dennis KWOK",
     "summary": "",
     "image": "",
@@ -280,6 +342,8 @@ const cardInfo = [
   },
   {
     "index": 32,
+    "name_ch": "張華峰",
+    "name_en": "Christopher CHEUNG",
     "title": "張華峰, Christopher CHEUNG",
     "summary": "Functional Constituency - Financial Services",
     "image": "https://www.legco.gov.hk/images/mem_1620/cwf.jpg",
@@ -289,6 +353,8 @@ const cardInfo = [
   },
   {
     "index": 33,
+    "name_ch": "張超雄",
+    "name_en": "Dr Fernando CHEUNG",
     "title": "張超雄, Dr Fernando CHEUNG",
     "summary": "",
     "image": "",
@@ -298,6 +364,8 @@ const cardInfo = [
   },
   {
     "index": 34,
+    "name_ch": "黃碧雲",
+    "name_en": "Dr Helena WONG",
     "title": "黃碧雲, Dr Helena WONG",
     "summary": "",
     "image": "",
@@ -307,6 +375,8 @@ const cardInfo = [
   },
   {
     "index": 35,
+    "name_ch": "葉建源",
+    "name_en": "IP Kin-yuen",
     "title": "葉建源, IP Kin-yuen",
     "summary": "",
     "image": "",
@@ -316,6 +386,8 @@ const cardInfo = [
   },
   {
     "index": 36,
+    "name_ch": "葛珮帆",
+    "name_en": "Elizabeth QUAT",
     "title": "葛珮帆, Elizabeth QUAT",
     "summary": "Geographical Constituency – New Territories East",
     "image": "https://www.legco.gov.hk/images/mem_1620/qe.jpg",
@@ -325,6 +397,8 @@ const cardInfo = [
   },
   {
     "index": 37,
+    "name_ch": "廖長江",
+    "name_en": "Martin LIAO",
     "title": "廖長江, Martin LIAO",
     "summary": "Functional Constituency - Commercial (Second)",
     "image": "https://www.legco.gov.hk/images/mem_1620/lck.jpg",
@@ -334,6 +408,8 @@ const cardInfo = [
   },
   {
     "index": 38,
+    "name_ch": "潘兆平",
+    "name_en": "POON Siu-ping",
     "title": "潘兆平, POON Siu-ping",
     "summary": "Functional Constituency - Labour",
     "image": "https://www.legco.gov.hk/images/mem_1620/psp.jpg",
@@ -343,6 +419,8 @@ const cardInfo = [
   },
   {
     "index": 39,
+    "name_ch": "蔣麗芸",
+    "name_en": "Dr CHIANG Lai-wan",
     "title": "蔣麗芸, Dr CHIANG Lai-wan",
     "summary": "Geographical Constituency – Kowloon West",
     "image": "https://www.legco.gov.hk/images/mem_small_1620/clw.jpg",
@@ -352,6 +430,8 @@ const cardInfo = [
   },
   {
     "index": 40,
+    "name_ch": "盧偉國",
+    "name_en": "Ir Dr LO Wai-kwok",
     "title": "盧偉國, Ir Dr LO Wai-kwok",
     "summary": "Functional Constituency - Engineering",
     "image": "https://www.legco.gov.hk/images/mem_1620/lwk.jpg",
@@ -361,6 +441,8 @@ const cardInfo = [
   },
   {
     "index": 41,
+    "name_ch": "鍾國斌",
+    "name_en": "CHUNG Kwok-pan",
     "title": "鍾國斌, CHUNG Kwok-pan",
     "summary": "Functional Constituency - Textiles and Garment",
     "image": "https://www.legco.gov.hk/images/mem_1620/ckpf.jpg",
@@ -370,6 +452,8 @@ const cardInfo = [
   },
   {
     "index": 42,
+    "name_ch": "楊岳橋",
+    "name_en": "Alvin YEUNG",
     "title": "楊岳橋, Alvin YEUNG",
     "summary": "",
     "image": "",
@@ -379,6 +463,8 @@ const cardInfo = [
   },
   {
     "index": 43,
+    "name_ch": "尹兆堅",
+    "name_en": "Andrew WAN",
     "title": "尹兆堅, Andrew WAN",
     "summary": "",
     "image": "",
@@ -388,6 +474,8 @@ const cardInfo = [
   },
   {
     "index": 44,
+    "name_ch": "朱凱廸",
+    "name_en": "CHU Hoi-dick",
     "title": "朱凱廸, CHU Hoi-dick",
     "summary": "",
     "image": "",
@@ -397,6 +485,8 @@ const cardInfo = [
   },
   {
     "index": 45,
+    "name_ch": "吳永嘉",
+    "name_en": "Jimmy NG",
     "title": "吳永嘉, Jimmy NG",
     "summary": "Functional Constituency - Industrial (Second)",
     "image": "https://www.legco.gov.hk/images/mem_1620/nwk.jpg",
@@ -406,6 +496,8 @@ const cardInfo = [
   },
   {
     "index": 46,
+    "name_ch": "何君堯",
+    "name_en": "Dr Junius HO",
     "title": "何君堯, Dr Junius HO",
     "summary": "Geographical Constituency - New Territories West",
     "image": "https://www.legco.gov.hk/images/mem_1620/hky.jpg",
@@ -415,6 +507,8 @@ const cardInfo = [
   },
   {
     "index": 47,
+    "name_ch": "何啟明",
+    "name_en": "HO Kai-ming",
     "title": "何啟明, HO Kai-ming",
     "summary": "",
     "image": "",
@@ -424,6 +518,8 @@ const cardInfo = [
   },
   {
     "index": 48,
+    "name_ch": "林卓廷",
+    "name_en": "LAM Cheuk-ting",
     "title": "林卓廷, LAM Cheuk-ting",
     "summary": "",
     "image": "",
@@ -433,6 +529,8 @@ const cardInfo = [
   },
   {
     "index": 49,
+    "name_ch": "周浩鼎",
+    "name_en": "Holden CHOW",
     "title": "周浩鼎, Holden CHOW",
     "summary": "Functional Constituency - District Council (Second)",
     "image": "https://www.legco.gov.hk/images/mem_1620/chdh.jpg",
@@ -442,6 +540,8 @@ const cardInfo = [
   },
   {
     "index": 50,
+    "name_ch": "邵家輝",
+    "name_en": "SHIU Ka-fai",
     "title": "邵家輝, SHIU Ka-fai",
     "summary": "Functional Constituency - Wholesale & Retail",
     "image": "https://www.legco.gov.hk/images/mem_small_1620/skf.jpg",
@@ -451,6 +551,8 @@ const cardInfo = [
   },
   {
     "index": 51,
+    "name_ch": "邵家臻",
+    "name_en": "SHIU Ka-chun",
     "title": "邵家臻, SHIU Ka-chun",
     "summary": "",
     "image": "",
@@ -460,6 +562,8 @@ const cardInfo = [
   },
   {
     "index": 52,
+    "name_ch": "柯創盛",
+    "name_en": "Wilson OR",
     "title": "柯創盛, Wilson OR",
     "summary": "Geographical Constituency - Kowloon East",
     "image": "https://www.legco.gov.hk/images/mem_1620/ocs.jpg",
@@ -469,6 +573,8 @@ const cardInfo = [
   },
   {
     "index": 53,
+    "name_ch": "容海恩",
+    "name_en": "YUNG Hoi-yan",
     "title": "容海恩, YUNG Hoi-yan",
     "summary": "Geographical Constituency - New Territories East",
     "image": "https://www.legco.gov.hk/images/mem_small_1620/yhy.jpg",
@@ -478,6 +584,8 @@ const cardInfo = [
   },
   {
     "index": 54,
+    "name_ch": "陳沛然",
+    "name_en": "Dr Pierre CHAN",
     "title": "陳沛然, Dr Pierre CHAN",
     "summary": "Functional Constituency - Medical",
     "image": "https://www.legco.gov.hk/images/mem_1620/cp.jpg",
@@ -487,6 +595,8 @@ const cardInfo = [
   },
   {
     "index": 55,
+    "name_ch": "陳振英",
+    "name_en": "CHAN Chun-ying",
     "title": "陳振英, CHAN Chun-ying",
     "summary": "Functional Constituency - Finance",
     "image": "https://www.legco.gov.hk/images/mem_1620/ccy.jpg",
@@ -496,6 +606,8 @@ const cardInfo = [
   },
   {
     "index": 56,
+    "name_ch": "陳淑莊",
+    "name_en": "Tanya CHAN",
     "title": "陳淑莊, Tanya CHAN",
     "summary": "",
     "image": "",
@@ -505,6 +617,8 @@ const cardInfo = [
   },
   {
     "index": 57,
+    "name_ch": "張國鈞",
+    "name_en": "CHEUNG Kwok-kwan",
     "title": "張國鈞, CHEUNG Kwok-kwan",
     "summary": "Geographical Constituency - Hong Kong Island",
     "image": "https://www.legco.gov.hk/images/mem_1620/ckk.jpg",
@@ -514,6 +628,8 @@ const cardInfo = [
   },
   {
     "index": 58,
+    "name_ch": "許智峯",
+    "name_en": "HUI Chi-fung",
     "title": "許智峯, HUI Chi-fung",
     "summary": "",
     "image": "",
@@ -523,6 +639,8 @@ const cardInfo = [
   },
   {
     "index": 59,
+    "name_ch": "陸頌雄",
+    "name_en": "LUK Chung-hung",
     "title": "陸頌雄, LUK Chung-hung",
     "summary": "Functional Constituency - Labour",
     "image": "https://www.legco.gov.hk/images/mem_1620/lch.jpg",
@@ -532,6 +650,8 @@ const cardInfo = [
   },
   {
     "index": 60,
+    "name_ch": "劉國勳",
+    "name_en": "LAU Kwok-fan",
     "title": "劉國勳, LAU Kwok-fan",
     "summary": "Functional Constituency - District Council (First)",
     "image": "https://www.legco.gov.hk/images/mem_1620/lkfe.jpg",
@@ -541,6 +661,8 @@ const cardInfo = [
   },
   {
     "index": 61,
+    "name_ch": "劉業強",
+    "name_en": "Kenneth LAU",
     "title": "劉業強, Kenneth LAU",
     "summary": "Functional Constituency - Heung Yee Kuk",
     "image": "https://www.legco.gov.hk/images/mem_1620/lik.jpg",
@@ -550,6 +672,8 @@ const cardInfo = [
   },
   {
     "index": 62,
+    "name_ch": "鄭松泰",
+    "name_en": "Dr CHENG Chung-tai",
     "title": "鄭松泰, Dr CHENG Chung-tai",
     "summary": "Geographical Constituency - New Territories West",
     "image": "https://www.legco.gov.hk/images/mem_1620/cct.jpg",
@@ -559,6 +683,8 @@ const cardInfo = [
   },
   {
     "index": 63,
+    "name_ch": "鄺俊宇",
+    "name_en": "KWONG Chun-yu",
     "title": "鄺俊宇, KWONG Chun-yu",
     "summary": "",
     "image": "",
@@ -568,6 +694,8 @@ const cardInfo = [
   },
   {
     "index": 64,
+    "name_ch": "譚文豪",
+    "name_en": "Jeremy TAM",
     "title": "譚文豪, Jeremy TAM",
     "summary": "",
     "image": "",
@@ -577,6 +705,8 @@ const cardInfo = [
   },
   {
     "index": 65,
+    "name_ch": "范國威",
+    "name_en": "Gary FAN",
     "title": "范國威, Gary FAN",
     "summary": "",
     "image": "",
@@ -586,6 +716,8 @@ const cardInfo = [
   },
   {
     "index": 66,
+    "name_ch": "區諾軒",
+    "name_en": "AU Nok-hin",
     "title": "區諾軒, AU Nok-hin",
     "summary": "",
     "image": "",
@@ -595,6 +727,8 @@ const cardInfo = [
   },
   {
     "index": 67,
+    "name_ch": "鄭泳舜",
+    "name_en": "Vincent CHENG",
     "title": "鄭泳舜, Vincent CHENG",
     "summary": "Geographical Constituency - Kowloon West",
     "image": "https://www.legco.gov.hk/images/mem_1620/cws.jpg",
@@ -604,6 +738,8 @@ const cardInfo = [
   },
   {
     "index": 68,
+    "name_ch": "謝偉銓",
+    "name_en": "Tony TSE",
     "title": "謝偉銓, Tony TSE",
     "summary": "Functional Constituency - Architectural, Surveying, Planning and Landscape",
     "image": "https://www.legco.gov.hk/images/mem_1620/twct.jpg",
@@ -613,6 +749,8 @@ const cardInfo = [
   },
   {
     "index": 69,
+    "name_ch": "陳凱欣",
+    "name_en": "CHAN Hoi-yan",
     "title": "陳凱欣, CHAN Hoi-yan",
     "summary": "",
     "image": "",
@@ -622,6 +760,8 @@ const cardInfo = [
   },
   {
     "index": 70,
+    "name_ch": "梁國雄",
+    "name_en": "LEUNG Kwok-hung",
     "title": "梁國雄, LEUNG Kwok-hung",
     "summary": "",
     "image": "",
@@ -631,6 +771,8 @@ const cardInfo = [
   },
   {
     "index": 71,
+    "name_ch": "羅冠聰",
+    "name_en": "Nathan LAW",
     "title": "羅冠聰, Nathan LAW",
     "summary": "",
     "image": "",
@@ -640,6 +782,8 @@ const cardInfo = [
   },
   {
     "index": 72,
+    "name_ch": "姚松炎",
+    "name_en": "Dr YIU Chung-yim",
     "title": "姚松炎, Dr YIU Chung-yim",
     "summary": "",
     "image": "",
@@ -649,6 +793,8 @@ const cardInfo = [
   },
   {
     "index": 73,
+    "name_ch": "劉小麗",
+    "name_en": "Dr LAU Siu-lai",
     "title": "劉小麗, Dr LAU Siu-lai",
     "summary": "",
     "image": "",
@@ -658,6 +804,8 @@ const cardInfo = [
   },
   {
     "index": 74,
+    "name_ch": "梁頌恆",
+    "name_en": "Sixtus LEUNG",
     "title": "梁頌恆, Sixtus LEUNG",
     "summary": "",
     "image": "",
@@ -667,6 +815,8 @@ const cardInfo = [
   },
   {
     "index": 75,
+    "name_ch": "游蕙禎",
+    "name_en": "YAU Wai-ching",
     "title": "游蕙禎, YAU Wai-ching",
     "summary": "",
     "image": "",
@@ -676,4 +826,4 @@ const cardInfo = [
   }
 ];
 
-export default cardInfo
+export default memberData

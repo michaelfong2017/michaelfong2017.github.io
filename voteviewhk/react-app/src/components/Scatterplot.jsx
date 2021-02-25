@@ -1,15 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import * as d3 from "d3";
+import memberData from "./MemberData"
 
 const Scatterplot = (props) => {
   const d3Container = useRef(null);
 
   useEffect(() => {
-    if (props.data && d3Container.current) {
+    if (d3Container.current) {
       const svg = d3.select(d3Container.current);
       // set the dimensions and margins of the graph
       var margin = { top: 10, right: 30, bottom: 30, left: 60 },
-        width = 700,
+        width = 890,
         height = 400;
 
       // append the svg object to the body of the page
@@ -20,7 +21,7 @@ const Scatterplot = (props) => {
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
       //Read the data
-      var data = props.data
+      var data = memberData
         .filter((d) => {
           return d.name_ch != null && d.name_en != null;
         })
@@ -90,6 +91,7 @@ const Scatterplot = (props) => {
       <g>
         <g class="x-axis"></g>
         <g class="y-axis"></g>
+        {/* <ellipse stroke="black" stroke-width="1px" fill="none" rx="395" ry="164.2460165" cx="470" cy="189.2460165"></ellipse> */}
         <g class="chart-body"></g>
       </g>
     </svg>
