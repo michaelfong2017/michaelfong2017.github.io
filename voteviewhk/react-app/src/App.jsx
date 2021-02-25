@@ -71,10 +71,7 @@ const App = (props) => {
         <Navbar />
       </Suspense>
 
-      <Container style={{margin: "0px"}}>
-        <Row>
-
-        </Row>
+      <Container fluid style={{padding: "30px"}}>
         <Row style={{ flexDirection: "column" }} noGutters>
 
           <input id="data_url" type="text" placeholder="Data url" />
@@ -92,9 +89,7 @@ const App = (props) => {
           </Suspense>
           <p>{data && selectedLegislator && data[selectedLegislator] ? "Legislator " + data[selectedLegislator]['name_ch'] : data ? "No legislator selected" : "Loading..."}</p>
 
-        </Row>
 
-        <Row>
           <Suspense fallback={
             <Spinner animation="border" role="status">
               <span className="sr-only">Loading...</span>

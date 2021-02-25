@@ -10,14 +10,14 @@ const MyMemberCards = () => {
 
   const MyCardColumns = styled(CardColumns)`
     // @media (min-width: 576px) {
-      column-count: 4
+      column-count: 3
     // }
   `;
   const MyCard = styled(Card)`
     && {
       display: inline-flex;
       flex-direction: row;
-      width: 200px;
+      width: 300px;
       height: 100px;
     }
   `;
@@ -30,7 +30,7 @@ const MyMemberCards = () => {
   const MyCardBody = styled(Card.Body)`
     padding: 0.5rem;
     > .card-title {
-      font-size: 12px;
+      font-size: 14px;
     }
     // > .card-subtitle {
     //   font-size: 12px;
@@ -46,9 +46,9 @@ const MyMemberCards = () => {
         <MyCardImg variant="top" src={card.image} />
         <MyCardBody>
           <Card.Title>{card.title}</Card.Title>
-          <Card.Subtitle>{card.subtitle}</Card.Subtitle>
+          {/* <Card.Subtitle>{card.subtitle}</Card.Subtitle> */}
           <Card.Text>
-            {card.text}
+            {card.summary}
           </Card.Text>
         </MyCardBody>
       </MyCard>
