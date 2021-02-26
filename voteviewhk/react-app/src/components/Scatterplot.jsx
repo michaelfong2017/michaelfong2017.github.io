@@ -3,96 +3,154 @@ import * as d3 from "d3";
 import memberData from "./MemberData"
 
 const Scatterplot = (props) => {
-  const d3Container = useRef(null);
+  const svgRef = useRef(null)
+  const groupRef = useRef(null)
+  const xAxisRef = useRef(null)
+  const yAxisRef = useRef(null)
+  const bodyRef = useRef(null)
+  const brushRef = useRef(null)
+
+  // [top, right, bottom, left]
+  const [selectionRect, setSelectionRect] = useState({
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+  })
+
+  const width = 890
+  const height = 400
+  const x = d3.scaleLinear().domain([-1.5, 1.5]).range([0, width]);
+  const y = d3.scaleLinear().domain([-0.75, 0.75]).range([height, 0]);
+
+  //Read the data
+  const data = memberData
+    .filter((d) => {
+      return d.name_ch != null && d.name_en != null;
+    })
+    .map((d) => {
+      return {
+        coord1D: d.coord1D,
+        coord2D: d.coord2D,
+      };
+    });
+  // console.log(data);
 
   useEffect(() => {
-    if (d3Container.current) {
-      const svg = d3.select(d3Container.current);
-      // set the dimensions and margins of the graph
-      var margin = { top: 10, right: 30, bottom: 30, left: 60 },
-        width = 890,
-        height = 400;
+    // console.log("useEffect")
 
-      // append the svg object to the body of the page
-      svg
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .select("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    const svg = d3.select(svgRef.current);
+    // append the svg object to the body of the page
+    svg
+      .attr("width", 1060)
+      .attr("height", 540)
 
-      //Read the data
-      var data = memberData
-        .filter((d) => {
-          return d.name_ch != null && d.name_en != null;
-        })
-        .map((d) => {
-          return {
-            coord1D: d.coord1D,
-            coord2D: d.coord2D,
-          };
-        });
-      console.log(data);
+    const group = d3.select(groupRef.current)
+    group
+      .attr("width", width)
+      .attr("height", height)
+      .attr("transform", "translate(40,40)")
 
-      // svg background select nothing when clicked
-      svg
-        .select("rect")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .style("opacity", 0)
-        .on("click", (d, i) => {
-          props.onChangeLegislator(null);
-        });
+    // Add X axis
+    d3.select(xAxisRef.current)
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
 
-      // Add X axis
-      var x = d3.scaleLinear().domain([-1, 1]).range([0, width]);
-      svg
-        .select("g")
-        .select("g .x-axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
+    // Add Y axis
+    d3.select(yAxisRef.current).call(d3.axisLeft(y));
 
-      // Add Y axis
-      var y = d3.scaleLinear().domain([-0.5, 0.5]).range([height, 0]);
-      svg.select("g").select("g .y-axis").call(d3.axisLeft(y));
+    // Add chart body
+    const body = d3.select(bodyRef.current)
+    const update = body.selectAll("circle").data(data);
 
-      // Add chart body
-      var chartBody = svg
-        .select("g")
-        .select("g .chart-body")
-        .attr("width", width)
-        .attr("height", height);
+    update
+      .enter()
+      .append("circle")
+      .attr("cx", function (d) {
+        return x(d.coord1D == null ? 0 : d.coord1D);
+      })
+      .attr("cy", function (d) {
+        return y(d.coord2D == null ? 0 : d.coord2D);
+      })
+      .attr("r", 2)
+      .style("fill", "#fc7f03")
+      .style("opacity", 1)
+      .on("click", (d, i) => {
+        props.onChangeLegislator(i);
+      })
 
-      var update = chartBody.selectAll("circle").data(data);
+    body.selectAll("circle")
+      .transition()
+      .attr('r', function (d) {
+        const selected = d.coord1D != null && d.coord2D != null
+          && x(d.coord1D) >= selectionRect.left && x(d.coord1D) <= selectionRect.right
+          && y(d.coord2D) >= selectionRect.top && y(d.coord2D) <= selectionRect.bottom
 
-      update
-        .enter()
-        .append("circle")
-        .attr("cx", function (d) {
-          console.log(d);
-          return x(d.coord1D == null ? 0 : d.coord1D);
-        })
-        .attr("cy", function (d) {
-          return y(d.coord2D == null ? 0 : d.coord2D);
-        })
-        .attr("r", 2)
-        .style("fill", "#fc7f03")
-        .style("opacity", 1)
-        .on("click", (d, i) => {
-          props.onChangeLegislator(i);
-        });
+        if (selected) {
+          return 4
+        }
+        else {
+          return 2
+        }
+      });
 
-      update.exit().remove();
+    update.exit().remove();
+
+    const brushReset = () => {
+      setSelectionRect({
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0
+      })
     }
-  }, [props.data, d3Container.current]);
+
+    const brushed = () => {
+      const selection = brush.select(".selection")
+      const x = selection.attr("x")
+      const y = selection.attr("y")
+      const width = selection.attr("width")
+      const height = selection.attr("height")
+
+      setSelectionRect({
+        top: parseInt(y),
+        right: parseInt(x) + parseInt(width),
+        bottom: parseInt(y) + parseInt(height),
+        left: parseInt(x)
+      })
+    }
+
+    const brushEnd = () => {
+      console.log("brushEnd")
+    }
+
+    const brush = d3.select(brushRef.current)
+    brush
+      .attr("class", "brush")
+      .call(
+        d3.brush()
+          .on("start", brushReset)
+          .on("brush", brushed)
+          .on("end", brushEnd)
+          .extent([[0, 0], [width, height]])
+      )
+
+  }, [svgRef.current, selectionRect]);
 
   return (
-    <svg className="d3-component" ref={d3Container}>
-      <rect class="svg-background"></rect>
-      <g>
-        <g class="x-axis"></g>
-        <g class="y-axis"></g>
-        {/* <ellipse stroke="black" stroke-width="1px" fill="none" rx="395" ry="164.2460165" cx="470" cy="189.2460165"></ellipse> */}
-        <g class="chart-body"></g>
+    <svg ref={svgRef}>
+      <g ref={groupRef}>
+        <g>
+          <g ref={xAxisRef}></g>
+          <g ref={yAxisRef}></g>
+          <ellipse stroke="black" stroke-width="1px" fill="none" rx={width / 2 * 0.95} ry={height / 2 * 0.9} cx={width / 2} cy={height / 2}></ellipse>
+        </g>
+        <g ref={bodyRef}>
+
+        </g>
+        <g ref={brushRef}>
+
+        </g>
       </g>
     </svg>
   );
