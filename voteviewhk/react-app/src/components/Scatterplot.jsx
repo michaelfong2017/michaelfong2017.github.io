@@ -84,6 +84,7 @@ const Scatterplot = (props) => {
 
     update
       .transition()
+      .duration(50)
       .attr('r', function (d) {
         const selected = selectedMembers.includes(d.index)
         if (selected) {
@@ -97,9 +98,10 @@ const Scatterplot = (props) => {
     update.exit().remove();
 
     var interval
+    clearInterval(interval)
     const brushStart = () => {
-      console.log("brushStart")
-      interval = setInterval(() => brushed(), 150)
+      console.log("brushStart") 
+      interval = setInterval(() => brushed(), 50)
     }
     const brushEnd = () => {
       console.log("brushEnd")
