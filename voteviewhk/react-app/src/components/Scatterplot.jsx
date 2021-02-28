@@ -2,6 +2,25 @@ import React, { useState, useRef, useEffect } from "react";
 import * as d3 from "d3";
 import memberData from "./MemberData"
 
+const width = 890
+const height = 400
+const xAxis = d3.scaleLinear().domain([-1.5, 1.5]).range([0, width]);
+const yAxis = d3.scaleLinear().domain([-0.75, 0.75]).range([height, 0]);
+
+//Read the data
+const data = memberData
+  .filter((d) => {
+    return d.name_ch != null && d.name_en != null;
+  })
+  .map((d) => {
+    return {
+      index: d.index,
+      coord1D: d.coord1D,
+      coord2D: d.coord2D,
+    };
+  });
+console.log(data);
+
 const Scatterplot = (props) => {
   const svgRef = useRef(null)
   const groupRef = useRef(null)
@@ -10,35 +29,9 @@ const Scatterplot = (props) => {
   const bodyRef = useRef(null)
   const brushRef = useRef(null)
 
-  // [top, right, bottom, left]
-  const [selectionRect, setSelectionRect] = useState({
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0
-  })
-
-  const width = 890
-  const height = 400
-  const x = d3.scaleLinear().domain([-1.5, 1.5]).range([0, width]);
-  const y = d3.scaleLinear().domain([-0.75, 0.75]).range([height, 0]);
-
-  //Read the data
-  const data = memberData
-    .filter((d) => {
-      return d.name_ch != null && d.name_en != null;
-    })
-    .map((d) => {
-      return {
-        coord1D: d.coord1D,
-        coord2D: d.coord2D,
-      };
-    });
-  // console.log(data);
+  const [selectedMembers, setSelectedMembers] = useState([])
 
   useEffect(() => {
-    // console.log("useEffect")
-
     const svg = d3.select(svgRef.current);
     // append the svg object to the body of the page
     svg
@@ -54,55 +47,63 @@ const Scatterplot = (props) => {
     // Add X axis
     d3.select(xAxisRef.current)
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+      .call(d3.axisBottom(xAxis));
 
     // Add Y axis
-    d3.select(yAxisRef.current).call(d3.axisLeft(y));
+    d3.select(yAxisRef.current).call(d3.axisLeft(yAxis));
 
     // Add chart body
     const body = d3.select(bodyRef.current)
     const update = body.selectAll("circle").data(data);
 
+    const isNullPoint = (d) => {
+      if (d.coord1D == null || d.coord1D == ""
+      || d.coord2D == null || d.coord2D == "") {
+        return true
+      }
+      return false
+    }
+
     update
       .enter()
       .append("circle")
       .attr("cx", function (d) {
-        return x(d.coord1D == null ? 0 : d.coord1D);
+        return xAxis(isNullPoint(d) ? 0 : d.coord1D);
       })
       .attr("cy", function (d) {
-        return y(d.coord2D == null ? 0 : d.coord2D);
+        return yAxis(isNullPoint(d) ? 0 : d.coord2D);
       })
-      .attr("r", 2)
+      .attr("r", d => {
+        return isNullPoint(d) ? 0 : 2
+      })
       .style("fill", "#fc7f03")
       .style("opacity", 1)
       .on("click", (d, i) => {
         props.onChangeLegislator(i);
       })
 
-    body.selectAll("circle")
+    update
       .transition()
       .attr('r', function (d) {
-        const selected = d.coord1D != null && d.coord2D != null
-          && x(d.coord1D) >= selectionRect.left && x(d.coord1D) <= selectionRect.right
-          && y(d.coord2D) >= selectionRect.top && y(d.coord2D) <= selectionRect.bottom
-
+        const selected = selectedMembers.includes(d.index)
         if (selected) {
           return 4
         }
         else {
-          return 2
+          return isNullPoint(d) ? 0 : 2
         }
       });
 
     update.exit().remove();
 
-    const brushReset = () => {
-      setSelectionRect({
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0
-      })
+    var interval
+    const brushStart = () => {
+      console.log("brushStart")
+      interval = setInterval(() => brushed(), 150)
+    }
+    const brushEnd = () => {
+      console.log("brushEnd")
+      clearInterval(interval)
     }
 
     const brushed = () => {
@@ -111,17 +112,30 @@ const Scatterplot = (props) => {
       const y = selection.attr("y")
       const width = selection.attr("width")
       const height = selection.attr("height")
+      const top = parseInt(y)
+      const right = parseInt(x) + parseInt(width)
+      const bottom = parseInt(y) + parseInt(height)
+      const left = parseInt(x)
 
-      setSelectionRect({
-        top: parseInt(y),
-        right: parseInt(x) + parseInt(width),
-        bottom: parseInt(y) + parseInt(height),
-        left: parseInt(x)
+      var newSelectedMembers = []
+      const arrayEquals = (a, b) => {
+        return Array.isArray(a) &&
+          Array.isArray(b) &&
+          a.length === b.length &&
+          a.every((val, index) => val === b[index]);
+      }
+      data.forEach(d => {
+        var selected = !isNullPoint(d)
+          && xAxis(d.coord1D) >= left && xAxis(d.coord1D) <= right
+          && yAxis(d.coord2D) >= top && yAxis(d.coord2D) <= bottom
+
+        if (selected) {
+          newSelectedMembers.push(d.index)
+        }
       })
-    }
-
-    const brushEnd = () => {
-      console.log("brushEnd")
+      if (!arrayEquals(selectedMembers, newSelectedMembers)) {
+        setSelectedMembers(newSelectedMembers)
+      }
     }
 
     const brush = d3.select(brushRef.current)
@@ -129,13 +143,13 @@ const Scatterplot = (props) => {
       .attr("class", "brush")
       .call(
         d3.brush()
-          .on("start", brushReset)
-          .on("brush", brushed)
+          .on("start", brushStart)
+          // .on("brush", brushed) // Too slow and laggy, should use setInterval instead
           .on("end", brushEnd)
           .extent([[0, 0], [width, height]])
       )
 
-  }, [svgRef.current, selectionRect]);
+  }, [svgRef.current, selectedMembers]);
 
   return (
     <svg ref={svgRef}>
