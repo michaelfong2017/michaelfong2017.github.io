@@ -112,6 +112,7 @@ const MyScatterplot = () => {
     const brushEnd = () => {
       // console.log("brushEnd")
       clearInterval(interval)
+      brushed()
     }
 
     const brushed = () => {
@@ -163,7 +164,9 @@ const MyScatterplot = () => {
         else {
           /* If 0 member is included in selection box and we drag, */
           /* we want to select nobody */
-          setSelectedMembers([])
+          if (newSelectedMembers.length == 0) {
+            setSelectedMembers([])
+          }
         }
       }
     }
