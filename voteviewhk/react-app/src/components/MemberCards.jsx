@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, {  } from "react";
 import {
   Card,
   CardColumns,
 } from "react-bootstrap"
 import styled from "styled-components"
 import memberData from "./MemberData"
+import {
+  useRecoilValue,
+} from "recoil"
+import { selectedMembersAtom } from "components/Scatterplot"
 
 const MyCardColumns = styled(CardColumns)`
     // @media (min-width: 576px) {
@@ -54,9 +58,13 @@ const renderCard = (card, index) => {
 };
 
 const MyMemberCards = () => {
+  const selectedMembers = useRecoilValue(selectedMembersAtom)
+
   return (
     <MyCardColumns>
-      {memberData.map(renderCard)}
+      {memberData.filter((d) => selectedMembers.includes(d.index)).map(renderCard)}
+      {/* Vertical space so that the view port will not change up and down */}
+      <div style={{height: "800px"}}></div>
     </MyCardColumns>
 
   );

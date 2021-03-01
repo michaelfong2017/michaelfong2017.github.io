@@ -1,10 +1,6 @@
-import React, { lazy, Suspense, useState, useEffect } from "react";
+import React, { lazy, Suspense } from "react"
 import {
   RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
 } from "recoil"
 
 import {
@@ -14,34 +10,33 @@ import {
   Spinner,
 } from "react-bootstrap"
 
-import "styles/app.scss";
-import * as d3 from "d3";
+import "styles/app.scss"
 
-const Navbar = lazy(() => import("components/Navbar"));
-const MemberCards = lazy(() => import("components/MemberCards"));
+const Navbar = lazy(() => import("components/Navbar"))
+const Scatterplot = lazy(() => import("components/Scatterplot"))
+const MemberCards = lazy(() => import("components/MemberCards"))
 
-const Scatterplot = lazy(() => import("components/Scatterplot"));
+const App = () => {
+  return (
+    <RecoilRoot>
+      <MyApp />
+    </RecoilRoot>
+  );
+}
 
-const App = (props) => {
-  const [selectedLegislator, setSelectedLegislator] = useState(null);
-
-  //function that will hook into the state to change it
-  function updateLegislator(legislator) {
-    setSelectedLegislator(legislator);
-  }
-
+const MyApp = () => {
   return (
     <div>
+
       <Suspense fallback={
         <Spinner animation="border" role="status">
           <span className="sr-only">Loading...</span>
         </Spinner>
-
       }>
         <Navbar />
       </Suspense>
 
-      <Container fluid style={{padding: "30px"}}>
+      <Container fluid style={{ padding: "30px" }}>
         <Row style={{ flexDirection: "column" }} noGutters>
 
           <Suspense fallback={
@@ -50,7 +45,7 @@ const App = (props) => {
             </Spinner>
 
           }>
-            <Scatterplot onChangeLegislator={updateLegislator} />
+            <Scatterplot/>
           </Suspense>
           {/* <p>{data && selectedLegislator && data[selectedLegislator] ? "Legislator " + data[selectedLegislator]['name_ch'] : data ? "No legislator selected" : "Loading..."}</p> */}
 
@@ -65,7 +60,6 @@ const App = (props) => {
         </Row>
 
       </Container>
-
 
     </div>
   );

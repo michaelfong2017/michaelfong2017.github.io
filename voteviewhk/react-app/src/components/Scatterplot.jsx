@@ -1,6 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 import memberData from "./MemberData"
+import {
+  useRecoilState,
+  atom
+} from "recoil";
 
 const width = 890
 const height = 400
@@ -21,7 +25,12 @@ const data = memberData
   });
 console.log(data);
 
-const Scatterplot = (props) => {
+const selectedMembersAtom = atom({
+  key: 'selectedMembers',
+  default: [...Array(memberData.length).keys()].map(i => i + 1)
+})
+
+const MyScatterplot = () => {
   const svgRef = useRef(null)
   const groupRef = useRef(null)
   const xAxisRef = useRef(null)
@@ -29,14 +38,14 @@ const Scatterplot = (props) => {
   const bodyRef = useRef(null)
   const brushRef = useRef(null)
 
-  const [selectedMembers, setSelectedMembers] = useState([])
+  const [selectedMembers, setSelectedMembers] = useRecoilState(selectedMembersAtom)
 
   useEffect(() => {
     const svg = d3.select(svgRef.current);
     // append the svg object to the body of the page
     svg
       .attr("width", 1060)
-      .attr("height", 540)
+      .attr("height", 520)
 
     const group = d3.select(groupRef.current)
     group
@@ -58,7 +67,7 @@ const Scatterplot = (props) => {
 
     const isNullPoint = (d) => {
       if (d.coord1D == null || d.coord1D == ""
-      || d.coord2D == null || d.coord2D == "") {
+        || d.coord2D == null || d.coord2D == "") {
         return true
       }
       return false
@@ -78,9 +87,6 @@ const Scatterplot = (props) => {
       })
       .style("fill", "#fc7f03")
       .style("opacity", 1)
-      .on("click", (d, i) => {
-        props.onChangeLegislator(i);
-      })
 
     update
       .transition()
@@ -88,7 +94,7 @@ const Scatterplot = (props) => {
       .attr('r', function (d) {
         const selected = selectedMembers.includes(d.index)
         if (selected) {
-          return 4
+          return isNullPoint(d) ? 0 : 4
         }
         else {
           return isNullPoint(d) ? 0 : 2
@@ -100,11 +106,11 @@ const Scatterplot = (props) => {
     var interval
     clearInterval(interval)
     const brushStart = () => {
-      console.log("brushStart") 
+      // console.log("brushStart") 
       interval = setInterval(() => brushed(), 50)
     }
     const brushEnd = () => {
-      console.log("brushEnd")
+      // console.log("brushEnd")
       clearInterval(interval)
     }
 
@@ -127,16 +133,38 @@ const Scatterplot = (props) => {
           a.every((val, index) => val === b[index]);
       }
       data.forEach(d => {
+        const tolerance = 2 /* Some tolerance for the sake of tap selection */
         var selected = !isNullPoint(d)
-          && xAxis(d.coord1D) >= left && xAxis(d.coord1D) <= right
-          && yAxis(d.coord2D) >= top && yAxis(d.coord2D) <= bottom
+          && xAxis(d.coord1D) >= left - tolerance && xAxis(d.coord1D) <= right + tolerance
+          && yAxis(d.coord2D) >= top - tolerance && yAxis(d.coord2D) <= bottom + tolerance
 
         if (selected) {
           newSelectedMembers.push(d.index)
         }
       })
-      if (!arrayEquals(selectedMembers, newSelectedMembers)) {
-        setSelectedMembers(newSelectedMembers)
+      if (width * height == 0) { /* Tap */
+        if (newSelectedMembers.length == 0) {
+          /* If 0 member is included in selection box and only tap instead of drag, */
+          /* we want to select everybody (including the 3 members with undefined coordinates) */
+          setSelectedMembers([...Array(memberData.length).keys()].map(i => i + 1))
+        }
+        else { /* When tap causes selection */
+          if (!arrayEquals(selectedMembers, newSelectedMembers)) {
+            setSelectedMembers(newSelectedMembers)
+          }
+        }
+      }
+      else { /* Drag */
+        /* Set state only when number of selected members are different to avoid unnecessary */
+        /* re-render because changing selection box without changing selection does not need re-render */
+        if (!arrayEquals(selectedMembers, newSelectedMembers)) {
+          setSelectedMembers(newSelectedMembers)
+        }
+        else {
+          /* If 0 member is included in selection box and we drag, */
+          /* we want to select nobody */
+          setSelectedMembers([])
+        }
       }
     }
 
@@ -172,4 +200,7 @@ const Scatterplot = (props) => {
   );
 };
 
-export default Scatterplot;
+// const MyScatterplot = {
+//   Scatterplot, selectedMembersAtom
+// }
+export { MyScatterplot as default, selectedMembersAtom };
