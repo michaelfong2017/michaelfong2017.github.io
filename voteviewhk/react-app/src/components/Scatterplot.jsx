@@ -115,16 +115,20 @@ const MyScatterplot = () => {
       brushed()
     }
 
+    var top, right, bottom, left
     const brushed = () => {
       const selection = brush.select(".selection")
       const x = selection.attr("x")
       const y = selection.attr("y")
       const width = selection.attr("width")
       const height = selection.attr("height")
-      const top = parseInt(y)
-      const right = parseInt(x) + parseInt(width)
-      const bottom = parseInt(y) + parseInt(height)
-      const left = parseInt(x)
+
+      /* If the current x and y are null, use the previous valid values, which come from brushStart. */
+      /* brushStart records a valid selection box with valid x and y, and width = height = 0. */
+      top = y == null ? top : parseInt(y)
+      right = x == null ? right : parseInt(x) + parseInt(width)
+      bottom = y == null ? bottom : parseInt(y) + parseInt(height)
+      left = x == null ? left : parseInt(x)
 
       var newSelectedMembers = []
       const arrayEquals = (a, b) => {
